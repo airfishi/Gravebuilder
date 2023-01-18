@@ -9,19 +9,22 @@ public class playerMovement : MonoBehaviour
     public GameObject player;
     private Vector3 speed;
     private Vector3 jump;
-    //private int jumpRemaining; //Jump Draft 1
     private bool jumping;
     private bool grounded;
     private bool movingRight;
     private bool movingLeft;
+    private int jumpTime;
+    private int maxJumpTime;
+
+
     void Start()
     {
         jump = new Vector3(0, 1,0); 
         speed = new Vector3(1, 0,0);
-        //jumpRemaining= 0;
-        //speedRemaining= 0;
         jumping = false;
         grounded = true;
+        jumpTime = 0;
+        maxJumpTime = 70;
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -38,7 +41,7 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))                     //Player Movement (left/right)
         {
             movingLeft= true;
         }
@@ -63,29 +66,14 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-       /* if (speedRemaining > 0)
-        {
-            
-            if(Input.GetKeyUp(KeyCode.A) && Input.GetKeyUp(KeyCode.LeftArrow))
-            {
-                moving = 0;
-            }
-        }
 
-        if (speedRemaining < 0)
-        {
-            
-            if (Input.GetKeyUp(KeyCode.D) && Input.GetKeyUp(KeyCode.RightArrow))
-            {
-                moving = 0;
-            }
-        }*/
 
-        if (!jumping && grounded)
+        if (!jumping && grounded)                                                               //Player Movement (Jumping)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 jumping = true;
+                jumpTime = 0;
             }
         }
         else
@@ -93,8 +81,9 @@ public class playerMovement : MonoBehaviour
             if (jumping)
             {
                 this.transform.localPosition += jump;
+                jumpTime++;
             }
-            if (Input.GetKeyUp(KeyCode.Space))
+            if (Input.GetKeyUp(KeyCode.Space) || jumpTime >= maxJumpTime)
             {
                 jumping = false;
             }
