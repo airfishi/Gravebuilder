@@ -45,58 +45,34 @@ public class playerMovement : MonoBehaviour
         {
             grounded = false;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Player Movement (left/right)
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))  //GetKeyDown only returns true on initial press.  Boolean allows continuous movement until GetKeyUp returns true.
+        // Update is called once per frame
+        void Update()
         {
-            movingLeft= true;
-        }
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            movingRight = true;
-        }
-        if (movingLeft)
-        {
-            player.transform.localPosition -= speed;                               //adjusts player's position in game--does not check for collisions. Collision check might be needed in later development to smooth gameplay.
-            if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
+            //Player Movement (left/right)
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))  //GetKeyDown only returns true on initial press.  Boolean allows continuous movement until GetKeyUp returns true.
             {
-                movingLeft = false;
+                movingLeft = true;
             }
-        }
-        if (movingRight)
-        {
-            player.transform.localPosition += speed;
-            if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
-                movingRight = false;
+                movingRight = true;
             }
-        }
-
-
-
-        if (!jumping && grounded)                                                  //Player Movement (Jumping)
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (movingLeft)
             {
-                jumping = true;
-                jumpTime = 0;
+                player.transform.localPosition -= speed;                               //adjusts player's position in game--does not check for collisions. Collision check might be needed in later development to smooth gameplay.
+                if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
+                {
+                    movingLeft = false;
+                }
             }
-        }
-        else
-        {
-            if (jumping)
+            if (movingRight)
             {
-                this.transform.localPosition += jump;
-                jumpTime++;
-            }
-            if (Input.GetKeyUp(KeyCode.Space) || jumpTime >= maxJumpTime)
-            {
-                jumping = false;
+                player.transform.localPosition += speed;
+                if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
+                {
+                    movingRight = false;
+                }
             }
         }
     }
-}
