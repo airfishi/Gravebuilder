@@ -275,9 +275,17 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8384968131505708651, guid: 51c8f2ecd53be9043a6376c5fab8421c, type: 3}
+      propertyPath: slime_type
+      value: 
+      objectReference: {fileID: 6057649563210529295, guid: 3f487223f3cdc3241b7994229eccc245, type: 3}
+    - target: {fileID: 8384968131505708651, guid: 51c8f2ecd53be9043a6376c5fab8421c, type: 3}
       propertyPath: large_slime
       value: 
       objectReference: {fileID: 6057649563210529295, guid: 3f487223f3cdc3241b7994229eccc245, type: 3}
+    - target: {fileID: 8384968131505708651, guid: 51c8f2ecd53be9043a6376c5fab8421c, type: 3}
+      propertyPath: secondsBetweenSpawn
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8384968131514111062, guid: 51c8f2ecd53be9043a6376c5fab8421c, type: 3}
       propertyPath: m_BodyType
       value: 0
