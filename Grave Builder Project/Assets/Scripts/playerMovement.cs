@@ -7,6 +7,7 @@ public class playerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject player;
+    public GameObject floor;
     private Vector3 speed;
     private Vector3 jump;
     private bool jumping;
@@ -25,16 +26,25 @@ public class playerMovement : MonoBehaviour
         grounded = true;
         jumpTime = 0;
         maxJumpTime = 70;
+        movingLeft = false;
+        movingRight = false;
+        floor.tag = "floor";
     }
 
-    void OnCollisionEnter2D(Collision2D col)            //gounded is uesed in jumping, see bottom section of Update()
+    void OnCollisionEnter2D(Collision2D other)            //gounded is uesed in jumping, see bottom section of Update()
     {
-        grounded = true;
+        if (other.gameObject.tag == "floor")
+        {
+            grounded = true;
+        }
     }
 
-    void OnCollisionExit2D(Collision2D col)
+    void OnCollisionExit2D(Collision2D other)
     {
-        grounded = false;
+        if (other.gameObject.tag == "floor")
+        {
+            grounded = false;
+        }
     }
 
     // Update is called once per frame
@@ -68,7 +78,7 @@ public class playerMovement : MonoBehaviour
 
 
 
-        if (!jumping && grounded)                                                               //Player Movement (Jumping)
+        if (!jumping && grounded)                                                  //Player Movement (Jumping)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
