@@ -20,7 +20,7 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        jump = new Vector3(0, 1, 0);
+        jump = new Vector3(0, 5, 0);
         speed = new Vector3(1, 0, 0);
         jumping = false;
         grounded = true;
@@ -90,7 +90,7 @@ public class playerMovement : MonoBehaviour
         {
             if (jumping)
             {
-                this.transform.localPosition += jump;
+                player.transform.localPosition += jump;
                 jumpTime++;
             }
             if (Input.GetKeyUp(KeyCode.Space) || jumpTime >= maxJumpTime)
