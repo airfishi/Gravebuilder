@@ -27,7 +27,7 @@ public class playerMovement : MonoBehaviour
         maxJumpTime = 70;
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D col)            //gounded is uesed in jumping, see bottom section of Update()
     {
         grounded = true;
     }
@@ -40,8 +40,8 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))                     //Player Movement (left/right)
+        //Player Movement (left/right)
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))  //GetKeyDown only returns true on initial press.  Boolean allows continuous movement until GetKeyUp returns true.
         {
             movingLeft= true;
         }
@@ -51,7 +51,7 @@ public class playerMovement : MonoBehaviour
         }
         if (movingLeft)
         {
-            player.transform.localPosition -= speed;
+            player.transform.localPosition -= speed;                               //adjusts player's position in game--does not check for collisions. Collision check might be needed in later development to smooth gameplay.
             if(Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
             {
                 movingLeft = false;
