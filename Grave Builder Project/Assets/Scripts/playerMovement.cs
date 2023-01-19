@@ -12,7 +12,7 @@ public class playerMovement : MonoBehaviour
     private int speedRemaining;
     void Start()
     {
-        jump = new Vector3(0, 1, 0); 
+        jump = new Vector3(0, 50, 0); 
         speed = new Vector3(1, 0, 0);
         jumpRemaining= 0;
         speedRemaining= 0;
