@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3631716597363719730}
   - component: {fileID: 1289839978864391315}
   - component: {fileID: 8948852884702181203}
-  - component: {fileID: 4167740476557466084}
+  - component: {fileID: 3936124160393529951}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2298281756710490334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.1, y: -2.46, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 16, y: 32, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4167740476557466084
+--- !u!114 &3936124160393529951
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,7 +143,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2298281756710490334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e9e53072a33fec4ebd2cd9bf8037156, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ae0750d773bb2847bddacdf4aed0d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2298281756710490334}
+  floor: {fileID: 379679151029307005, guid: 0b4d23eab46f10d40b00920ab083ccc9, type: 3}
