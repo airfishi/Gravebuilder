@@ -21,7 +21,7 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         jump = new Vector3(0, 5, 0);
-        speed = new Vector3(1, 0, 0);
+        speed = new Vector3(3, 0, 0);
         jumping = false;
         grounded = true;
         jumpTime = 0;
@@ -36,6 +36,11 @@ public class playerMovement : MonoBehaviour
         if (other.gameObject.tag == "floor")
         {
             grounded = true;
+            Debug.Log("Landed on Floor");
+        }
+        else
+        {
+            Debug.Log("Landed on Not Floor");
         }
     }
 
@@ -44,6 +49,12 @@ public class playerMovement : MonoBehaviour
         if (other.gameObject.tag == "floor")
         {
             grounded = false;
+            Debug.Log("Left the Floor");
+        }
+        else
+        {
+            Debug.Log("Left something else");
+
         }
     }
 

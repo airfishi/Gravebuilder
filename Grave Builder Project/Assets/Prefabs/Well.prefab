@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   secondsBetweenSpawn: 5
   elapsedTime: 0
-  large_slime: {fileID: 0}
+  slime_type: {fileID: 0}
 --- !u!1 &8384968131377915977
 GameObject:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 20
 --- !u!50 &8384968131377915972
 Rigidbody2D:
   serializedVersion: 4
@@ -448,4 +448,4 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 20
