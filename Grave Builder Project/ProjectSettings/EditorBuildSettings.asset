@@ -8,6 +8,7 @@ EditorBuildSettings:
   - enabled: 1
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -18,6 +19,8 @@ EditorBuildSettings:
 >>>>>>> 090c5bbea9f9d30c1e0f67d3da4ee313dbb9a75a
 =======
 >>>>>>> 090c5bbea9f9d30c1e0f67d3da4ee313dbb9a75a
+=======
+>>>>>>> 5071408bcd641dc9d28e4ea56f8c3294cc1870b1
     path: Assets/Scenes/Game Screen.unity
     guid: 920d2fcfb57ca05479075ee9eab5acce
   - enabled: 1
