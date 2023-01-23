@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Grave Builder Project/Assets/Prefabs/Temporary Wall Object.prefab.meta
 guid: 07662048f49fc134ea6ab9e91dec24e6
 PrefabImporter:
+========
+guid: 0ff948ad326c21742bd0c8ef6c8960cd
+DefaultImporter:
+>>>>>>>> 5071408bcd641dc9d28e4ea56f8c3294cc1870b1:Grave Builder Project/Assets/Scenes/FishScene.unity.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

@@ -147,4 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2298281756710490334}
+<<<<<<< HEAD
+  floor: {fileID: 0}
+=======
   floor: {fileID: 6570626910819111056, guid: ac7a648fc6f5f9b4386f46fc84dc1c97, type: 3}
+>>>>>>> 5071408bcd641dc9d28e4ea56f8c3294cc1870b1
