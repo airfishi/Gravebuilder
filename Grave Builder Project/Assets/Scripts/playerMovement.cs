@@ -16,6 +16,7 @@ public class playerMovement : MonoBehaviour
     private bool movingLeft;
     private int jumpTime;
     private int maxJumpTime;
+    private int onWall;
 
 
     void Start()
