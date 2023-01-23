@@ -1916,3 +1916,63 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 419.959170 seconds.
+  path: Assets/Scenes/FixingPlayerMovement.unity
+  artifactKey: Guid(4d207a75cff4e17408bd9050a54f7f23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/FixingPlayerMovement.unity using Guid(4d207a75cff4e17408bd9050a54f7f23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a4e079ceb8ee08784f7e02084f845e1') in 0.008839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.132678 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(bc4a46e8f1ffeea4f9e516524f69ee00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(bc4a46e8f1ffeea4f9e516524f69ee00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4641b200c2b5efc5edbedb0b1ef8627a') in 0.072272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 108.968653 seconds.
+  path: Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Square.png
+  artifactKey: Guid(311925a002f4447b3a28927169b83ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2/Square.png using Guid(311925a002f4447b3a28927169b83ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4086e043480ae832dc5a5a6b2f25477') in 0.032780 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 52.883124 seconds.
+  path: Assets/Prefabs/Floor.prefab
+  artifactKey: Guid(ac7a648fc6f5f9b4386f46fc84dc1c97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Floor.prefab using Guid(ac7a648fc6f5f9b4386f46fc84dc1c97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afd9976bd5a306bd0b043f904e1665d7') in 0.009685 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.009435 seconds.
+  path: Assets/Prefabs/Well.prefab
+  artifactKey: Guid(51c8f2ecd53be9043a6376c5fab8421c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Well.prefab using Guid(51c8f2ecd53be9043a6376c5fab8421c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c076764619b9e35176b1938dc0887fad') in 0.014886 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 26.669547 seconds.
+  path: Assets/Prefabs/Player.prefab
+  artifactKey: Guid(bc4a46e8f1ffeea4f9e516524f69ee00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Player.prefab using Guid(bc4a46e8f1ffeea4f9e516524f69ee00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a8a68c1d2aee9c8d0d868c4550ed75d') in 0.011347 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.452288 seconds.
+  path: Assets/Scenes/FixingPlayerMovement.unity
+  artifactKey: Guid(4d207a75cff4e17408bd9050a54f7f23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/FixingPlayerMovement.unity using Guid(4d207a75cff4e17408bd9050a54f7f23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f84f0b853d81dddca211f03f49081d9') in 0.001839 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 196.783297 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17e0bcd1f10396eef1fdd7dfc360de52') in 0.004525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.265022 seconds.
+  path: Assets/Prefabs/Floor.prefab
+  artifactKey: Guid(ac7a648fc6f5f9b4386f46fc84dc1c97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Floor.prefab using Guid(ac7a648fc6f5f9b4386f46fc84dc1c97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4613d7e25dd55e10042783cb426325e') in 0.010445 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Prefabs/Well.prefab
+  artifactKey: Guid(51c8f2ecd53be9043a6376c5fab8421c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Well.prefab using Guid(51c8f2ecd53be9043a6376c5fab8421c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c1602e9b3ee53eb7ca8d2d13eeda571') in 0.009893 seconds 
