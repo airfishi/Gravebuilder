@@ -178,6 +178,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Well
       objectReference: {fileID: 0}
+    - target: {fileID: 8384968131505708651, guid: 51c8f2ecd53be9043a6376c5fab8421c, type: 3}
+      propertyPath: slime_type
+      value: 
+      objectReference: {fileID: 6747579021929866888, guid: 05d0b089e4ce47e408f51b4c2e525a6e, type: 3}
+    - target: {fileID: 8384968131505708651, guid: 51c8f2ecd53be9043a6376c5fab8421c, type: 3}
+      propertyPath: secondsBetweenSpawn
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51c8f2ecd53be9043a6376c5fab8421c, type: 3}
 --- !u!1 &853592988
