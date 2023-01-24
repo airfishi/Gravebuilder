@@ -7,11 +7,12 @@ public class HeadDetectScript : MonoBehaviour
     // Start is called before the first frame update
     public GameObject enemy;
     public GameObject babyEnemy;
-
-
+    private bool quitting = false;
+    
     void Start()
     {
         enemy = gameObject.transform.parent.gameObject;    
+        quitting = false;
     }
 
     // Update is called once per frame
@@ -27,8 +28,14 @@ public class HeadDetectScript : MonoBehaviour
     }
 
     private void OnDestroy(){
-        Vector3 right = new Vector3(150, 0, 0);
-        GameObject leftEnemy = (GameObject)Instantiate(babyEnemy,transform.parent.position - right,Quaternion.Euler(0,0,0));
-        GameObject rightEnemy = (GameObject)Instantiate(babyEnemy,transform.parent.position + right,Quaternion.Euler(0,0,0));
+        if(quitting == false){
+            Vector3 right = new Vector3(250, 0, 0);
+            GameObject leftEnemy = (GameObject)Instantiate(babyEnemy,transform.parent.position - right,Quaternion.Euler(0,0,0));   
+            GameObject rightEnemy = (GameObject)Instantiate(babyEnemy,transform.parent.position + right,Quaternion.Euler(0,0,0));
+        }
+    }
+    
+    private void OnApplicationQuit(){
+        quitting = true;
     }
 }
