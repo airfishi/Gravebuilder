@@ -21,7 +21,7 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         jump = new Vector3(0, 5, 0);
-        speed = new Vector3(1, 0, 0);
+        speed = new Vector3(3, 0, 0);
         jumping = false;
         grounded = true;
         jumpTime = 0;
