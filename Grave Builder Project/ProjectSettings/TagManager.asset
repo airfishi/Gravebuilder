@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - floor
+  - LargeSlime
+  - MediumSlime
+  - SmallSlime
   layers:
   - Default
   - TransparentFX
