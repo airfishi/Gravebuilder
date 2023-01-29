@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   floor: {fileID: 4944688478474118562, guid: 65acf48bb20d0304993a5e94255cc140, type: 3}
+  animationID: {fileID: 7400000, guid: b364851ba269144a2acee1c003c40671, type: 2}
 --- !u!50 &8948852884702181203
 Rigidbody2D:
   serializedVersion: 4

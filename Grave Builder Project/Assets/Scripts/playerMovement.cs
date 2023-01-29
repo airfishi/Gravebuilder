@@ -8,15 +8,16 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject floor;
+    public AnimationClip animationID;
     private Vector3 speed;
     private Vector3 jump;
-    private bool jumping;
-    private bool grounded;
-    private bool movingRight;
-    private bool movingLeft;
-    private int jumpTime;
-    private int maxJumpTime;
-    private int onWall;
+    public bool jumping;
+    public bool grounded;
+    public bool movingRight;
+    public bool movingLeft;
+    public int jumpTime;
+    public int maxJumpTime;
+    public int onWall;
 
 
     void Start()
@@ -66,6 +67,7 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))  //GetKeyDown only returns true on initial press.  Boolean allows continuous movement until GetKeyUp returns true.
         {
             movingLeft = true;
+
         }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
