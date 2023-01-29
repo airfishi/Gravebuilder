@@ -13,16 +13,9 @@ GameObject:
   - component: {fileID: 1439530813087519734}
   - component: {fileID: 1439530813087519736}
   - component: {fileID: 8948852884702181203}
-<<<<<<<< HEAD:Grave Builder Project/Assets/Prefabs/Player/Player.prefab
-  - component: {fileID: -3750121163024444042}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
-========
-  m_Layer: 0
-  m_Name: Player
-  m_TagString: floor
->>>>>>>> origin/main:Grave Builder Project/Assets/Prefabs/Player.prefab
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,13 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439530813087519739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<<< HEAD:Grave Builder Project/Assets/Prefabs/Player/Player.prefab
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-========
   m_LocalPosition: {x: -14, y: -916, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 1}
->>>>>>>> origin/main:Grave Builder Project/Assets/Prefabs/Player.prefab
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -88,11 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-<<<<<<<< HEAD:Grave Builder Project/Assets/Prefabs/Player/Player.prefab
   m_Sprite: {fileID: 653946441, guid: 2c99b7f0569a34ae8ac00a9eec8c5d2a, type: 3}
-========
-  m_Sprite: {fileID: 21300000, guid: 9d3230e9c8e210b418faebfaa06d2f70, type: 3}
->>>>>>>> origin/main:Grave Builder Project/Assets/Prefabs/Player.prefab
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,32 +100,19 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-<<<<<<<< HEAD:Grave Builder Project/Assets/Prefabs/Player/Player.prefab
-  m_Offset: {x: -0.009836659, y: -0.01836124}
-========
-  m_Offset: {x: -0.010867804, y: -0.17388427}
->>>>>>>> origin/main:Grave Builder Project/Assets/Prefabs/Player.prefab
+  m_Offset: {x: -0.007470101, y: 0.020228118}
   m_SpriteTilingProperty:
     border: {x: 0.07, y: 0, z: 0.089999996, w: 0.04}
     pivot: {x: 0.5, y: 0.5}
-<<<<<<<< HEAD:Grave Builder Project/Assets/Prefabs/Player/Player.prefab
     oldSize: {x: 0.32, y: 0.32}
-========
-    oldSize: {x: 2.7, y: 2.86}
->>>>>>>> origin/main:Grave Builder Project/Assets/Prefabs/Player.prefab
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-<<<<<<<< HEAD:Grave Builder Project/Assets/Prefabs/Player/Player.prefab
-  m_Size: {x: 0.17765376, y: 0.3022527}
-  m_EdgeRadius: 20
-========
-  m_Size: {x: 1.369504, y: 2.1737182}
+  m_Size: {x: 0.33469057, y: 0.37505192}
   m_EdgeRadius: 10
->>>>>>>> origin/main:Grave Builder Project/Assets/Prefabs/Player.prefab
 --- !u!114 &1439530813087519736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,14 +125,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae0750d773bb2847bddacdf4aed0d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<<< HEAD:Grave Builder Project/Assets/Prefabs/Player/Player.prefab
-  player: {fileID: 0}
-  floor: {fileID: 4944688478474118562, guid: 65acf48bb20d0304993a5e94255cc140, type: 3}
-  animationID: {fileID: 7400000, guid: b364851ba269144a2acee1c003c40671, type: 2}
-========
   player: {fileID: 1439530813087519739}
   floor: {fileID: 4944688478474118562, guid: 65acf48bb20d0304993a5e94255cc140, type: 3}
->>>>>>>> origin/main:Grave Builder Project/Assets/Prefabs/Player.prefab
+  animationID: {fileID: 0}
+  jumping: 0
+  grounded: 0
+  movingRight: 0
+  movingLeft: 0
+  jumpTime: 0
+  maxJumpTime: 0
+  onWall: 0
 --- !u!50 &8948852884702181203
 Rigidbody2D:
   serializedVersion: 4
@@ -183,26 +156,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
-<<<<<<<< HEAD:Grave Builder Project/Assets/Prefabs/Player/Player.prefab
---- !u!95 &-3750121163024444042
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1439530813087519739}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6d71c27cd053643ceb055b51a30d5cea, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-========
->>>>>>>> origin/main:Grave Builder Project/Assets/Prefabs/Player.prefab
