@@ -38,11 +38,42 @@ public class playerMovement : MonoBehaviour
         if (other.gameObject.tag == "floor")
         {
             grounded = true;
-            Debug.Log("Landed on Floor");
         }
-        else
+
+        if (other.gameObject.tag == "LargeSlime")
         {
-            Debug.Log("Landed on Not Floor");
+            if(player.transform.position.y > other.gameObject.transform.position.y + 260)
+            {
+                Destroy(other.transform.gameObject.transform.parent.gameObject);
+            }
+            else
+            {
+                Destroy(player);
+            }
+        }
+
+        if (other.gameObject.tag == "MediumSlime")
+        {
+            if(player.transform.position.y > other.gameObject.transform.position.y + 220)
+            {
+                Destroy(other.transform.gameObject.transform.parent.gameObject);
+            }
+            else
+            {
+                Destroy(player);
+            }
+        }
+
+        if (other.gameObject.tag == "SmallSlime")
+        {
+            if(player.transform.position.y > other.gameObject.transform.position.y + 160)
+            {
+                Destroy(other.transform.gameObject.transform.parent.gameObject);
+            }
+            else
+            {
+                Destroy(player);
+            }
         }
     }
 
