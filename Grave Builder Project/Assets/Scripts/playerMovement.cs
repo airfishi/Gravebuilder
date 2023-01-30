@@ -22,12 +22,12 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        jump = new Vector3(0, 6, 0);
-        speed = new Vector3(3, 0, 0);
+        jump = new Vector3(0, 1000, 0);
+        speed = new Vector3(1500, 0, 0);
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 70;
+        maxJumpTime = 210;
         movingLeft = false;
         movingRight = false;
         floor.tag = "floor";
@@ -54,7 +54,7 @@ public class playerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "MediumSlime")
         {
-            if(player.transform.position.y > other.gameObject.transform.position.y + 220)
+            if(player.transform.position.y > other.gameObject.transform.position.y + 100)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
             }
@@ -106,7 +106,7 @@ public class playerMovement : MonoBehaviour
         }
         if (movingLeft)
         {
-            player.transform.localPosition -= speed;                               //adjusts player's position in game--does not check for collisions. Collision check might be needed in later development to smooth gameplay.
+            player.transform.localPosition -= speed * Time.deltaTime;                               //adjusts player's position in game--does not check for collisions. Collision check might be needed in later development to smooth gameplay.
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
             {
                 movingLeft = false;
@@ -114,7 +114,7 @@ public class playerMovement : MonoBehaviour
         }
         if (movingRight)
         {
-            player.transform.localPosition += speed;
+            player.transform.localPosition += speed * Time.deltaTime;
             if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
             {
                 movingRight = false;
@@ -135,7 +135,7 @@ public class playerMovement : MonoBehaviour
         {
             if (jumping)
             {
-                player.transform.localPosition += jump;
+                player.transform.localPosition += jump * Time.deltaTime;
                 jumpTime++;
             }
             if (Input.GetKeyUp(KeyCode.Space) || jumpTime >= maxJumpTime)

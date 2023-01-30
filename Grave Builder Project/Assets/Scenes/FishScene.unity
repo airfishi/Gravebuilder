@@ -581,6 +581,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Well
       objectReference: {fileID: 0}
+    - target: {fileID: 2151018642437412637, guid: 21f143e44d7e6ea4b99f1fc225af09bd, type: 3}
+      propertyPath: secondsBetweenSpawn
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4830703491507290078, guid: 21f143e44d7e6ea4b99f1fc225af09bd, type: 3}
       propertyPath: m_RootOrder
       value: 5
