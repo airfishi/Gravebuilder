@@ -82,11 +82,11 @@ public class playerMovement : MonoBehaviour
         if (other.gameObject.tag == "floor")
         {
             grounded = false;
-            Debug.Log("Left the Floor");
+            //Debug.Log("Left the Floor");
         }
         else
         {
-            Debug.Log("Left something else");
+            //Debug.Log("Left something else");
 
         }
     }
