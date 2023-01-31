@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8995789676073674047}
   - component: {fileID: 4007634489925742886}
   - component: {fileID: 136214268515530907}
-  - component: {fileID: 1482086674465352837}
   m_Layer: 0
   m_Name: Medium_Slime
   m_TagString: MediumSlime
@@ -152,19 +151,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1482086674465352837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113920725537500450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4ee2140d8deca94a937235ff8a8ca76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  babyEnemy: {fileID: 6747579021929866888, guid: 05d0b089e4ce47e408f51b4c2e525a6e, type: 3}
 --- !u!1 &6747579021929866888
 GameObject:
   m_ObjectHideFlags: 0
