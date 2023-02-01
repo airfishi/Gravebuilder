@@ -28,9 +28,10 @@ public class Slime_split : MonoBehaviour
 
     private void OnDestroy(){
         if(quitting == false){
-            Vector3 right = new Vector3(250, 0, 0);
-            GameObject leftEnemy = (GameObject)Instantiate(babyEnemy,transform.position - right,Quaternion.Euler(0,0,0));   
-            GameObject rightEnemy = (GameObject)Instantiate(babyEnemy,transform.position + right,Quaternion.Euler(0,0,0));
+            Vector3 right = new Vector3(1000, 0, 0);
+            Vector3 up = new Vector3(0, 150, 0);
+            GameObject leftEnemy = (GameObject)Instantiate(babyEnemy,transform.position - right + up,Quaternion.Euler(0,0,0));   
+            GameObject rightEnemy = (GameObject)Instantiate(babyEnemy,transform.position + right + up,Quaternion.Euler(0,0,0));
         }
     }
     
