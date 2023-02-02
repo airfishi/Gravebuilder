@@ -20,7 +20,7 @@ public class large_slime_spawning : MonoBehaviour
         elapsedTime += Time.deltaTime;
         if(elapsedTime > secondsBetweenSpawn){
             elapsedTime = 0;
-            //randomly pick a place between -6 and 6 for slime to spawn
+            //randomly pick a place between -3000 and 3000 for slime to spawn
             xspawn = rand.Next(3000);
             posneg = rand.Next(2);
             if(posneg == 1) xspawn = xspawn*-1;
