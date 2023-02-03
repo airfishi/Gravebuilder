@@ -9,8 +9,11 @@ public class playerMovement : MonoBehaviour
     public GameObject player;
     public GameObject floor;
     public AnimationClip animationID;
+
     private Vector3 speed;
     private Vector3 jump;
+    private KeyCode jumpKey;
+
     public bool jumping;
     public bool grounded;
     public bool movingRight;
@@ -18,7 +21,7 @@ public class playerMovement : MonoBehaviour
     public int jumpTime;
     public int maxJumpTime;
     public int onWall;
-
+    
 
     void Start()
     {
@@ -64,9 +67,9 @@ public class playerMovement : MonoBehaviour
             }
         }
 
-        if (other.gameObject.tag == "SmallSlime")
+        /*if (other.gameObject.tag == "SmallSlime")
         {
-            if(player.transform.position.y > other.gameObject.transform.position.y + 160)
+            if(player.transform.position.y < other.gameObject.transform.position.y - 20000)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
             }
@@ -74,7 +77,7 @@ public class playerMovement : MonoBehaviour
             {
                 Destroy(player);
             }
-        }
+        }*/
     }
 
     void OnCollisionExit2D(Collision2D other)
@@ -129,6 +132,13 @@ public class playerMovement : MonoBehaviour
             {
                 jumping = true;
                 jumpTime = 0;
+                jumpKey = KeyCode.Space;
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                jumping = true;
+                jumpTime = 0;
+                jumpKey = KeyCode.UpArrow;
             }
         }
         else
@@ -138,7 +148,7 @@ public class playerMovement : MonoBehaviour
                 player.transform.localPosition += jump * Time.deltaTime;
                 jumpTime++;
             }
-            if (Input.GetKeyUp(KeyCode.Space) || jumpTime >= maxJumpTime)
+            if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || jumpTime >= maxJumpTime)
             {
                 jumping = false;
             }
