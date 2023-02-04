@@ -12,6 +12,7 @@ public class initial_move_dir : MonoBehaviour
     System.Random rand = new System.Random();
 
     void OnCollisionEnter2D(){
+        
         if(dirX==0){
             //randomly start the movement left or right when it lands
             int changeTo = rand.Next(2);
