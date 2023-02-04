@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8995789676073674047}
   - component: {fileID: 4007634489925742886}
   - component: {fileID: 136214268515530907}
+  - component: {fileID: 4695096541087598853}
   m_Layer: 0
   m_Name: Medium_Slime
   m_TagString: MediumSlime
@@ -151,6 +152,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &4695096541087598853
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113920725537500450}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 375355976f6ee0e469f8242f7bf6e9ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &6747579021929866888
 GameObject:
   m_ObjectHideFlags: 0

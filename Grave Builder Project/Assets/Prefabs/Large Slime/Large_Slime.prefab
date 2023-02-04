@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 3549541878428502240}
   - component: {fileID: 5237139675492407783}
   - component: {fileID: 6374385695985081844}
+  - component: {fileID: 2847518911557324969}
   m_Layer: 0
   m_Name: Slime
   m_TagString: LargeSlime
@@ -158,7 +159,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.17, y: 0.12}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -217,3 +218,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   babyEnemy: {fileID: 6747579021929866888, guid: c3f94834cfbf50340b8c7d27fac3b474, type: 3}
+--- !u!95 &2847518911557324969
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7966762630348556667}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4d6ba6a7a309441429b3c4d2cecbd841, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

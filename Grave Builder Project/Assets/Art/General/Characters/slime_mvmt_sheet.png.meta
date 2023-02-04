@@ -122,11 +122,11 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 33
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 10, y: 0, z: 10, w: 23}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -141,9 +141,9 @@ TextureImporter:
       name: slime_move1
       rect:
         serializedVersion: 2
-        x: 37
+        x: 32
         y: 128
-        width: 27
+        width: 32
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -183,10 +183,10 @@ TextureImporter:
       name: slime_move3
       rect:
         serializedVersion: 2
-        x: 104
+        x: 96
         y: 128
-        width: 17
-        height: 12
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -369,7 +369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle0
+      name: slime_idle0
       rect:
         serializedVersion: 2
         x: 0
@@ -390,7 +390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle1
+      name: slime_idle1
       rect:
         serializedVersion: 2
         x: 32
@@ -411,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle2
+      name: slime_idle2
       rect:
         serializedVersion: 2
         x: 64
@@ -432,7 +432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle3
+      name: slime_idle3
       rect:
         serializedVersion: 2
         x: 96
@@ -453,7 +453,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die0
+      name: slime_die0
       rect:
         serializedVersion: 2
         x: 0
@@ -474,7 +474,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die1
+      name: slime_die1
       rect:
         serializedVersion: 2
         x: 32
@@ -495,7 +495,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die2
+      name: slime_die2
       rect:
         serializedVersion: 2
         x: 64
@@ -516,7 +516,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die3
+      name: slime_die3
       rect:
         serializedVersion: 2
         x: 96
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die4
+      name: slime_die4
       rect:
         serializedVersion: 2
         x: 128
@@ -558,7 +558,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die5
+      name: slime_die5
       rect:
         serializedVersion: 2
         x: 160
@@ -579,7 +579,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die6
+      name: slime_die6
       rect:
         serializedVersion: 2
         x: 192
@@ -610,35 +610,35 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      slime_die4: -312667685
       slime_move1: -111203096
-      char_idle2: 70617221
-      char_die6: 1419791295
+      slime_die2: 464085077
       slime_jump6: -1021615574
-      char_die5: -1049531834
+      slime_idle0: 1504407065
       Slime Sprite Sheet_12: -956086380
       Slime Sprite Sheet_18: 786369485
+      slime_die5: -1049531834
       slime_move2: -1293155652
       slime_move0: -1485759284
-      char_idle3: 2064800276
+      slime_idle1: 1689541155
       Slime Sprite Sheet_17: -250779859
+      slime_idle3: 2064800276
       slime_jump2: 2069973172
       slime_move3: 1605740525
+      slime_die1: -639468423
       Slime Sprite Sheet_16: 308967805
-      char_die4: -312667685
       slime_jump3: -1814466417
-      char_idle0: 1504407065
+      slime_idle2: 70617221
       Slime Sprite Sheet_14: 708083927
-      char_die0: 1322925541
       Slime Sprite Sheet_15: -1720148039
-      char_die2: 464085077
-      char_idle1: 1689541155
+      slime_die0: 1322925541
+      slime_die6: 1419791295
       Slime Sprite Sheet_13: -892703773
       slime_jump1: 264351996
       slime_jump7: -977146738
       slime_jump5: -1390095403
-      char_die3: 1247789218
+      slime_die3: 1247789218
       slime_jump4: 1637811317
-      char_die1: -639468423
       slime_jump0: 983025803
   spritePackingTag: 
   pSDRemoveMatte: 0
