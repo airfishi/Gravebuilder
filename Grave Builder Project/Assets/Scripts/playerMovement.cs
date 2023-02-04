@@ -36,6 +36,7 @@ public class playerMovement : MonoBehaviour
         movingLeft = false;
         movingRight = false;
         floor.tag = "floor";
+        idle = true;
     }
 
     void OnCollisionEnter2D(Collision2D other)            //gounded is uesed in jumping, see bottom section of Update()
