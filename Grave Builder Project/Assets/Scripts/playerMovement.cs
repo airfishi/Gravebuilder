@@ -21,7 +21,6 @@ public class playerMovement : MonoBehaviour
     public int jumpTime;
     public int maxJumpTime;
     public int onWall;
-    
 
     void Start()
     {
