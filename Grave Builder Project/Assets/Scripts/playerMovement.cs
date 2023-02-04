@@ -19,6 +19,8 @@ public class playerMovement : MonoBehaviour
     public bool grounded;
     public bool movingRight;
     public bool movingLeft;
+    public bool idle;
+
     public int jumpTime;
     public int maxJumpTime;
     public int onWall;
@@ -153,5 +155,7 @@ public class playerMovement : MonoBehaviour
                 jumping = false;
             }
         }
+    idle = !jumping && !movingRight && !movingLeft && grounded;
     }
+    
 }
