@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slime_split0
+      name: L_slime_split0
       rect:
         serializedVersion: 2
         x: 0
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_split1
+      name: L_slime_split1
       rect:
         serializedVersion: 2
         x: 64
@@ -159,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_split2
+      name: L_slime_split2
       rect:
         serializedVersion: 2
         x: 128
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_split3
+      name: L_slime_split3
       rect:
         serializedVersion: 2
         x: 192
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_split4
+      name: L_slime_split4
       rect:
         serializedVersion: 2
         x: 256
@@ -222,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_split5
+      name: L_slime_split5
       rect:
         serializedVersion: 2
         x: 0
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_split6
+      name: L_slime_split6
       rect:
         serializedVersion: 2
         x: 64
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_split7
+      name: L_slime_split7
       rect:
         serializedVersion: 2
         x: 128
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_split8
+      name: L_slime_split8
       rect:
         serializedVersion: 2
         x: 192
@@ -306,7 +306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_split9
+      name: L_slime_split9
       rect:
         serializedVersion: 2
         x: 256
@@ -337,16 +337,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      slime_split5: -945590880
-      slime_split6: 1807313157
-      slime_split4: -2114897035
-      slime_split1: -1706190221
-      slime_split3: -466885555
-      slime_split9: -862846942
-      slime_split7: -1518404827
-      slime_split0: 283298365
-      slime_split2: 637753293
-      slime_split8: 1413876145
+      L_slime_split6: 1807313157
+      L_slime_split0: 283298365
+      L_slime_split9: -862846942
+      L_slime_split3: -466885555
+      L_slime_split7: -1518404827
+      L_slime_split2: 637753293
+      L_slime_split5: -945590880
+      L_slime_split4: -2114897035
+      L_slime_split8: 1413876145
+      L_slime_split1: -1706190221
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
