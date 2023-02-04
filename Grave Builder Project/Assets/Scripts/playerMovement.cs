@@ -57,7 +57,7 @@ public class playerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "MediumSlime")
         {
-            if(player.transform.position.y > other.gameObject.transform.position.y + 100)
+            if(player.transform.position.y > other.gameObject.transform.position.y + 80)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
             }
