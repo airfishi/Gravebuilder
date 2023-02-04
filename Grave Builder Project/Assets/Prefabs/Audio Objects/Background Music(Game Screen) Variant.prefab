@@ -57,7 +57,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1178466577008095246, guid: 64a057690c269ef41a4082141da021d0, type: 3}
       propertyPath: m_Name
-      value: Background Music(Game Screen)
+      value: Background Music(Game Screen) Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1178466577008095247, guid: 64a057690c269ef41a4082141da021d0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 64a057690c269ef41a4082141da021d0, type: 3}

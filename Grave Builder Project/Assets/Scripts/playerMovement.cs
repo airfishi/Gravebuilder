@@ -9,6 +9,7 @@ public class playerMovement : MonoBehaviour
     public GameObject player;
     public GameObject floor;
     public AnimationClip animationID;
+    public AudioSource audio;
 
     private Vector3 speed;
     private Vector3 jump;
@@ -44,7 +45,7 @@ public class playerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "LargeSlime")
         {
-            if(player.transform.position.y > other.gameObject.transform.position.y + 260)
+            if(player.transform.position.y > other.gameObject.transform.position.y + 0)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
             }
