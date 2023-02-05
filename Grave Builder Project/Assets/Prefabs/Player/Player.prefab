@@ -102,7 +102,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1439530813087519739}
   floor: {fileID: 4944688478474118562, guid: 65acf48bb20d0304993a5e94255cc140, type: 3}
-  animationID: {fileID: 0}
   audio: {fileID: 0}
   jumping: 0
   grounded: 0

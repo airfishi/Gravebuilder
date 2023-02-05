@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_idle0
+      name: Rchar_idle0
       rect:
         serializedVersion: 2
         x: 0
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle1
+      name: Rchar_idle1
       rect:
         serializedVersion: 2
         x: 32
@@ -159,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle2
+      name: Rchar_idle2
       rect:
         serializedVersion: 2
         x: 0
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_idle3
+      name: Rchar_idle3
       rect:
         serializedVersion: 2
         x: 32
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_walk0
+      name: Rchar_walk0
       rect:
         serializedVersion: 2
         x: 0
@@ -222,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_walk1
+      name: Rchar_walk1
       rect:
         serializedVersion: 2
         x: 32
@@ -243,7 +243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_walk2
+      name: Rchar_walk2
       rect:
         serializedVersion: 2
         x: 64
@@ -264,7 +264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_walk3
+      name: Rchar_walk3
       rect:
         serializedVersion: 2
         x: 96
@@ -285,7 +285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_run0
+      name: Rchar_run0
       rect:
         serializedVersion: 2
         x: 0
@@ -306,7 +306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_run1
+      name: Rchar_run1
       rect:
         serializedVersion: 2
         x: 32
@@ -327,7 +327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_run2
+      name: Rchar_run2
       rect:
         serializedVersion: 2
         x: 64
@@ -348,7 +348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_run3
+      name: Rchar_run3
       rect:
         serializedVersion: 2
         x: 96
@@ -369,7 +369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_run4
+      name: Rchar_run4
       rect:
         serializedVersion: 2
         x: 128
@@ -390,7 +390,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_run5
+      name: Rchar_run5
       rect:
         serializedVersion: 2
         x: 160
@@ -411,7 +411,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_run6
+      name: Rchar_run6
       rect:
         serializedVersion: 2
         x: 192
@@ -432,7 +432,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_run7
+      name: Rchar_run7
       rect:
         serializedVersion: 2
         x: 224
@@ -453,7 +453,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_kneel0
+      name: Rchar_kneel0
       rect:
         serializedVersion: 2
         x: 0
@@ -474,7 +474,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_kneel1
+      name: Rchar_kneel1
       rect:
         serializedVersion: 2
         x: 32
@@ -495,7 +495,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_kneel2
+      name: Rchar_kneel2
       rect:
         serializedVersion: 2
         x: 64
@@ -516,7 +516,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_kneel3
+      name: Rchar_kneel3
       rect:
         serializedVersion: 2
         x: 96
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_kneel4
+      name: Rchar_kneel4
       rect:
         serializedVersion: 2
         x: 128
@@ -558,7 +558,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_kneel5
+      name: Rchar_kneel5
       rect:
         serializedVersion: 2
         x: 160
@@ -579,7 +579,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_jump0
+      name: Rchar_jump0
       rect:
         serializedVersion: 2
         x: 0
@@ -600,7 +600,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_jump1
+      name: Rchar_jump1
       rect:
         serializedVersion: 2
         x: 32
@@ -621,7 +621,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_jump2
+      name: Rchar_jump2
       rect:
         serializedVersion: 2
         x: 64
@@ -642,7 +642,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_jump3
+      name: Rchar_jump3
       rect:
         serializedVersion: 2
         x: 96
@@ -663,7 +663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_jump4
+      name: Rchar_jump4
       rect:
         serializedVersion: 2
         x: 128
@@ -684,7 +684,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_jump5
+      name: Rchar_jump5
       rect:
         serializedVersion: 2
         x: 160
@@ -705,7 +705,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_jump6
+      name: Rchar_jump6
       rect:
         serializedVersion: 2
         x: 192
@@ -726,7 +726,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_jump7
+      name: Rchar_jump7
       rect:
         serializedVersion: 2
         x: 224
@@ -747,7 +747,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die0
+      name: Rchar_die0
       rect:
         serializedVersion: 2
         x: 0
@@ -768,7 +768,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die1
+      name: Rchar_die1
       rect:
         serializedVersion: 2
         x: 32
@@ -789,7 +789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die2
+      name: Rchar_die2
       rect:
         serializedVersion: 2
         x: 64
@@ -810,7 +810,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die3
+      name: Rchar_die3
       rect:
         serializedVersion: 2
         x: 96
@@ -831,7 +831,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die4
+      name: Rchar_die4
       rect:
         serializedVersion: 2
         x: 128
@@ -852,7 +852,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die5
+      name: Rchar_die5
       rect:
         serializedVersion: 2
         x: 160
@@ -873,7 +873,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die6
+      name: Rchar_die6
       rect:
         serializedVersion: 2
         x: 192
@@ -894,7 +894,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char_die7
+      name: Rchar_die7
       rect:
         serializedVersion: 2
         x: 224
@@ -925,56 +925,56 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      char_jump3: -2045134294
       char_sheet_49: -1116831974
-      char_walk2: -1004142435
-      char_run7: 855480661
-      char_idle2: 749818315
-      char_run1: -1965710603
-      char_kneel5: 1793713343
-      char_die5: -1190511818
-      char_jump2: -1758708717
-      char_run0: -1490164736
-      char_die6: -2095229489
-      char_run6: -2092471686
-      char_run4: -2101901088
-      char_walk3: 771600500
-      char_jump5: -1650779415
-      char_idle0: 653946441
-      char_run3: 1598807507
+      Rchar_jump4: -1444366479
+      Rchar_idle0: 653946441
+      Rchar_kneel0: -219050400
+      Rchar_kneel4: 1870441615
+      Rchar_die6: -2095229489
+      Rchar_die3: -503752559
+      Rchar_run3: 1598807507
+      Rchar_die1: 826953021
+      Rchar_die2: -1302228761
+      Rchar_die0: -1970214273
+      Rchar_jump2: -1758708717
+      Rchar_walk1: -1692475743
+      Rchar_kneel5: 1793713343
+      Rchar_run1: -1965710603
+      Rchar_die7: -1855430248
+      Rchar_jump5: -1650779415
+      Rchar_run0: -1490164736
+      Rchar_run4: -2101901088
+      Rchar_jump0: 1564341840
       char_sheet_31: 73653759
-      char_die2: -1302228761
-      char_jump4: -1444366479
-      char_idle1: -1197111818
-      char_die7: -1855430248
-      char_die3: -503752559
+      Rchar_idle1: -1197111818
+      Rchar_walk0: -1866572201
+      Rchar_kneel3: -1722373250
+      Rchar_jump7: 573047227
+      Rchar_walk2: -1004142435
       char_sheet_42: -170380477
-      char_die1: 826953021
-      char_kneel1: 244255951
-      char_jump6: 1985607119
-      char_kneel0: -219050400
-      char_jump0: 1564341840
+      Rchar_idle2: 749818315
+      Rchar_walk3: 771600500
+      Rchar_jump3: -2045134294
+      Rchar_run7: 855480661
+      Rchar_die5: -1190511818
+      Rchar_kneel1: 244255951
       char_sheet_32: 1538176481
-      char_jump7: 573047227
       char_sheet_44: -1721661262
-      char_idle3: 2090892807
-      char_kneel2: 25452971
-      char_run2: -659383923
+      Rchar_jump1: 122566917
+      Rchar_idle3: 2090892807
       char_sheet_47: -775104130
       char_sheet_33: 1468383685
-      char_kneel4: 1870441615
-      char_run5: 675445179
+      Rchar_run2: -659383923
       char_sheet_45: -1605296544
       char_sheet_46: 1328936867
-      char_jump1: 122566917
-      char_die4: 188031522
-      char_walk1: -1692475743
-      char_walk0: -1866572201
-      char_kneel3: -1722373250
+      Rchar_jump6: 1985607119
+      Rchar_kneel2: 25452971
       char_sheet_43: -1983748198
-      char_die0: -1970214273
       char_sheet_48: -1531490354
       char_sheet_30: -312388304
+      Rchar_die4: 188031522
+      Rchar_run6: -2092471686
+      Rchar_run5: 675445179
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
