@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 34331
+  controlID: 38965
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 34281
+  controlID: 38938
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 34255
+  controlID: 38939
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: a6e9feff
+      m_SelectedIDs: 32ef0000
+      m_LastClickedID: 61234
+      m_ExpandedIDs: 8cbdfeff28ef0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -558,9 +558,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -192.91089, y: -894.10944, z: -1.4367403}
+    m_Target: {x: 309.45258, y: 104.136696, z: -10.98542}
     speed: 2
-    m_Value: {x: 2623.306, y: -614.4212, z: 18.459036}
+    m_Value: {x: 640.3731, y: -297.02505, z: 76.1586}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -611,9 +611,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 490.90585
+    m_Target: 568.8187
     speed: 2
-    m_Value: 3074.9976
+    m_Value: 2825.672
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -704,9 +704,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 6d71c27cd053643ceb055b51a30d5cea, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 4d6ba6a7a309441429b3c4d2cecbd841, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 7111072238135706251, guid: 6d71c27cd053643ceb055b51a30d5cea, type: 2}
+  - m_Target: {fileID: -1460603313082537550, guid: 4d6ba6a7a309441429b3c4d2cecbd841, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -746,7 +746,7 @@ MonoBehaviour:
   - {fileID: 12}
   - {fileID: 13}
   m_Selected: 0
-  m_LastSelected: 2
+  m_LastSelected: 1
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -788,21 +788,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Player
+    - Assets/Sounds
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Player
+  - Assets/Sounds
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\asche\Gravebuilder\Gravebuilder\Grave Builder Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 24620000
-    m_LastClickedID: 25124
+    scrollPos: {x: 0, y: 85.666626}
+    m_SelectedIDs: 42620000
+    m_LastClickedID: 25154
     m_ExpandedIDs: 0000000022620000246200003a62000080a600008ca6000096a600009aa6000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -856,8 +856,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 32ef0000
+    m_LastClickedInstanceID: 61234
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300007c600000
     m_RenameOverlay:
