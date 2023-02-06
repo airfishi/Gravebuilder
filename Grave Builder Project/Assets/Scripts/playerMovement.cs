@@ -8,6 +8,7 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject floor;
+    public Rigidbody2D playerBody;
     public AudioSource playerSound;
 
     public AudioClip walking;
@@ -35,12 +36,12 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        jump = new Vector3(0, 1000, 0);
+        jump = new Vector3(0, 500000, 0);
         speed = new Vector3(1500, 0, 0);
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 210;
+        maxJumpTime = 50;
         movingLeft = false;
         movingRight = false;
         floor.tag = "floor";
@@ -64,7 +65,7 @@ public class playerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "LargeSlime")
         {
-            if(player.transform.position.y > other.gameObject.transform.position.y + 0)
+            if(player.transform.position.y > other.gameObject.transform.position.y - 30)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
                 playerSound.Stop();
@@ -82,7 +83,7 @@ public class playerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "MediumSlime")
         {
-            if(player.transform.position.y > other.gameObject.transform.position.y + 60)
+            if(player.transform.position.y > other.gameObject.transform.position.y + 50)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
                 playerSound.Stop();
@@ -174,14 +175,12 @@ public class playerMovement : MonoBehaviour
                                                                                        //Walking Audio
         if((movingLeft || movingRight) && grounded && playerSound.clip != walking)
         {
-            print("alking");
             playerSound.Stop();
             playerSound.clip = walking;
             playerSound.loop = true;
             playerSound.Play();
         }if(((!movingLeft && !movingRight) || !grounded) && playerSound.clip == walking)
-        {
-            print("not alking");           
+        {       
             playerSound.Stop();
             playerSound.clip = null;
         }
@@ -213,7 +212,8 @@ public class playerMovement : MonoBehaviour
         {
             if (jumping)
             {
-                player.transform.localPosition += jump * Time.deltaTime;
+                playerBody.AddForce(jump * Time.deltaTime, ForceMode2D.Force);
+                print(jump*Time.deltaTime);
                 jumpTime++;
             }
             if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime)
