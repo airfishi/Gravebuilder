@@ -31,6 +31,8 @@ public class playerMovement : MonoBehaviour
     public int maxJumpTime;
     public int onWall;
 
+    public bool idle;
+
     void Start()
     {
         jump = new Vector3(0, 1000, 0);
@@ -215,5 +217,7 @@ public class playerMovement : MonoBehaviour
                 jumping = false;
             }
         }
+
+        idle = (grounded && !movingLeft && !movingRight);       
     }
 }
