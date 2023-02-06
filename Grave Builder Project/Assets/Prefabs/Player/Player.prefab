@@ -103,7 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1439530813087519739}
   floor: {fileID: 4944688478474118562, guid: 65acf48bb20d0304993a5e94255cc140, type: 3}
-  audio: {fileID: 1418407727275919918}
+  playerBody: {fileID: 0}
+  playerSound: {fileID: 1418407727275919918}
   walking: {fileID: 8300000, guid: 1deb201b8bf8f89479323a74e421150b, type: 3}
   jumpStart: {fileID: 8300000, guid: c67094411db019d48a61f26811124bcc, type: 3}
   kill: {fileID: 8300000, guid: 8ff708c2ef19b434aa3ee5ab814e5723, type: 3}
@@ -116,6 +117,7 @@ MonoBehaviour:
   jumpTime: 0
   maxJumpTime: 0
   onWall: 0
+  idle: 0
 --- !u!50 &8948852884702181203
 Rigidbody2D:
   serializedVersion: 4
@@ -237,10 +239,10 @@ AudioSource:
   m_GameObject: {fileID: 1439530813087519739}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 0f9f80c7db6a35145a2651acc93d2840, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
