@@ -180,9 +180,10 @@ public class playerMovement : MonoBehaviour
             playerSound.loop = true;
             playerSound.Play();
         }if(((!movingLeft && !movingRight) || !grounded) && playerSound.clip == walking)
-        {       
-            playerSound.Stop();
-            playerSound.clip = null;
+        {
+            playerSound.loop = false;
+            if(!playerSound.isPlaying)
+                playerSound.clip = null;
         }
 
 
