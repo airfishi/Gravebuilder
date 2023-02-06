@@ -8,19 +8,18 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject floor;
-    public AnimationClip animationID;
     public AudioSource audio;
 
     private Vector3 speed;
     private Vector3 jump;
     private KeyCode jumpKey;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     public bool jumping;
     public bool grounded;
     public bool movingRight;
     public bool movingLeft;
-    public bool idle;
-
     public int jumpTime;
     public int maxJumpTime;
     public int onWall;
@@ -36,7 +35,10 @@ public class playerMovement : MonoBehaviour
         movingLeft = false;
         movingRight = false;
         floor.tag = "floor";
-        idle = true;
+
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     void OnCollisionEnter2D(Collision2D other)            //gounded is uesed in jumping, see bottom section of Update()
@@ -104,11 +106,14 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))  //GetKeyDown only returns true on initial press.  Boolean allows continuous movement until GetKeyUp returns true.
         {
             movingLeft = true;
-
+            animator.SetBool("isRunning", true);
+            spriteRenderer.flipX = true;
         }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             movingRight = true;
+            animator.SetBool("isRunning", true);
+            spriteRenderer.flipX = false;
         }
         if (movingLeft)
         {
@@ -116,6 +121,7 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
             {
                 movingLeft = false;
+                animator.SetBool("isRunning", false);
             }
         }
         if (movingRight)
@@ -124,7 +130,12 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
             {
                 movingRight = false;
+                animator.SetBool("isRunning", false);
             }
+        }
+        if (!movingLeft && !movingRight)
+        {
+            animator.SetBool("isRunning", false);
         }
 
 
@@ -156,7 +167,5 @@ public class playerMovement : MonoBehaviour
                 jumping = false;
             }
         }
-    idle = !jumping && !movingRight && !movingLeft && grounded;
     }
-    
 }
