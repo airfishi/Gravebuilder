@@ -8,12 +8,20 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject floor;
-    public AnimationClip animationID;
     public AudioSource audio;
+
+    public AudioClip walking;
+    public AudioClip jumpStart;
+    public AudioClip kill;
+    public AudioClip land;
+    public AudioClip die;
+
 
     private Vector3 speed;
     private Vector3 jump;
     private KeyCode jumpKey;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     public bool jumping;
     public bool grounded;
@@ -22,6 +30,8 @@ public class playerMovement : MonoBehaviour
     public int jumpTime;
     public int maxJumpTime;
     public int onWall;
+
+    public bool idle;
 
     void Start()
     {
@@ -34,6 +44,10 @@ public class playerMovement : MonoBehaviour
         movingLeft = false;
         movingRight = false;
         floor.tag = "floor";
+
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     void OnCollisionEnter2D(Collision2D other)            //gounded is uesed in jumping, see bottom section of Update()
@@ -41,6 +55,11 @@ public class playerMovement : MonoBehaviour
         if (other.gameObject.tag == "floor")
         {
             grounded = true;
+
+            audio.Stop();
+            audio.loop = false;
+            audio.clip = land;
+            audio.Play();
         }
 
         if (other.gameObject.tag == "LargeSlime")
@@ -48,10 +67,16 @@ public class playerMovement : MonoBehaviour
             if(player.transform.position.y > other.gameObject.transform.position.y + 0)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
+                audio.Stop();
+                audio.clip = kill;
+                audio.Play();
             }
             else
             {
                 Destroy(player);
+                audio.Stop();
+                audio.clip = die;
+                audio.Play();
             }
         }
 
@@ -60,10 +85,18 @@ public class playerMovement : MonoBehaviour
             if(player.transform.position.y > other.gameObject.transform.position.y + 60)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
+                audio.Stop();
+                audio.clip = kill;
+                audio.loop = false;
+                audio.Play();
             }
             else
             {
                 Destroy(player);
+                audio.Stop();
+                audio.clip = die;
+                audio.loop = false;
+                audio.Play();
             }
         }
 
@@ -85,6 +118,11 @@ public class playerMovement : MonoBehaviour
         if (other.gameObject.tag == "floor")
         {
             grounded = false;
+
+            audio.Stop();
+            audio.clip = jumpStart;
+            audio.loop = false;
+            audio.Play();
             //Debug.Log("Left the Floor");
         }
         else
@@ -101,11 +139,14 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))  //GetKeyDown only returns true on initial press.  Boolean allows continuous movement until GetKeyUp returns true.
         {
             movingLeft = true;
-
+            animator.SetBool("isRunning", true);
+            spriteRenderer.flipX = true;
         }
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             movingRight = true;
+            animator.SetBool("isRunning", true);
+            spriteRenderer.flipX = false;
         }
         if (movingLeft)
         {
@@ -113,6 +154,7 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
             {
                 movingLeft = false;
+                animator.SetBool("isRunning", false);
             }
         }
         if (movingRight)
@@ -121,7 +163,27 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
             {
                 movingRight = false;
+                animator.SetBool("isRunning", false);
             }
+        }
+        if (!movingLeft && !movingRight)
+        {
+            animator.SetBool("isRunning", false);
+        }
+
+                                                                                       //Walking Audio
+        if((movingLeft || movingRight) && grounded && audio.clip != walking)
+        {
+            print("alking");
+            audio.Stop();
+            audio.clip = walking;
+            audio.loop = true;
+            audio.Play();
+        }if(((!movingLeft && !movingRight) || !grounded) && audio.clip == walking)
+        {
+            print("not alking");           
+            audio.Stop();
+            audio.clip = null;
         }
 
 
@@ -140,6 +202,12 @@ public class playerMovement : MonoBehaviour
                 jumpTime = 0;
                 jumpKey = KeyCode.UpArrow;
             }
+            else if (Input.GetKeyDown(KeyCode.W))
+            {
+                jumping = true;
+                jumpTime = 0;
+                jumpKey = KeyCode.W;
+            }
         }
         else
         {
@@ -148,10 +216,12 @@ public class playerMovement : MonoBehaviour
                 player.transform.localPosition += jump * Time.deltaTime;
                 jumpTime++;
             }
-            if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || jumpTime >= maxJumpTime)
+            if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime)
             {
                 jumping = false;
             }
         }
+
+        idle = (grounded && !movingLeft && !movingRight);       
     }
 }
