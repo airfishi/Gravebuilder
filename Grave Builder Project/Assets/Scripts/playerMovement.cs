@@ -8,7 +8,7 @@ public class playerMovement : MonoBehaviour
     // Start is called before the first frame update
     public GameObject player;
     public GameObject floor;
-    public AudioSource audio;
+    public AudioSource playerSound;
 
     public AudioClip walking;
     public AudioClip jumpStart;
@@ -56,10 +56,10 @@ public class playerMovement : MonoBehaviour
         {
             grounded = true;
 
-            audio.Stop();
-            audio.loop = false;
-            audio.clip = land;
-            audio.Play();
+            playerSound.Stop();
+            playerSound.loop = false;
+            playerSound.clip = land;
+            playerSound.Play();
         }
 
         if (other.gameObject.tag == "LargeSlime")
@@ -67,16 +67,16 @@ public class playerMovement : MonoBehaviour
             if(player.transform.position.y > other.gameObject.transform.position.y + 0)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
-                audio.Stop();
-                audio.clip = kill;
-                audio.Play();
+                playerSound.Stop();
+                playerSound.clip = kill;
+                playerSound.Play();
             }
             else
             {
                 Destroy(player);
-                audio.Stop();
-                audio.clip = die;
-                audio.Play();
+                playerSound.Stop();
+                playerSound.clip = die;
+                playerSound.Play();
             }
         }
 
@@ -85,18 +85,18 @@ public class playerMovement : MonoBehaviour
             if(player.transform.position.y > other.gameObject.transform.position.y + 60)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
-                audio.Stop();
-                audio.clip = kill;
-                audio.loop = false;
-                audio.Play();
+                playerSound.Stop();
+                playerSound.clip = kill;
+                playerSound.loop = false;
+                playerSound.Play();
             }
             else
             {
                 Destroy(player);
-                audio.Stop();
-                audio.clip = die;
-                audio.loop = false;
-                audio.Play();
+                playerSound.Stop();
+                playerSound.clip = die;
+                playerSound.loop = false;
+                playerSound.Play();
             }
         }
 
@@ -119,10 +119,10 @@ public class playerMovement : MonoBehaviour
         {
             grounded = false;
 
-            audio.Stop();
-            audio.clip = jumpStart;
-            audio.loop = false;
-            audio.Play();
+            playerSound.Stop();
+            playerSound.clip = jumpStart;
+            playerSound.loop = false;
+            playerSound.Play();
             //Debug.Log("Left the Floor");
         }
         else
@@ -172,18 +172,18 @@ public class playerMovement : MonoBehaviour
         }
 
                                                                                        //Walking Audio
-        if((movingLeft || movingRight) && grounded && audio.clip != walking)
+        if((movingLeft || movingRight) && grounded && playerSound.clip != walking)
         {
             print("alking");
-            audio.Stop();
-            audio.clip = walking;
-            audio.loop = true;
-            audio.Play();
-        }if(((!movingLeft && !movingRight) || !grounded) && audio.clip == walking)
+            playerSound.Stop();
+            playerSound.clip = walking;
+            playerSound.loop = true;
+            playerSound.Play();
+        }if(((!movingLeft && !movingRight) || !grounded) && playerSound.clip == walking)
         {
             print("not alking");           
-            audio.Stop();
-            audio.clip = null;
+            playerSound.Stop();
+            playerSound.clip = null;
         }
 
 
