@@ -23,7 +23,7 @@ public class Slime_split : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag.Equals("Player"))
-            Destroy(transform.parent.transform.parent.gameObject);
+            Destroy(transform.parent.gameObject);
     }
 
     private void OnDestroy(){
