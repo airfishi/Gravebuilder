@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 201436978}
   - component: {fileID: 201436979}
   - component: {fileID: 201436980}
+  - component: {fileID: 201436981}
   m_Layer: 5
   m_Name: Volume Slider
   m_TagString: Untagged
@@ -215,10 +216,10 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuEvents, Assembly-CSharp
-        m_MethodName: SetVolume
-        m_Mode: 1
+      - m_Target: {fileID: 201436980}
+        m_TargetAssemblyTypeName: AudioSlider, Assembly-CSharp
+        m_MethodName: OnChangeSlider
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -240,8 +241,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: 0b4b07ec661204b40888bda82dd7bdd8, type: 2}
-  AudioSource: {fileID: 297357281}
+  AudioSource: {fileID: 297357280}
   ValueText: {fileID: 1529539155}
+  MixMode: 0
+--- !u!114 &201436981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201436977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae23cf643db7e04eba4515e962e7022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mixer: {fileID: 24100000, guid: 0b4b07ec661204b40888bda82dd7bdd8, type: 2}
+  AudioSource: {fileID: 1456673935}
+  ValueText: {fileID: 0}
   MixMode: 0
 --- !u!1 &251789094
 GameObject:
@@ -401,7 +418,7 @@ GameObject:
   - component: {fileID: 297357278}
   - component: {fileID: 297357277}
   - component: {fileID: 297357276}
-  - component: {fileID: 297357281}
+  - component: {fileID: 297357280}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -493,7 +510,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!82 &297357281
+--- !u!82 &297357280
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -882,6 +899,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1237215351}
     m_Modifications:
+    - target: {fileID: 1418407727275919918, guid: c0ac66e3864fd4c6cbf4d9517cb571b9, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 0b4b07ec661204b40888bda82dd7bdd8, type: 2}
     - target: {fileID: 1439530813087519732, guid: c0ac66e3864fd4c6cbf4d9517cb571b9, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -930,7 +951,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1439530813087519736, guid: c0ac66e3864fd4c6cbf4d9517cb571b9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c0ac66e3864fd4c6cbf4d9517cb571b9, type: 3}
 --- !u!1 &843418354
 GameObject:
@@ -1101,7 +1123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &929317224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1256,7 +1278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1237215351
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1442,6 +1464,45 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1456673934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1439530813087519739, guid: c0ac66e3864fd4c6cbf4d9517cb571b9, type: 3}
+  m_PrefabInstance: {fileID: 814920695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1456673935 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1418407727275919918, guid: c0ac66e3864fd4c6cbf4d9517cb571b9, type: 3}
+  m_PrefabInstance: {fileID: 814920695}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1456673941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456673934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae0750d773bb2847bddacdf4aed0d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1456673934}
+  floor: {fileID: 4944688478474118562, guid: 65acf48bb20d0304993a5e94255cc140, type: 3}
+  playerBody: {fileID: 0}
+  playerSound: {fileID: 1456673935}
+  walking: {fileID: 8300000, guid: 1deb201b8bf8f89479323a74e421150b, type: 3}
+  jumpStart: {fileID: 8300000, guid: c67094411db019d48a61f26811124bcc, type: 3}
+  kill: {fileID: 8300000, guid: 8ff708c2ef19b434aa3ee5ab814e5723, type: 3}
+  land: {fileID: 8300000, guid: 7131d701ae015a54aa3d856feccd513f, type: 3}
+  die: {fileID: 0}
+  jumping: 0
+  grounded: 0
+  movingRight: 0
+  movingLeft: 0
+  jumpTime: 0
+  maxJumpTime: 0
+  onWall: 0
+  idle: 0
 --- !u!1 &1529539153
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,7 +1756,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
