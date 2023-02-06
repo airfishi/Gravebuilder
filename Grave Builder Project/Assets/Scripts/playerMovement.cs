@@ -83,7 +83,7 @@ public class playerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "MediumSlime")
         {
-            if(player.transform.position.y > other.gameObject.transform.position.y + 50)
+            if(player.transform.position.y > other.gameObject.transform.position.y + 60)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
                 playerSound.Stop();
