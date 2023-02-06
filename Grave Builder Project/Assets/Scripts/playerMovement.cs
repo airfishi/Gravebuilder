@@ -10,6 +10,13 @@ public class playerMovement : MonoBehaviour
     public GameObject floor;
     public AudioSource audio;
 
+    public AudioClip walking;
+    public AudioClip jumpStart;
+    public AudioClip kill;
+    public AudioClip land;
+    public AudioClip die;
+
+
     private Vector3 speed;
     private Vector3 jump;
     private KeyCode jumpKey;
@@ -46,6 +53,11 @@ public class playerMovement : MonoBehaviour
         if (other.gameObject.tag == "floor")
         {
             grounded = true;
+
+            audio.Stop();
+            audio.loop = false;
+            audio.clip = land;
+            audio.Play();
         }
 
         if (other.gameObject.tag == "LargeSlime")
@@ -53,10 +65,16 @@ public class playerMovement : MonoBehaviour
             if(player.transform.position.y > other.gameObject.transform.position.y + 0)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
+                audio.Stop();
+                audio.clip = kill;
+                audio.Play();
             }
             else
             {
                 Destroy(player);
+                audio.Stop();
+                audio.clip = die;
+                audio.Play();
             }
         }
 
@@ -65,10 +83,18 @@ public class playerMovement : MonoBehaviour
             if(player.transform.position.y > other.gameObject.transform.position.y + 60)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
+                audio.Stop();
+                audio.clip = kill;
+                audio.loop = false;
+                audio.Play();
             }
             else
             {
                 Destroy(player);
+                audio.Stop();
+                audio.clip = die;
+                audio.loop = false;
+                audio.Play();
             }
         }
 
@@ -90,6 +116,11 @@ public class playerMovement : MonoBehaviour
         if (other.gameObject.tag == "floor")
         {
             grounded = false;
+
+            audio.Stop();
+            audio.clip = jumpStart;
+            audio.loop = false;
+            audio.Play();
             //Debug.Log("Left the Floor");
         }
         else
@@ -138,6 +169,17 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
+        if((movingLeft || movingRight) && grounded && audio.clip != walking)
+        {
+            audio.Stop();
+            audio.clip = walking;
+            audio.loop = true;
+            audio.Play();
+        }if(((!movingLeft && !movingRight) || !grounded) && audio.clip == walking)
+        {
+            audio.Stop();
+        }
+
 
 
         if (!jumping && grounded)                                                  //Player Movement (Jumping)
@@ -154,6 +196,12 @@ public class playerMovement : MonoBehaviour
                 jumpTime = 0;
                 jumpKey = KeyCode.UpArrow;
             }
+            else if (Input.GetKeyDown(KeyCode.W))
+            {
+                jumping = true;
+                jumpTime = 0;
+                jumpKey = KeyCode.W;
+            }
         }
         else
         {
@@ -162,7 +210,7 @@ public class playerMovement : MonoBehaviour
                 player.transform.localPosition += jump * Time.deltaTime;
                 jumpTime++;
             }
-            if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || jumpTime >= maxJumpTime)
+            if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime)
             {
                 jumping = false;
             }
