@@ -171,15 +171,19 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("isRunning", false);
         }
 
+                                                                                       //Walking Audio
         if((movingLeft || movingRight) && grounded && audio.clip != walking)
         {
+            print("alking");
             audio.Stop();
             audio.clip = walking;
             audio.loop = true;
             audio.Play();
         }if(((!movingLeft && !movingRight) || !grounded) && audio.clip == walking)
         {
+            print("not alking");           
             audio.Stop();
+            audio.clip = null;
         }
 
 
