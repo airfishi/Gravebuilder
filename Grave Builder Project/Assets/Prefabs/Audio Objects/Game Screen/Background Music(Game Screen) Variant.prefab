@@ -9,12 +9,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1178466577008095240, guid: 64a057690c269ef41a4082141da021d0, type: 3}
       propertyPath: Loop
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1178466577008095240, guid: 64a057690c269ef41a4082141da021d0, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8300000, guid: 4106666d3da63544b91ea5c8a9d584f3, type: 3}
     - target: {fileID: 1178466577008095240, guid: 64a057690c269ef41a4082141da021d0, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
