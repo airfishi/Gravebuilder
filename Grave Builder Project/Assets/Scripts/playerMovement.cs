@@ -7,7 +7,6 @@ public class playerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject player;
-    public GameObject floor;
     public Rigidbody2D playerBody;
     public AudioSource playerSound;
 
@@ -16,7 +15,6 @@ public class playerMovement : MonoBehaviour
     public AudioClip kill;
     public AudioClip land;
     public AudioClip die;
-
 
     private Vector3 speed;
     private Vector3 jump;
@@ -28,11 +26,14 @@ public class playerMovement : MonoBehaviour
     public bool grounded;
     public bool movingRight;
     public bool movingLeft;
-    public int jumpTime;
-    public int maxJumpTime;
-    public int onWall;
 
     public bool idle;
+
+    private int jumpTime;
+    private int maxJumpTime;
+    private int score;
+
+
 
     void Start()
     {
@@ -44,13 +45,17 @@ public class playerMovement : MonoBehaviour
         maxJumpTime = 50;
         movingLeft = false;
         movingRight = false;
-        floor.tag = "floor";
+        score = 0;
 
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
+    public int getScore()
+    {
+        return score;
+    }
     void OnCollisionEnter2D(Collision2D other)            //gounded is uesed in jumping, see bottom section of Update()
     {
         if (other.gameObject.tag == "floor")
@@ -67,6 +72,7 @@ public class playerMovement : MonoBehaviour
         {
             if(player.transform.position.y > other.gameObject.transform.position.y - 30)
             {
+                score++;
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
                 playerSound.Stop();
                 playerSound.clip = kill;
@@ -83,8 +89,9 @@ public class playerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "MediumSlime")
         {
-            if(player.transform.position.y > other.gameObject.transform.position.y + 60)
+            if(player.transform.position.y > other.gameObject.transform.position.y + 55)
             {
+                score++;
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
                 playerSound.Stop();
                 playerSound.clip = kill;
