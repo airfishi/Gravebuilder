@@ -14,6 +14,13 @@ public class slimeLandingAudio : MonoBehaviour
         
     }
 
+    void Update() {
+        if(landedOnce){
+            
+        }
+
+    }
+
     void OnCollisionEnter2D(Collision2D collision){
         if(!landedOnce){
             landedOnce = true;
