@@ -21,7 +21,7 @@ public class initial_move_dir : MonoBehaviour
         }
         else if(dirX == -1) dirX = 1; //swap the direction when slime collides
         else dirX = -1;
-        speed = new Vector3(dirX,0,0);
+        speed = new Vector3(dirX*Time.deltaTime*Screen.width/100,0,0);
     }
 
     /*
