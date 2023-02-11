@@ -38,12 +38,12 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        jump = new Vector3(0, 2000, 0);
+        jump = new Vector3(0, 3000, 0);
         speed = new Vector3(1500, 0, 0);
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 50;
+        maxJumpTime = 1000;
         movingLeft = false;
         movingRight = false;
         score = 0;
@@ -207,19 +207,19 @@ public class playerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     jumping = true;
-                    jumpTime = 0;
+                    jumpTime = 10;
                     jumpKey = KeyCode.Space;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     jumping = true;
-                    jumpTime = 0;
+                    jumpTime = 10;
                     jumpKey = KeyCode.UpArrow;
                 }
                 else if (Input.GetKeyDown(KeyCode.W))
                 {
                     jumping = true;
-                    jumpTime = 0;
+                    jumpTime = 10;
                     jumpKey = KeyCode.W;
                 }
             }
@@ -227,7 +227,7 @@ public class playerMovement : MonoBehaviour
             {
                 if (jumping)
                 {
-                    playerBody.AddForce(jump, ForceMode2D.Force);
+                    playerBody.AddForce(jump/(jumpTime/10), ForceMode2D.Force);
                     jumpTime++;
                 }
                 if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime)
