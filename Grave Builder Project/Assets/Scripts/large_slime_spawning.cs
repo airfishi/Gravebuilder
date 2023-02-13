@@ -22,10 +22,10 @@ public class large_slime_spawning : MonoBehaviour
         if(elapsedTime > secondsBetweenSpawn){
             elapsedTime = 0;
             //randomly pick a place between -3000 and 3000 for slime to spawn
-            xspawn = rand.Next(2000);
+            xspawn = rand.Next(5000);
             posneg = rand.Next(2);
             if(posneg == 1) xspawn = xspawn*-1;
-            Vector3 spawnPosition = new Vector3(xspawn,1500,0);
+            Vector3 spawnPosition = new Vector3(xspawn,3750,0);
             GameObject newEnemy = (GameObject)Instantiate(slime_type,spawnPosition,Quaternion.Euler(0,0,0), gameScreen);
         }
     }
