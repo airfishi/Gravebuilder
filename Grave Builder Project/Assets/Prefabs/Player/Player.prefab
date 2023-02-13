@@ -101,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1439530813087519739}
+<<<<<<< HEAD
   playerBody: {fileID: 0}
   playerSound: {fileID: 6318316450202140280, guid: 23d36474dcf00a148b6efab047d41137, type: 3}
   walking: {fileID: 8300000, guid: 1deb201b8bf8f89479323a74e421150b, type: 3}
@@ -108,6 +109,11 @@ MonoBehaviour:
   kill: {fileID: 8300000, guid: 8ff708c2ef19b434aa3ee5ab814e5723, type: 3}
   land: {fileID: 8300000, guid: 7131d701ae015a54aa3d856feccd513f, type: 3}
   die: {fileID: 8300000, guid: 199343c515d26b04f8a50561724cffbb, type: 3}
+=======
+  floor: {fileID: 4944688478474118562, guid: 65acf48bb20d0304993a5e94255cc140, type: 3}
+  animationID: {fileID: 0}
+  audio: {fileID: 0}
+>>>>>>> parent of be3376a (Gave player right and left movement animations in the game (and script). Needs tweaking.)
   jumping: 0
   grounded: 0
   movingRight: 0
