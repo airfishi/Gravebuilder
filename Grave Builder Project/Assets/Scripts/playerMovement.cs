@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-
 public class playerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -234,7 +233,7 @@ public class playerMovement : MonoBehaviour
                 }
                 if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime)
                 {
-                    playerBody.AddForce(jump * -1 * (101-(jumpTime/2)), ForceMode2D.Force);
+                    playerBody.AddForce(jump * -1 * (int)(101 - (jumpTime / 2)), ForceMode2D.Force);
                     jumping = false;
                 }
             }
@@ -248,18 +247,6 @@ public class playerMovement : MonoBehaviour
             {
                 Destroy(player);
             }
-        }
-    }
-
-    private double Max(double v1, double v2)
-    {
-        if(v1 > v2)
-        {
-            return v1;
-        }
-        else
-        {
-            return v2;
         }
     }
 }
