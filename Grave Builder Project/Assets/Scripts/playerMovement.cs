@@ -8,7 +8,6 @@ public class playerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject player;
-<<<<<<< HEAD
     public Rigidbody2D playerBody;
     public AudioSource playerSound;
 
@@ -17,15 +16,12 @@ public class playerMovement : MonoBehaviour
     public AudioClip kill;
     public AudioClip land;
     public AudioClip die;
-=======
-    public GameObject floor;
-    public AnimationClip animationID;
-    public AudioSource audio;
->>>>>>> parent of be3376a (Gave player right and left movement animations in the game (and script). Needs tweaking.)
 
     private Vector3 speed;
     private Vector3 jump;
     private KeyCode jumpKey;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     public bool jumping;
     public bool grounded;
@@ -51,16 +47,12 @@ public class playerMovement : MonoBehaviour
         maxJumpTime = 200;
         movingLeft = false;
         movingRight = false;
-<<<<<<< HEAD
         score = 0;
         dead = false;
 
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-=======
-        floor.tag = "floor";
->>>>>>> parent of be3376a (Gave player right and left movement animations in the game (and script). Needs tweaking.)
     }
 
     public int getScore()
@@ -158,7 +150,6 @@ public class playerMovement : MonoBehaviour
     {
         if (!dead)
         {
-<<<<<<< HEAD
             //Player Movement (left/right)
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))  //GetKeyDown only returns true on initial press.  Boolean allows continuous movement until GetKeyUp returns true.
             {
@@ -194,31 +185,6 @@ public class playerMovement : MonoBehaviour
             {
                 animator.SetBool("isRunning", false);
             }
-=======
-            movingLeft = true;
-
-        }
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            movingRight = true;
-        }
-        if (movingLeft)
-        {
-            player.transform.localPosition -= speed * Time.deltaTime;                               //adjusts player's position in game--does not check for collisions. Collision check might be needed in later development to smooth gameplay.
-            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
-            {
-                movingLeft = false;
-            }
-        }
-        if (movingRight)
-        {
-            player.transform.localPosition += speed * Time.deltaTime;
-            if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
-            {
-                movingRight = false;
-            }
-        }
->>>>>>> parent of be3376a (Gave player right and left movement animations in the game (and script). Needs tweaking.)
 
             //Walking Audio
             if ((movingLeft || movingRight) && grounded && playerSound.clip != walking)
