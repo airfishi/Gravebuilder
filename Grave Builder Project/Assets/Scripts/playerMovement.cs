@@ -83,7 +83,7 @@ public class playerMovement : MonoBehaviour
 
         if (other.gameObject.tag == "MediumSlime")
         {
-            if(player.transform.position.y > other.gameObject.transform.position.y + 50)
+            if(player.transform.position.y > other.gameObject.transform.position.y + 60)
             {
                 Destroy(other.transform.gameObject.transform.parent.gameObject);
                 playerSound.Stop();
@@ -214,7 +214,6 @@ public class playerMovement : MonoBehaviour
             if (jumping)
             {
                 playerBody.AddForce(jump * Time.deltaTime, ForceMode2D.Force);
-                print(jump*Time.deltaTime);
                 jumpTime++;
             }
             if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime)

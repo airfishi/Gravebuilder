@@ -549,7 +549,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6318316450202140280, guid: 23d36474dcf00a148b6efab047d41137, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6318316450202140281, guid: 23d36474dcf00a148b6efab047d41137, type: 3}
       propertyPath: m_RootOrder
