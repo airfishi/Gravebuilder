@@ -23,7 +23,7 @@ public class Slime_split : MonoBehaviour
     private void OnDestroy(){
         if(quitting == false){
             Vector3 right = new Vector3(1500, 0, 0);
-            Vector3 up = new Vector3(0, -350, 0);
+            Vector3 up = new Vector3(0, -370, 0);
             //Vector3 up = Vector3.zero;
             Vector3 leftspawnloc = transform.position - right + up;
             Vector3 rightspawnloc = transform.position + right + up;
