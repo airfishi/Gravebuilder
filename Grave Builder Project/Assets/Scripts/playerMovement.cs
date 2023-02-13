@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -38,12 +40,12 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        jump = new Vector3(0, 3000, 0);
+        jump = new Vector3(0, 1300, 0);
         speed = new Vector3(1500, 0, 0);
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 1000;
+        maxJumpTime = 200;
         movingLeft = false;
         movingRight = false;
         score = 0;
@@ -200,26 +202,27 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = null;
             }
 
-
-
-            if (!jumping && grounded)                                                  //Player Movement (Jumping)
+            if(!jumping && grounded)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     jumping = true;
-                    jumpTime = 10;
+                    jumpTime = 0;
+                    playerBody.AddForce(jump*100, ForceMode2D.Force);
                     jumpKey = KeyCode.Space;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     jumping = true;
-                    jumpTime = 10;
+                    jumpTime = 0;
+                    playerBody.AddForce(jump*100, ForceMode2D.Force);
                     jumpKey = KeyCode.UpArrow;
                 }
                 else if (Input.GetKeyDown(KeyCode.W))
                 {
                     jumping = true;
-                    jumpTime = 10;
+                    jumpTime = 0;
+                    playerBody.AddForce(jump*100, ForceMode2D.Force);
                     jumpKey = KeyCode.W;
                 }
             }
@@ -227,15 +230,16 @@ public class playerMovement : MonoBehaviour
             {
                 if (jumping)
                 {
-                    playerBody.AddForce(jump/(jumpTime/10), ForceMode2D.Force);
                     jumpTime++;
                 }
                 if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime)
                 {
+                    playerBody.AddForce(jump * -1 * (101-(jumpTime/2)), ForceMode2D.Force);
                     jumping = false;
                 }
             }
 
+            
             idle = (grounded && !movingLeft && !movingRight);
         }
         else
@@ -244,6 +248,18 @@ public class playerMovement : MonoBehaviour
             {
                 Destroy(player);
             }
+        }
+    }
+
+    private double Max(double v1, double v2)
+    {
+        if(v1 > v2)
+        {
+            return v1;
+        }
+        else
+        {
+            return v2;
         }
     }
 }
