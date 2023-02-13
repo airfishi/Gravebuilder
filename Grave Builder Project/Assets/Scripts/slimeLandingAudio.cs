@@ -19,7 +19,12 @@ public class slimeLandingAudio : MonoBehaviour
     {
         if(!landedOnce){
             landedOnce = true;
-            StartCoroutine(playSlimeSound());
+            if(transform.gameObject.tag == "LargeSlime")
+                StartCoroutine(playSlimeSound());
+            else{
+                GetComponent<AudioSource>().clip = walk;
+                GetComponent<AudioSource>().Play();
+            }
         }
     }
 
