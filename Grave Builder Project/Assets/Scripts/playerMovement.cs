@@ -50,6 +50,7 @@ public class playerMovement : MonoBehaviour
         score = 0;
         dead = false;
 
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -59,7 +60,7 @@ public class playerMovement : MonoBehaviour
     {
         return score;
     }
-    void OnCollisionEnter2D(Collision2D other)            //gounded is uesed in jumping, see bottom section of Update()
+    void OnCollisionEnter2D(Collision2D other)            //grounded is used in jumping, see bottom section of Update()
     {
         if (!dead)
         {
