@@ -169,7 +169,6 @@ public class playerMovement : MonoBehaviour
                 if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
                 {
                     movingLeft = false;
-                    animator.SetBool("isRunning", false);
                 }
             }
             if (movingRight)
@@ -178,8 +177,11 @@ public class playerMovement : MonoBehaviour
                 if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
                 {
                     movingRight = false;
-                    animator.SetBool("isRunning", false);
                 }
+            }
+            if (movingLeft && movingRight)
+            {
+                animator.SetBool("isRunning", false);
             }
             if (!movingLeft && !movingRight)
             {
