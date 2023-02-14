@@ -9,18 +9,22 @@ public class initial_move_dir : MonoBehaviour
     Vector3 speed = Vector3.zero;
 
     private float dirX;
+    private float magnitude = 1;
     System.Random rand = new System.Random();
 
     void OnCollisionEnter2D(){
-        
-        if(dirX==0){
+
+        if (dirX == 0)
+        {
             //randomly start the movement left or right when it lands
             int changeTo = rand.Next(2);
-            if(changeTo == 1) dirX = -1;
-            else dirX = 1; 
+            if (changeTo == 1) dirX = -magnitude;
+            else dirX = magnitude;
         }
-        else if(dirX == -1) dirX = 1; //swap the direction when slime collides
-        else dirX = -1;
+        else if (GetComponent<Transform>().position.x > 5000) dirX = -magnitude;
+        else if (GetComponent<Transform>().position.x < -4000) dirX = magnitude;
+        else if (dirX == -magnitude) dirX = magnitude; //swap the direction when slime collides
+        else dirX = -magnitude;
         speed = new Vector3(dirX,0,0);
     }
 
