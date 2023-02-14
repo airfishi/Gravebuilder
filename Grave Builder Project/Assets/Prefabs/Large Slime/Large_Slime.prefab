@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 3549541878428502240}
   - component: {fileID: 5237139675492407783}
   - component: {fileID: 6374385695985081844}
-  - component: {fileID: 5447542316181185570}
+  - component: {fileID: 1802538929544644397}
   - component: {fileID: 2847518911557324969}
   - component: {fileID: 7690170200780119430}
   m_Layer: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   babyEnemy: {fileID: 6747579021929866888, guid: c3f94834cfbf50340b8c7d27fac3b474, type: 3}
---- !u!114 &5447542316181185570
+--- !u!114 &1802538929544644397
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,7 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a824e1ec26fb29c4c97277604a55d6f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saw: {fileID: 8300000, guid: b5f0db75cdbf24a4db23ce9aac253863, type: 3}
+  land: {fileID: 8300000, guid: b5f0db75cdbf24a4db23ce9aac253863, type: 3}
+  walk: {fileID: 8300000, guid: 7a9c9880d300c894ca33b0c716016445, type: 3}
 --- !u!95 &2847518911557324969
 Animator:
   serializedVersion: 5

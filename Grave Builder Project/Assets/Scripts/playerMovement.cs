@@ -1,8 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-
-
 
 public class playerMovement : MonoBehaviour
 {
@@ -35,22 +35,22 @@ public class playerMovement : MonoBehaviour
     private int score;
     private bool dead;
 
-    public GameObject endScreen;
 
 
     void Start()
     {
-        jump = new Vector3(0, 3000, 0);
+        jump = new Vector3(0, 1300, 0);
         speed = new Vector3(1500, 0, 0);
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 1000;
+        maxJumpTime = 200;
         movingLeft = false;
         movingRight = false;
         score = 0;
         dead = false;
 
+        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -60,7 +60,7 @@ public class playerMovement : MonoBehaviour
     {
         return score;
     }
-    void OnCollisionEnter2D(Collision2D other)            //gounded is uesed in jumping, see bottom section of Update()
+    void OnCollisionEnter2D(Collision2D other)            //grounded is used in jumping, see bottom section of Update()
     {
         if (!dead)
         {
@@ -170,7 +170,6 @@ public class playerMovement : MonoBehaviour
                 if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
                 {
                     movingLeft = false;
-                    animator.SetBool("isRunning", false);
                 }
             }
             if (movingRight)
@@ -179,8 +178,11 @@ public class playerMovement : MonoBehaviour
                 if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
                 {
                     movingRight = false;
-                    animator.SetBool("isRunning", false);
                 }
+            }
+            if (movingLeft && movingRight)
+            {
+                animator.SetBool("isRunning", false);
             }
             if (!movingLeft && !movingRight)
             {
@@ -202,26 +204,27 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = null;
             }
 
-
-
-            if (!jumping && grounded)                                                  //Player Movement (Jumping)
+            if(!jumping && grounded)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     jumping = true;
-                    jumpTime = 10;
+                    jumpTime = 0;
+                    playerBody.AddForce(jump*100, ForceMode2D.Force);
                     jumpKey = KeyCode.Space;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
                     jumping = true;
-                    jumpTime = 10;
+                    jumpTime = 0;
+                    playerBody.AddForce(jump*100, ForceMode2D.Force);
                     jumpKey = KeyCode.UpArrow;
                 }
                 else if (Input.GetKeyDown(KeyCode.W))
                 {
                     jumping = true;
-                    jumpTime = 10;
+                    jumpTime = 0;
+                    playerBody.AddForce(jump*100, ForceMode2D.Force);
                     jumpKey = KeyCode.W;
                 }
             }
@@ -229,15 +232,19 @@ public class playerMovement : MonoBehaviour
             {
                 if (jumping)
                 {
-                    playerBody.AddForce(jump/(jumpTime/10), ForceMode2D.Force);
                     jumpTime++;
+
                 }
-                if ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime)
+                if (jumping && ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime))
                 {
+                    //playerBody.AddForce(jump * -1 * (int)(120 - (jumpTime / 2)), ForceMode2D.Force);
+                    playerBody.AddForce(jump * -55, ForceMode2D.Force);
+                    //Debug.Log(jumpKey + " " + Input.GetKeyUp(KeyCode.W)+ " " + jumpTime);
                     jumping = false;
                 }
             }
-
+            
+            
             idle = (grounded && !movingLeft && !movingRight);
         }
         else
@@ -247,11 +254,5 @@ public class playerMovement : MonoBehaviour
                 Destroy(player);
             }
         }
-        if (dead)
-        {
-            endScreen.SetActive(true);
-            Time.timeScale = 1.0f;
-        }    
     }
-
 }

@@ -22,17 +22,17 @@ public class Slime_split : MonoBehaviour
 
     private void OnDestroy(){
         if(quitting == false){
-            Vector3 right = new Vector3(1000, 0, 0);
-            Vector3 up = new Vector3(0, 0, 0);
+            Vector3 right = new Vector3(1500, 0, 0);
+            Vector3 up = new Vector3(0, -370, 0);
             //Vector3 up = Vector3.zero;
             Vector3 leftspawnloc = transform.position - right + up;
             Vector3 rightspawnloc = transform.position + right + up;
             
             GameObject leftEnemy;
-            if(leftspawnloc.x > -3000)
+            if(leftspawnloc.x > -5000)
                 leftEnemy = (GameObject)Instantiate(babyEnemy,transform.position - right + up,Quaternion.Euler(0,0,0));  
             GameObject rightEnemy;
-            if(rightspawnloc.x < 3000)
+            if(rightspawnloc.x < 5000)
                 rightEnemy = (GameObject)Instantiate(babyEnemy,transform.position + right + up,Quaternion.Euler(0,0,0));
         }
     }
