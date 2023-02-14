@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class playerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -34,6 +35,7 @@ public class playerMovement : MonoBehaviour
     private int score;
     private bool dead;
 
+    public GameObject endScreen;
 
 
     void Start()
@@ -245,5 +247,11 @@ public class playerMovement : MonoBehaviour
                 Destroy(player);
             }
         }
+        if (dead)
+        {
+            endScreen.SetActive(true);
+            Time.timeScale = 1.0f;
+        }    
     }
+
 }
