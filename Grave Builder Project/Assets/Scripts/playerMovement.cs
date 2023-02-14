@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
@@ -34,6 +35,7 @@ public class playerMovement : MonoBehaviour
     private int maxJumpTime;
     private int score;
     private bool dead;
+    public int endScenes;
 
 
 
@@ -49,8 +51,6 @@ public class playerMovement : MonoBehaviour
         movingRight = false;
         score = 0;
         dead = false;
-
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -251,8 +251,12 @@ public class playerMovement : MonoBehaviour
         {
             if (!playerSound.isPlaying)
             {
-                Destroy(player);
+                EndGame();
             }
         }
+    }
+    private void EndGame()
+    {
+        SceneManager.LoadScene(endScenes);
     }
 }

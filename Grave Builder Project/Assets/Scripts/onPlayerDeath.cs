@@ -8,7 +8,7 @@ public class onPlayerDeath : MonoBehaviour
 
     public GameObject endScreen;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("LargeSlime"))
         {
@@ -28,7 +28,7 @@ public class onPlayerDeath : MonoBehaviour
 
     public void RestartGame()
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
