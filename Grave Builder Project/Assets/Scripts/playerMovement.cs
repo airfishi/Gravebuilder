@@ -155,17 +155,15 @@ public class playerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))  //GetKeyDown only returns true on initial press.  Boolean allows continuous movement until GetKeyUp returns true.
             {
                 movingLeft = true;
-                animator.SetBool("isRunning", true);
-                spriteRenderer.flipX = true;
             }
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 movingRight = true;
-                animator.SetBool("isRunning", true);
-                spriteRenderer.flipX = false;
             }
             if (movingLeft)
             {
+                animator.SetBool("isRunning", true);
+                spriteRenderer.flipX = true;
                 player.transform.localPosition -= speed * Time.deltaTime;                               //adjusts player's position in game--does not check for collisions. Collision check might be needed in later development to smooth gameplay.
                 if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
                 {
@@ -174,6 +172,8 @@ public class playerMovement : MonoBehaviour
             }
             if (movingRight)
             {
+                animator.SetBool("isRunning", true);
+                spriteRenderer.flipX = false;
                 player.transform.localPosition += speed * Time.deltaTime;
                 if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
                 {
