@@ -233,7 +233,7 @@ public class playerMovement : MonoBehaviour
                 if (jumping)
                 {
                     jumpTime++;
-
+                    animator.SetBool("isJumping", true);
                 }
                 if (jumping && ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime))
                 {
@@ -241,11 +241,9 @@ public class playerMovement : MonoBehaviour
                     playerBody.AddForce(jump * -55, ForceMode2D.Force);
                     //Debug.Log(jumpKey + " " + Input.GetKeyUp(KeyCode.W)+ " " + jumpTime);
                     jumping = false;
+                    animator.SetBool("isJumping", false);
                 }
             }
-            
-            
-            idle = (grounded && !movingLeft && !movingRight);
         }
         
         else
