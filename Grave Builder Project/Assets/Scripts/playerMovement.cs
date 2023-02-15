@@ -247,14 +247,17 @@ public class playerMovement : MonoBehaviour
             
             idle = (grounded && !movingLeft && !movingRight);
         }
+        
         else
         {
+            animator.SetBool("isDying", true);
             if (!playerSound.isPlaying)
             {
                 EndGame();
             }
-        }
+        }    
     }
+
     private void EndGame()
     {
         SceneManager.LoadScene(endScenes);
