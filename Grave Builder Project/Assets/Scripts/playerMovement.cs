@@ -36,6 +36,7 @@ public class playerMovement : MonoBehaviour
     private int score;
     private bool dead;
     public int endScenes;
+    private bool gameStart;
 
 
 
@@ -53,6 +54,7 @@ public class playerMovement : MonoBehaviour
         dead = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        gameStart = true;
 
     }
 
@@ -67,11 +69,17 @@ public class playerMovement : MonoBehaviour
             if (other.gameObject.tag == "floor")
             {
                 grounded = true;
-
-                playerSound.Stop();
-                playerSound.loop = false;
-                playerSound.clip = land;
-                playerSound.Play();
+                if (!gameStart)
+                {
+                    playerSound.Stop();
+                    playerSound.loop = false;
+                    playerSound.clip = land;
+                    playerSound.Play();
+                }
+                else
+                {
+                    gameStart = false;
+                }
             }
 
             if (other.gameObject.tag == "LargeSlime")

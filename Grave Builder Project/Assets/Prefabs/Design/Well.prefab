@@ -51,6 +51,7 @@ MonoBehaviour:
   secondsBetweenSpawn: 3
   elapsedTime: 0
   slime_type: {fileID: 6057649563210529295, guid: 3f487223f3cdc3241b7994229eccc245, type: 3}
+  gameScreen: {fileID: 0}
 --- !u!82 &7673225566100144640
 AudioSource:
   m_ObjectHideFlags: 0
@@ -279,7 +280,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 600
+  m_EdgeRadius: 1100
 --- !u!1 &7603360505111031748
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +413,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 650
+  m_EdgeRadius: 1100
 --- !u!1 &7603360505488759368
 GameObject:
   m_ObjectHideFlags: 0
