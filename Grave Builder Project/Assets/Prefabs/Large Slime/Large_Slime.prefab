@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   babyEnemy: {fileID: 6747579021929866888, guid: c3f94834cfbf50340b8c7d27fac3b474, type: 3}
+  gameScreen: {fileID: 0}
 --- !u!114 &1802538929544644397
 MonoBehaviour:
   m_ObjectHideFlags: 0
