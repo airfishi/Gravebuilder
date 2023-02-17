@@ -11,11 +11,19 @@ public class initial_move_dir : MonoBehaviour
     private float dirX;
     private float magnitude = 1;
     System.Random rand = new System.Random();
+    
+    private Animator animator;
 
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+    
     void OnCollisionEnter2D(){
 
         if (dirX == 0)
         {
+            animator.SetBool("isLanding", true);
             //randomly start the movement left or right when it lands
             int changeTo = rand.Next(2);
             if (changeTo == 1) dirX = -magnitude;

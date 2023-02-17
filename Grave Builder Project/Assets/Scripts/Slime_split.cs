@@ -9,11 +9,13 @@ public class Slime_split : MonoBehaviour
     public GameObject babyEnemy;
     private bool quitting = false;
     public Transform gameScreen;
+    private Animator animator;
     
     void Start()
     {
      //   enemy = gameObject.transform.parent.gameObject;    
         quitting = false;
+        animator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {

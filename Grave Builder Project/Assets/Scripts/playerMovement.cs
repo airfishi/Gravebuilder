@@ -8,31 +8,34 @@ using UnityEngine.SceneManagement;
 public class playerMovement : MonoBehaviour
 {
     // Start is called before the first frame update
+   //components
     public GameObject player;
     public Rigidbody2D playerBody;
     public AudioSource playerSound;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
+    //audio
     public AudioClip walking;
     public AudioClip jumpStart;
     public AudioClip kill;
     public AudioClip land;
     public AudioClip die;
 
+    //factors
     private Vector3 speed;
     private Vector3 jump;
     private KeyCode jumpKey;
-    private Animator animator;
-    private SpriteRenderer spriteRenderer;
-
+   
+    //movement
     public bool jumping;
     public bool grounded;
     public bool movingRight;
     public bool movingLeft;
-
-    public bool idle;
-
     private int jumpTime;
     private int maxJumpTime;
+
+    //extras
     private int score;
     private bool dead;
     public int endScenes;

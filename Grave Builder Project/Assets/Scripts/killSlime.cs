@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class killSlime : MonoBehaviour
 {
-
 public GameObject block;
-
+    
     private bool quitting = false;
     private Vector3 spawnloc = new Vector3(-5500,-1600,-2);
 
