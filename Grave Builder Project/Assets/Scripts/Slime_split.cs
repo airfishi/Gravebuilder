@@ -8,6 +8,7 @@ public class Slime_split : MonoBehaviour
     //public GameObject enemy;
     public GameObject babyEnemy;
     private bool quitting = false;
+    public Transform gameScreen;
     
     void Start()
     {
@@ -30,10 +31,10 @@ public class Slime_split : MonoBehaviour
             
             GameObject leftEnemy;
             if(leftspawnloc.x > -5000)
-                leftEnemy = (GameObject)Instantiate(babyEnemy,transform.position - right + up,Quaternion.Euler(0,0,0));  
+                leftEnemy = (GameObject)Instantiate(babyEnemy,transform.position - right + up,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);  
             GameObject rightEnemy;
             if(rightspawnloc.x < 5000)
-                rightEnemy = (GameObject)Instantiate(babyEnemy,transform.position + right + up,Quaternion.Euler(0,0,0));
+                rightEnemy = (GameObject)Instantiate(babyEnemy,transform.position + right + up,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);
         }
     }
     

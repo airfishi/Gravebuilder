@@ -25,7 +25,7 @@ public class large_slime_spawning : MonoBehaviour
             xspawn = rand.Next(5000);
             posneg = rand.Next(2);
             if(posneg == 1) xspawn = xspawn*-1;
-            Vector3 spawnPosition = new Vector3(xspawn,3750,0);
+            Vector3 spawnPosition = new Vector3(0,1000,0);
             GameObject newEnemy = (GameObject)Instantiate(slime_type,spawnPosition,Quaternion.Euler(0,0,0), gameScreen);
         }
     }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4397604568749830062}
   - component: {fileID: 7107134343546392268}
   - component: {fileID: 8995789676073674047}
+  - component: {fileID: 2759957945250594689}
   - component: {fileID: 4007634489925742886}
   - component: {fileID: 136214268515530907}
   - component: {fileID: 4695096541087598853}
@@ -103,6 +104,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   large_slime: {fileID: 6747579021929866888}
+--- !u!114 &2759957945250594689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113920725537500450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e897f6fc8752e4da803de554976f27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: {fileID: 1991295116446461959, guid: 7b3b02d1c30eed1468663df965a61e77, type: 3}
+  gameScreen: {fileID: 6683326850225249359, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
 --- !u!60 &4007634489925742886
 PolygonCollider2D:
   m_ObjectHideFlags: 0
