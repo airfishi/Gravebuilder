@@ -8,10 +8,12 @@ public class slimeLandingAudio : MonoBehaviour
     public AudioClip land;
     public AudioClip walk;
     private bool landedOnce = false;
+    private Animator animator;
 
     void Start(){
         GetComponent<AudioSource>().playOnAwake = false;
         GetComponent<AudioSource>().loop = true;
+        animator = GetComponent<Animator>();
     }
 
 
