@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class killSlime : MonoBehaviour
 {
+
 public GameObject block;
-    
+
     private bool quitting = false;
-    private Vector3 spawnloc = new Vector3(-5500,-1600,-2);
+    private Vector3 spawnloc;
+    private GameObject gameScreen;
+
 
     void OnDestroy(){
+        gameScreen = transform.parent.transform.parent.transform.parent.gameObject;
+        //Debug.Log(gameScreen); //should be gameScreen, but cannot directly reference
+        if(!gameScreen.activeInHierarchy) quitting = true;
         if(!quitting){
-            int xpos = (int) transform.position.x;
-            //spawnloc.x = -5500 + 360*(xpos - 5500 % 360); 
-            //~33 blocks across, 360 width change
-            //28 blocks high, 240 height change
+            //x, 250 between each block, first location is -4200, last is 2300
+
+            int xpos = Mathf.RoundToInt(transform.position.x / 250) * 250;
+            int ypos = Mathf.RoundToInt(transform.position.y /125) * 125;
+            
+            spawnloc = new Vector3(xpos,ypos - 250, transform.position.z);
+
+
             GameObject newEnemy = (GameObject)Instantiate(block,spawnloc,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);
         }
     }
@@ -22,4 +32,5 @@ public GameObject block;
     void OnApplicationQuit(){
         quitting = true;
     }
+
 }
