@@ -10,10 +10,15 @@ public GameObject block;
     private bool quitting = false;
     private Vector3 spawnloc;
     private GameObject gameScreen;
+    public GameObject camera;
+    
+    void Start()
+    {
+        gameScreen = transform.parent.transform.parent.transform.parent.gameObject;
+    }
 
 
     void OnDestroy(){
-        gameScreen = transform.parent.transform.parent.transform.parent.gameObject;
         //Debug.Log(gameScreen); //should be gameScreen, but cannot directly reference
         if(!gameScreen.activeInHierarchy) quitting = true;
         if(!quitting){
@@ -24,13 +29,14 @@ public GameObject block;
             
             spawnloc = new Vector3(xpos,ypos - 250, transform.position.z);
 
+            camera.GetComponent<MoveCamera>().addBlock(ypos, xpos);
 
             GameObject newEnemy = (GameObject)Instantiate(block,spawnloc,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);
+
         }
     }
 
     void OnApplicationQuit(){
         quitting = true;
     }
-
 }
