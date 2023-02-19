@@ -87,7 +87,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "LargeSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y - 30)
+                if (player.transform.position.y > other.gameObject.transform.position.y - 40)
                 {
                     score++;
                     Destroy(other.transform.gameObject.transform.parent.gameObject);
@@ -107,7 +107,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "MediumSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y + 55)
+                if (player.transform.position.y > other.gameObject.transform.position.y + 20)
                 {
                     score++;
                     Destroy(other.transform.gameObject.transform.parent.gameObject);

@@ -116,7 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e897f6fc8752e4da803de554976f27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  block: {fileID: 1991295116446461959, guid: 7b3b02d1c30eed1468663df965a61e77, type: 3}
+  block: {fileID: 5873832888071387712, guid: 7b3b02d1c30eed1468663df965a61e77, type: 3}
+  camera: {fileID: 7897267136860694450, guid: 191b2840684d3714f85d2ab5ec9f25b2, type: 3}
 --- !u!60 &4007634489925742886
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -11,7 +11,8 @@ public class initial_move_dir : MonoBehaviour
     private float dirX;
     private float magnitude = 1;
     System.Random rand = new System.Random();
-    
+    private float leftScreen = -4200;
+    private float rightScreen = 2300;
     private Animator animator;
 
     void Start()
@@ -29,8 +30,8 @@ public class initial_move_dir : MonoBehaviour
             if (changeTo == 1) dirX = -magnitude;
             else dirX = magnitude;
         }
-        else if (GetComponent<Transform>().position.x > 5000) dirX = -magnitude;
-        else if (GetComponent<Transform>().position.x < -4000) dirX = magnitude;
+        else if (GetComponent<Transform>().position.x > rightScreen) dirX = -magnitude;
+        else if (GetComponent<Transform>().position.x < leftScreen) dirX = magnitude;
         else if (dirX == -magnitude) dirX = magnitude; //swap the direction when slime collides
         else dirX = -magnitude;
         speed = new Vector3(dirX,0,0);
