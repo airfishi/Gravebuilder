@@ -58,7 +58,6 @@ public class MoveCamera : MonoBehaviour
     {
         int yindex = (ypos / 250)+5;
         int xindex = (xpos / 250)+14;
-        Debug.Log("Block Added at " + xindex + "," + yindex);
-        blocks[ypos / 250][xpos / 250] = true;
+        blocks[yindex][xindex] = true;
     }        
 }
