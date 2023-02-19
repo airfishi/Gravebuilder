@@ -20,7 +20,7 @@ public GameObject block;
             //x, 250 between each block, first location is -4200, last is 2300
 
             int xpos = Mathf.RoundToInt(transform.position.x / 250) * 250;
-            int ypos = Mathf.RoundToInt(transform.position.y /125) * 125;
+            int ypos = Mathf.RoundToInt(transform.position.y /250) * 250;
             
             spawnloc = new Vector3(xpos,ypos - 250, transform.position.z);
 
