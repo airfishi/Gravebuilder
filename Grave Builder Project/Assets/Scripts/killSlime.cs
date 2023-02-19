@@ -5,12 +5,12 @@ using UnityEngine;
 public class killSlime : MonoBehaviour
 {
 
-public GameObject block;
+    public GameObject block;
+    public GameObject cameraObject;
 
     private bool quitting = false;
     private Vector3 spawnloc;
     private GameObject gameScreen;
-    public GameObject camera;
     
     void Start()
     {
@@ -27,12 +27,12 @@ public GameObject block;
             int xpos = Mathf.RoundToInt(transform.position.x / 250) * 250;
             int ypos = Mathf.RoundToInt(transform.position.y /250) * 250;
             
-            spawnloc = new Vector3(xpos,ypos - 250, transform.position.z);
+            spawnloc = new Vector3(xpos,ypos-125, transform.position.z);
 
             GameObject newEnemy = (GameObject)Instantiate(block,spawnloc,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);
             
             
-            camera.GetComponent<MoveCamera>().addBlock(ypos, xpos);
+            cameraObject.GetComponent<MoveCamera>().addBlock(ypos, xpos);
 
         }
     }

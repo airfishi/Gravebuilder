@@ -5,9 +5,9 @@ using UnityEngine;
 public class MoveCamera : MonoBehaviour
 {
     
-    public bool[][] blocks = new bool[26][];
     public GameObject well;
 
+    private bool[][] blocks = new bool[26][];
     private Vector3 moveBy = Vector3.zero;
     private int numBlocksInLevel = 1;
     private int blockSize = 250;
