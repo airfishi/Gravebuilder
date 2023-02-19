@@ -599,7 +599,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6247890345868041381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1970,6 +1970,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 6247890346748563944}
+    - target: {fileID: 4652927968040768193, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
+      propertyPath: endScenes
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4652927968320044654, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
       propertyPath: m_Name
       value: GameScenes
