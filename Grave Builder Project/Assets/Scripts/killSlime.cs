@@ -29,9 +29,10 @@ public GameObject block;
             
             spawnloc = new Vector3(xpos,ypos - 250, transform.position.z);
 
-            camera.GetComponent<MoveCamera>().addBlock(ypos, xpos);
-
             GameObject newEnemy = (GameObject)Instantiate(block,spawnloc,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);
+            
+            
+            camera.GetComponent<MoveCamera>().addBlock(ypos, xpos);
 
         }
     }

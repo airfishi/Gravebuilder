@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveCamera : MonoBehaviour
 {
     
-    public bool[][] blocks;
+    public bool[][] blocks = new bool[26][];
     public GameObject well;
 
     private Vector3 moveBy = Vector3.zero;
@@ -16,6 +16,7 @@ public class MoveCamera : MonoBehaviour
     {
         for (int i = 0; i < 26; i++)
         {
+            blocks[i] = new bool[26]; 
             for (int j = 0; j < 26; j++)
             {
                 blocks[i][j] = false;
@@ -55,7 +56,9 @@ public class MoveCamera : MonoBehaviour
 
     public void addBlock(int ypos, int xpos)
     {
-        Debug.Log("Block Added!");
+        int yindex = (ypos / 250)+5;
+        int xindex = (xpos / 250)+14;
+        Debug.Log("Block Added at " + xindex + "," + yindex);
         blocks[ypos / 250][xpos / 250] = true;
     }        
 }
