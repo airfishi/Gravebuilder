@@ -343,6 +343,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -858
       objectReference: {fileID: 0}
+    - target: {fileID: 6247890346505484373, guid: b77114ff093c1da43ba426e9d1ac836d, type: 3}
+      propertyPath: slime_type
+      value: 
+      objectReference: {fileID: 6747579021929866888, guid: c3f94834cfbf50340b8c7d27fac3b474, type: 3}
+    - target: {fileID: 6247890346505484373, guid: b77114ff093c1da43ba426e9d1ac836d, type: 3}
+      propertyPath: secondsBetweenSpawn
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6247890346541627943, guid: b77114ff093c1da43ba426e9d1ac836d, type: 3}
       propertyPath: m_SizeDelta.x
       value: 300
