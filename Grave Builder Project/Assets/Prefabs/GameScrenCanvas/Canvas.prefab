@@ -543,7 +543,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6247890346975156890}
+  - {fileID: 1308403601263133762}
   - {fileID: 6247890346377808754}
   - {fileID: 6247890346748563951}
   - {fileID: 6247890346439555140}
@@ -1737,7 +1737,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 6247890346975156891}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1959,21 +1959,13 @@ MonoBehaviour:
           m_StringArgument: TitleScreen
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1001 &1596089008981140725
+--- !u!1001 &5961331529716316717
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 6247890345868041402}
     m_Modifications:
-    - target: {fileID: 4652927967804149272, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 6247890346748563944}
-    - target: {fileID: 4652927968040768193, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
-      propertyPath: endScenes
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4652927968320044654, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
       propertyPath: m_Name
       value: GameScenes
@@ -2024,13 +2016,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
---- !u!4 &6247890346975156890 stripped
+--- !u!4 &1308403601263133762 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4652927968320044655, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
-  m_PrefabInstance: {fileID: 1596089008981140725}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6247890346975156891 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4652927968320044654, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
-  m_PrefabInstance: {fileID: 1596089008981140725}
+  m_PrefabInstance: {fileID: 5961331529716316717}
   m_PrefabAsset: {fileID: 0}
