@@ -37,7 +37,8 @@ public class initial_move_dir : MonoBehaviour
         /*
         if (dirX == 0)
         {
-            animator.SetBool("isLanding", true);
+            if(animator)
+                animator.SetBool("isLanding", true);
             //randomly start the movement left or right when it lands
             int changeTo = rand.Next(2);
             if (changeTo == 1) dirX = -magnitude;
