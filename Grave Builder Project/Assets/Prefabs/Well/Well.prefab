@@ -584,7 +584,6 @@ MonoBehaviour:
   secondsBetweenSpawn: 3
   elapsedTime: 0
   slime_type: {fileID: 6057649563210529295, guid: 3f487223f3cdc3241b7994229eccc245, type: 3}
-  gameScreen: {fileID: 0}
 --- !u!82 &4721883272047988836
 AudioSource:
   m_ObjectHideFlags: 0
