@@ -30,11 +30,11 @@ public class large_slime_spawning : MonoBehaviour
             //xspawn = rand.Next(5000);
             //posneg = rand.Next(2);
             //if(posneg == 1) xspawn = xspawn*-1;
-            var lowerbound = -3000;
-            var upperbound = 3200;
+            var lowerbound = -3200;
+            var upperbound = 2600;
             var xspawn = rand.Next(lowerbound,upperbound);
 
-            Vector3 spawnPosition = new Vector3(xspawn,2000,0);
+            Vector3 spawnPosition = new Vector3(2600,2000,0);
             GameObject newEnemy = (GameObject)Instantiate(slime_type,spawnPosition,Quaternion.Euler(0,0,0), gameScreen.transform);
         }
     }

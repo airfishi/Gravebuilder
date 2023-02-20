@@ -32,11 +32,11 @@ public class Slime_split : MonoBehaviour
             Vector3 rightspawnloc = transform.position + right + up;
             
             GameObject leftEnemy;
-            if(leftspawnloc.x > -5000)
-                leftEnemy = (GameObject)Instantiate(babyEnemy,transform.position - right + up,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);  
+            if(leftspawnloc.x > -2700)
+                leftEnemy = (GameObject)Instantiate(babyEnemy,leftspawnloc,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);  
             GameObject rightEnemy;
-            if(rightspawnloc.x < 5000)
-                rightEnemy = (GameObject)Instantiate(babyEnemy,transform.position + right + up,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);
+            if(rightspawnloc.x < 1000)
+                rightEnemy = (GameObject)Instantiate(babyEnemy,rightspawnloc,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);
         }
     }
     
