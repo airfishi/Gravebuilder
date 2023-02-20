@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc8e96012b9f744fa93aed219238ed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsBetweenSpawn: 3
+  secondsBetweenSpawn: 5
   elapsedTime: 0
   slime_type: {fileID: 6057649563210529295, guid: 3f487223f3cdc3241b7994229eccc245, type: 3}
   gameScreen: {fileID: 0}

@@ -6,8 +6,8 @@ public class killSlime : MonoBehaviour
 {
 
     public GameObject block;
-    public GameObject cameraObject;
-
+    
+    private GameObject cameraObject;
     private bool quitting = false;
     private Vector3 spawnloc;
     private GameObject gameScreen;
@@ -15,6 +15,7 @@ public class killSlime : MonoBehaviour
     void Start()
     {
         gameScreen = transform.parent.transform.parent.transform.parent.gameObject;
+        cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
 
