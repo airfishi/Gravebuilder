@@ -101,7 +101,7 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = die;
                     playerSound.loop = false;
                     playerSound.Play();
-                    dead = true;
+                    //dead = true;
                 }
             }
 
@@ -122,7 +122,7 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = die;
                     playerSound.loop = false;
                     playerSound.Play();
-                    dead = true;
+                    //dead = true;
                 }
             }
 

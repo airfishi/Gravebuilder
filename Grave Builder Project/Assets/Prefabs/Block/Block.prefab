@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7317496937653390394}
   - component: {fileID: 7926076434041938442}
   - component: {fileID: 521949732616761376}
+  - component: {fileID: 8435858870297364321}
   m_Layer: 5
   m_Name: Block
   m_TagString: floor
@@ -136,3 +137,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &8435858870297364321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873832888071387712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa6022164afad74090ddacd5972d7b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
