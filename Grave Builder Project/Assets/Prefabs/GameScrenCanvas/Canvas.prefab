@@ -1978,6 +1978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameScenes
       objectReference: {fileID: 0}
+    - target: {fileID: 4652927968320044654, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4652927968320044655, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
       propertyPath: m_RootOrder
       value: 0

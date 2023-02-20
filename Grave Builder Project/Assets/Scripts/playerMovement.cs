@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,7 +37,7 @@ public class playerMovement : MonoBehaviour
     private int maxJumpTime;
 
     //extras
-    private int score;
+    public int score;
     private bool dead;
     public int endScenes;
     private bool gameStart;
@@ -272,3 +273,4 @@ public class playerMovement : MonoBehaviour
         SceneManager.LoadScene(endScenes);
     }
 }
+
