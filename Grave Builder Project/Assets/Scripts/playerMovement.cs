@@ -122,7 +122,7 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = die;
                     playerSound.loop = false;
                     playerSound.Play();
-                    //dead = true;  //TODO: Layer Detect works with initial position of block, not gravity.
+                    dead = true;
                 }
             }
 
