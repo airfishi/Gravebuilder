@@ -10,10 +10,15 @@ public class large_slime_spawning : MonoBehaviour
     public float secondsBetweenSpawn;
     public float elapsedTime = 0.0f;
     public GameObject slime_type;
-    public Transform gameScreen;
+    private GameObject gameScreen;
+
     private int xspawn;
     private int posneg;
     System.Random rand = new System.Random();
+
+    void Start(){
+        gameScreen = gameObject.transform.parent.gameObject;
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,7 +35,7 @@ public class large_slime_spawning : MonoBehaviour
             var xspawn = rand.Next(lowerbound,upperbound);
 
             Vector3 spawnPosition = new Vector3(xspawn,2000,0);
-            GameObject newEnemy = (GameObject)Instantiate(slime_type,spawnPosition,Quaternion.Euler(0,0,0), gameScreen);
+            GameObject newEnemy = (GameObject)Instantiate(slime_type,spawnPosition,Quaternion.Euler(0,0,0), gameScreen.transform);
         }
     }
 }

@@ -14,7 +14,11 @@ public class killSlime : MonoBehaviour
     
     void Start()
     {
-        gameScreen = transform.parent.transform.parent.transform.parent.gameObject;
+        //removed gameScreen object from being assigned in inspector
+        gameScreen = gameObject;
+        while(!gameScreen.name.Equals("GameScenes")){
+            gameScreen = gameScreen.transform.parent.gameObject;
+        }
     }
 
 
@@ -29,7 +33,7 @@ public class killSlime : MonoBehaviour
             
             spawnloc = new Vector3(xpos,ypos-125, transform.position.z);
 
-            GameObject newEnemy = (GameObject)Instantiate(block,spawnloc,Quaternion.Euler(0,0,0), transform.parent.transform.parent.gameObject.transform);
+            GameObject newEnemy = (GameObject)Instantiate(block,spawnloc,Quaternion.Euler(0,0,0), gameScreen.transform);
             
             
             cameraObject.GetComponent<MoveCamera>().addBlock(ypos, xpos);
