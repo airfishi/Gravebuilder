@@ -23,7 +23,7 @@ public class playerMovement : MonoBehaviour
     public AudioClip die;
 
     //factors
-    private Vector3 speed;
+    private int speed;
     private Vector3 jump;
     private KeyCode jumpKey;
    
@@ -46,7 +46,7 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         jump = new Vector3(0, 1300, 0);
-        speed = new Vector3(1500, 0, 0);
+        speed = 1500;
         jumping = false;
         grounded = true;
         jumpTime = 0;
@@ -175,29 +175,30 @@ public class playerMovement : MonoBehaviour
             {
                 animator.SetBool("isRunning", true);
                 spriteRenderer.flipX = true;
-                player.transform.localPosition -= speed * Time.deltaTime;                               //adjusts player's position in game--does not check for collisions. Collision check might be needed in later development to smooth gameplay.
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, player.GetComponent<Rigidbody2D>().velocity.y);
                 if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
                 {
                     movingLeft = false;
                 }
-            }
-            if (movingRight)
+            }else if (movingRight)
             {
                 animator.SetBool("isRunning", true);
                 spriteRenderer.flipX = false;
-                player.transform.localPosition += speed * Time.deltaTime;
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(speed, player.GetComponent<Rigidbody2D>().velocity.y);
+
                 if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
                 {
                     movingRight = false;
                 }
-            }
-            if (movingLeft && movingRight)
+            }else if (movingLeft && movingRight)
             {
                 animator.SetBool("isRunning", false);
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
             }
-            if (!movingLeft && !movingRight)
+            else if (!movingLeft && !movingRight)
             {
                 animator.SetBool("isRunning", false);
+                player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
             }
 
             //Walking Audio

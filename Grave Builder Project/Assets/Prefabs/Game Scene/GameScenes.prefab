@@ -716,6 +716,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4652927968320044655}
     m_Modifications:
+    - target: {fileID: 4721883270623697989, guid: 139b93085d07057498c762467420dd4b, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4721883272047988834, guid: 139b93085d07057498c762467420dd4b, type: 3}
       propertyPath: m_Name
       value: Well
