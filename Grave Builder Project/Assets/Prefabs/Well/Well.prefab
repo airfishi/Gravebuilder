@@ -160,7 +160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4721883270623697984}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: -6.7, z: 0}
   m_LocalScale: {x: 18, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -265,7 +265,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 850
 --- !u!1 &4721883270994538660
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +584,6 @@ MonoBehaviour:
   secondsBetweenSpawn: 5
   elapsedTime: 0
   slime_type: {fileID: 6057649563210529295, guid: 3f487223f3cdc3241b7994229eccc245, type: 3}
-  gameScreen: {fileID: 0}
 --- !u!82 &4721883272047988836
 AudioSource:
   m_ObjectHideFlags: 0
