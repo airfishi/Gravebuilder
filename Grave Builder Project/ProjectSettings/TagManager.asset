@@ -9,7 +9,7 @@ TagManager:
   - MediumSlime
   - SmallSlime
   - Enemy
-  - GameScenes
+  - EndScenes
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -36,7 +37,7 @@ public class playerMovement : MonoBehaviour
     private int maxJumpTime;
 
     //extras
-    private int score;
+    public int score;
     private bool dead;
     public int endScenes;
     private bool gameStart;
@@ -87,7 +88,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "LargeSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y - 40)
+                if (player.transform.position.y > other.gameObject.transform.position.y - 50)
                 {
                     score++;
                     Destroy(other.transform.gameObject.transform.parent.gameObject);
@@ -101,7 +102,7 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = die;
                     playerSound.loop = false;
                     playerSound.Play();
-                    //dead = true;
+                    dead = true;
                 }
             }
 
@@ -122,7 +123,7 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = die;
                     playerSound.loop = false;
                     playerSound.Play();
-                    //dead = true;
+                    dead = true;
                 }
             }
 
@@ -273,3 +274,4 @@ public class playerMovement : MonoBehaviour
         SceneManager.LoadScene(endScenes);
     }
 }
+

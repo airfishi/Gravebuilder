@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,11 +8,11 @@ public class scoreScript : MonoBehaviour
 {
     
     public TextMeshProUGUI text;
-    public playerMovement player;
+    private playerMovement player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerMovement>();
     }
 
     // Update is called once per frame
