@@ -7,6 +7,7 @@ public class MoveCamera : MonoBehaviour
     
     public GameObject well;
 
+
     private bool[][] blocks = new bool[26][];
     private Vector3 moveBy = Vector3.zero;
     private int numBlocksInLevel = 1;
@@ -27,6 +28,25 @@ public class MoveCamera : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        gravity();
+        checkAndMove();
+    }
+    public void gravity()
+    {
+        for(int i = 26; i > 1; i--)
+        {
+            for(int j = 0; j < 26; j++)
+            {
+                if (blocks[i][j] && !blocks[i - 1][j])
+                {
+                    blocks[i][j] = false;
+                    blocks[i - 1][j] = true;
+                }
+            }
+        }
+    }
+    public void checkAndMove()
     {
         int levels = 0;
         for (int i = 0; i < 26; i++)
@@ -50,10 +70,16 @@ public class MoveCamera : MonoBehaviour
             Debug.Log("MOVING!!!");
             GetComponent<Transform>().position += moveBy;
             well.transform.position += moveBy;
+            for(int i = 0; i < numBlocksInLevel; i++)
+            {
+                for(int j = 0; j < 26; j++)
+                {
+                    blocks[i][j] = false;
+                }
+            }
+            gravity();
         }
     }
-
-
     public void addBlock(int ypos, int xpos)
     {
         int yindex = (ypos / 250)+5;
