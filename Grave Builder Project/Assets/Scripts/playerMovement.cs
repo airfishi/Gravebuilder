@@ -273,9 +273,7 @@ public class playerMovement : MonoBehaviour
 
     private void EndGame()
     {
-        mainCanvas.gameObject.SetActive(false);
-        other.gameObject.SetActive(true);
-
+        SceneManager.LoadScene(endScenes);
     }
 }
 
