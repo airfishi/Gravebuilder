@@ -8,7 +8,7 @@ public class Slime_split : MonoBehaviour
     //public GameObject enemy;
     public GameObject babyEnemy;
     private bool quitting = false;
-    public Transform gameScreen;
+    public GameObject gameScreen;
     private Animator animator;
     
     void Start()
@@ -16,6 +16,10 @@ public class Slime_split : MonoBehaviour
      //   enemy = gameObject.transform.parent.gameObject;    
         quitting = false;
         animator = GetComponent<Animator>();
+        gameScreen = gameObject;
+        while(!gameScreen.name.Equals("GameScenes")){
+            gameScreen = gameScreen.transform.parent.gameObject;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -24,6 +28,7 @@ public class Slime_split : MonoBehaviour
     }
 
     private void OnDestroy(){
+        if(!gameScreen.activeInHierarchy) quitting = true;
         if(quitting == false){
             Vector3 right = new Vector3(1500, 0, 0);
             Vector3 up = new Vector3(0, -150, 0);
@@ -43,4 +48,5 @@ public class Slime_split : MonoBehaviour
     private void OnApplicationQuit(){
         quitting = true;
     }
+    
 }
