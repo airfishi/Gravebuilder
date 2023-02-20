@@ -42,6 +42,8 @@ public class playerMovement : MonoBehaviour
     public int endScenes;
     private bool gameStart;
 
+    public GameObject mainCanvas;
+    public GameObject other;
 
 
     void Start()
@@ -181,8 +183,7 @@ public class playerMovement : MonoBehaviour
                 {
                     movingLeft = false;
                 }
-            }
-            if (movingRight)
+            }else if (movingRight)
             {
                 animator.SetBool("isRunning", true);
                 spriteRenderer.flipX = false;
@@ -192,13 +193,12 @@ public class playerMovement : MonoBehaviour
                 {
                     movingRight = false;
                 }
-            }
-            if (movingLeft && movingRight)
+            }else if (movingLeft && movingRight)
             {
                 animator.SetBool("isRunning", false);
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
             }
-            if (!movingLeft && !movingRight)
+            else if (!movingLeft && !movingRight)
             {
                 animator.SetBool("isRunning", false);
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
@@ -273,7 +273,9 @@ public class playerMovement : MonoBehaviour
 
     private void EndGame()
     {
-        SceneManager.LoadScene(endScenes);
+        mainCanvas.gameObject.SetActive(false);
+        other.gameObject.SetActive(true);
+
     }
 }
 
