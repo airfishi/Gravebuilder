@@ -181,7 +181,8 @@ public class playerMovement : MonoBehaviour
                 {
                     movingLeft = false;
                 }
-            }if (movingRight)
+            }
+            if (movingRight)
             {
                 animator.SetBool("isRunning", true);
                 spriteRenderer.flipX = false;
