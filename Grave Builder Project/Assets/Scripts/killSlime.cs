@@ -29,10 +29,10 @@ public class killSlime : MonoBehaviour
         if(!quitting){
             //x, 250 between each block, first location is -4200, last is 2300
 
-            int xpos = Mathf.RoundToInt(transform.position.x / 250) * 250;
-            int ypos = Mathf.RoundToInt(transform.position.y /250) * 250;
+            int xpos = Mathf.RoundToInt(transform.position.x / 500) * 500;
+            int ypos = Mathf.RoundToInt(transform.position.y / 500) * 500;
             
-            spawnloc = new Vector3(xpos,ypos-90, transform.position.z);
+            spawnloc = new Vector3(xpos,ypos-180, transform.position.z);
 
             GameObject newEnemy = (GameObject)Instantiate(block,spawnloc,Quaternion.Euler(0,0,0), gameScreen.transform);
             
