@@ -183,7 +183,8 @@ public class playerMovement : MonoBehaviour
                 {
                     movingLeft = false;
                 }
-            }else if (movingRight)
+            }
+            if (movingRight)
             {
                 animator.SetBool("isRunning", true);
                 spriteRenderer.flipX = false;
@@ -193,12 +194,13 @@ public class playerMovement : MonoBehaviour
                 {
                     movingRight = false;
                 }
-            }else if (movingLeft && movingRight)
+            }
+            if (movingLeft && movingRight)
             {
                 animator.SetBool("isRunning", false);
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
             }
-            else if (!movingLeft && !movingRight)
+            if (!movingLeft && !movingRight)
             {
                 animator.SetBool("isRunning", false);
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
