@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slime_to_block (3)_2
+      name: slime_block1
       rect:
         serializedVersion: 2
         x: 267
@@ -138,7 +138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_to_block (3)_10
+      name: slime_block2
       rect:
         serializedVersion: 2
         x: 524
@@ -159,7 +159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_to_block (3)_12
+      name: slime_block3
       rect:
         serializedVersion: 2
         x: 19
@@ -180,7 +180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_to_block (3)_14
+      name: slime_block4
       rect:
         serializedVersion: 2
         x: 275
@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_to_block (3)_16
+      name: slime_block5
       rect:
         serializedVersion: 2
         x: 526
@@ -222,7 +222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slime_to_block (3)_18
+      name: slime_block0
       rect:
         serializedVersion: 2
         x: 16
@@ -253,25 +253,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      slime_block5: -821679234
       slime_to_block (3)_11: -821439806
-      slime_to_block (3)_14: -1342427105
       slime_to_block (3)_17: -226002474
       slime_to_block (3)_0: 1427860566
-      slime_to_block (3)_2: 149021193
-      slime_to_block (3)_10: 1810374027
+      slime_block0: 1507230263
       slime_to_block (3)_13: -895227883
+      slime_block1: 149021193
       slime_to_block (3)_7: 1678443871
       slime_to_block (3)_4: -859224548
       slime_to_block (3)_6: -212424098
+      slime_block3: -455416141
       slime_to_block (3)_5: -1020778161
       slime_to_block (3)_15: 634835159
       slime_to_block (3)_8: -1665092953
       slime_to_block (3)_3: 1835205577
       slime_to_block (3)_1: -1160182177
-      slime_to_block (3)_18: 1507230263
-      slime_to_block (3)_12: -455416141
+      slime_block4: -1342427105
+      slime_block2: 1810374027
       slime_to_block (3)_9: 1949461804
-      slime_to_block (3)_16: -821679234
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
