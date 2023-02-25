@@ -275,7 +275,8 @@ public class playerMovement : MonoBehaviour
 
     private void EndGame()
     {
-        SceneManager.LoadScene(endScenes);
+        mainCanvas.SetActive(false);
+        other.SetActive(true);
     }
 }
 
