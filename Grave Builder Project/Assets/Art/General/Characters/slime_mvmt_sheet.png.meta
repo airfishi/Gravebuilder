@@ -599,6 +599,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: slime_mvmt_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798a5eede4d22ab44b8c353f7d1280e6
+      internalID: 977844806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_mvmt_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738150da0733cf3429910285e46515ed
+      internalID: -59051577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_mvmt_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7f8e07e8aca71149b73bf6a527ceece
+      internalID: 1874221514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_mvmt_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9e2bdee954b3e4480bb12dd656357e
+      internalID: 242274394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: slime_mvmt_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738cf09a0e76f3e44acda1ee7f94a91f
+      internalID: -142509192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -612,6 +717,8 @@ TextureImporter:
     nameFileIdTable:
       slime_die4: -312667685
       slime_move1: -111203096
+      slime_mvmt_sheet_4: -142509192
+      slime_mvmt_sheet_2: 1874221514
       slime_die2: 464085077
       slime_jump6: -1021615574
       slime_idle0: 1504407065
@@ -620,16 +727,19 @@ TextureImporter:
       slime_die5: -1049531834
       slime_move2: -1293155652
       slime_move0: -1485759284
+      slime_mvmt_sheet_3: 242274394
       slime_idle1: 1689541155
       Slime Sprite Sheet_17: -250779859
       slime_idle3: 2064800276
       slime_jump2: 2069973172
       slime_move3: 1605740525
+      slime_mvmt_sheet_1: -59051577
       slime_die1: -639468423
       Slime Sprite Sheet_16: 308967805
       slime_jump3: -1814466417
       slime_idle2: 70617221
       Slime Sprite Sheet_14: 708083927
+      slime_mvmt_sheet_0: 977844806
       Slime Sprite Sheet_15: -1720148039
       slime_die0: 1322925541
       slime_die6: 1419791295
