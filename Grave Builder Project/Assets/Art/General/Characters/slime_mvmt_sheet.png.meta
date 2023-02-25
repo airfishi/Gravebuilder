@@ -599,153 +599,6 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: slime_destroy0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29d865e00367b644d996787004b56de8
-      internalID: 1759353603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_destroy1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a5df218059ab8246abbe97b076d9d62
-      internalID: -1017792017
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_destroy2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 249885471a6ddf446a6eee1c3006a412
-      internalID: -805898938
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_destroy3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9f941e65fdff86541a5ea412eca5f7c3
-      internalID: -322778695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_destroy4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3bb79d420cb1d145841e82b93df4ed1
-      internalID: -191006328
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_destroy5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26ca0d9501fc5f54ba9e7c1377db5d02
-      internalID: -1144317630
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slime_destroy6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45a25110783e13147949dceb2bae7fbd
-      internalID: 1184941954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -757,14 +610,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      slime_destroy5: -1144317630
       slime_die4: -312667685
       slime_move1: -111203096
-      slime_destroy0: 1759353603
       slime_die2: 464085077
       slime_jump6: -1021615574
       slime_idle0: 1504407065
-      slime_destroy1: -1017792017
       Slime Sprite Sheet_12: -956086380
       Slime Sprite Sheet_18: 786369485
       slime_die5: -1049531834
@@ -775,7 +625,6 @@ TextureImporter:
       slime_idle3: 2064800276
       slime_jump2: 2069973172
       slime_move3: 1605740525
-      slime_destroy6: 1184941954
       slime_die1: -639468423
       Slime Sprite Sheet_16: 308967805
       slime_jump3: -1814466417
@@ -783,8 +632,6 @@ TextureImporter:
       Slime Sprite Sheet_14: 708083927
       Slime Sprite Sheet_15: -1720148039
       slime_die0: 1322925541
-      slime_destroy4: -191006328
-      slime_destroy3: -322778695
       slime_die6: 1419791295
       Slime Sprite Sheet_13: -892703773
       slime_jump1: 264351996
@@ -792,7 +639,6 @@ TextureImporter:
       slime_jump5: -1390095403
       slime_die3: 1247789218
       slime_jump4: 1637811317
-      slime_destroy2: -805898938
       slime_jump0: 983025803
   spritePackingTag: 
   pSDRemoveMatte: 0
