@@ -37,9 +37,7 @@ public class playerMovement : MonoBehaviour
     private int maxJumpTime;
 
     //extras
-    public int score;
     private bool dead;
-    public int endScenes;
     private bool gameStart;
 
     public GameObject mainCanvas;
@@ -56,7 +54,6 @@ public class playerMovement : MonoBehaviour
         maxJumpTime = 200;
         movingLeft = false;
         movingRight = false;
-        score = 0;
         dead = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -64,10 +61,6 @@ public class playerMovement : MonoBehaviour
 
     }
 
-    public int getScore()
-    {
-        return score;
-    }
     void OnCollisionEnter2D(Collision2D other)            //grounded is used in jumping, see bottom section of Update()
     {
         if (!dead)
@@ -92,7 +85,7 @@ public class playerMovement : MonoBehaviour
             {
                 if (player.transform.position.y > other.gameObject.transform.position.y - 50)
                 {
-                    score++;
+                    scoreManager.instance.AddScore();
                     Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
                     playerSound.clip = kill;
@@ -112,7 +105,7 @@ public class playerMovement : MonoBehaviour
             {
                 if (player.transform.position.y > other.gameObject.transform.position.y + 20)
                 {
-                    score++;
+                    scoreManager.instance.AddScore();
                     Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
                     playerSound.clip = kill;
@@ -275,8 +268,9 @@ public class playerMovement : MonoBehaviour
 
     private void EndGame()
     {
-        mainCanvas.SetActive(false);
-        other.SetActive(true);
+        mainCanvas.gameObject.SetActive(false);
+
+        other.gameObject.SetActive(true);
     }
 }
 
