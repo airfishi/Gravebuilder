@@ -35,6 +35,7 @@ public class playerMovement : MonoBehaviour
     public bool movingLeft;
     private int jumpTime;
     private int maxJumpTime;
+    private bool slamming;
 
     //extras
     private bool dead;
@@ -85,11 +86,12 @@ public class playerMovement : MonoBehaviour
             {
                 if (player.transform.position.y > other.gameObject.transform.position.y - 100)
                 {
-                    scoreManager.instance.AddScore();
+                    //scoreManager.instance.AddScore();
                     Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.Play();
+                    Jump(125, 2 * maxJumpTime / 3);
                 }
                 else
                 {
@@ -105,12 +107,14 @@ public class playerMovement : MonoBehaviour
             {
                 if (player.transform.position.y > other.gameObject.transform.position.y + 30)
                 {
-                    scoreManager.instance.AddScore();
+                    //scoreManager.instance.AddScore();
                     Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.loop = false;
                     playerSound.Play();
+                    player.transform.position += new Vector3(0, 200, 0);
+                    Jump(110, 2 * maxJumpTime / 3);
                 }
                 else
                 {
@@ -199,6 +203,8 @@ public class playerMovement : MonoBehaviour
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
             }
 
+
+
             //Walking Audio
             if ((movingLeft || movingRight) && grounded && playerSound.clip != walking)
             {
@@ -214,27 +220,24 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = null;
             }
 
+
+
+            //Jumping
             if(!jumping && grounded)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    jumping = true;
-                    jumpTime = 0;
-                    playerBody.AddForce(jump*100, ForceMode2D.Force);
+                    Jump();
                     jumpKey = KeyCode.Space;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    jumping = true;
-                    jumpTime = 0;
-                    playerBody.AddForce(jump*100, ForceMode2D.Force);
+                    Jump();
                     jumpKey = KeyCode.UpArrow;
                 }
                 else if (Input.GetKeyDown(KeyCode.W))
                 {
-                    jumping = true;
-                    jumpTime = 0;
-                    playerBody.AddForce(jump*100, ForceMode2D.Force);
+                    Jump();
                     jumpKey = KeyCode.W;
                 }
             }
@@ -252,10 +255,28 @@ public class playerMovement : MonoBehaviour
                     //Debug.Log(jumpKey + " " + Input.GetKeyUp(KeyCode.W)+ " " + jumpTime);
                     jumping = false;
                     animator.SetBool("isJumping", false);
+                    Debug.Log("");
                 }
+            }
+
+
+            //Slam Down
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                slamming = true;
+            }
+            if (slamming && (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S)))
+            {
+                slamming = false;
+            }
+            if (slamming)
+            {
+                playerBody.AddForce(-2 * jump,ForceMode2D.Force);
             }
         }
         
+        //End of Game
+
         else
         {
             animator.SetBool("isDying", true);
@@ -264,6 +285,22 @@ public class playerMovement : MonoBehaviour
                 EndGame();
             }
         }    
+    }
+
+    private void Jump()
+    {
+        jumping = true;
+        jumpTime = 0;
+        playerBody.AddForce(jump * 100, ForceMode2D.Force);
+        Debug.Log("JUMPING!!!");
+    }
+
+    private void Jump(int strength, int durationPenalty)
+    {
+        jumping = true;
+        jumpTime = durationPenalty;
+        playerBody.AddForce(jump * strength, ForceMode2D.Force);
+        Debug.Log("JUMPING!!!");
     }
 
     private void EndGame()
