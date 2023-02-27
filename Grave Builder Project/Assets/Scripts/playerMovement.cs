@@ -255,7 +255,7 @@ public class playerMovement : MonoBehaviour
                     //Debug.Log(jumpKey + " " + Input.GetKeyUp(KeyCode.W)+ " " + jumpTime);
                     jumping = false;
                     animator.SetBool("isJumping", false);
-                    Debug.Log("");
+                    //Debug.Log("");
                 }
             }
 
@@ -292,7 +292,7 @@ public class playerMovement : MonoBehaviour
         jumping = true;
         jumpTime = 0;
         playerBody.AddForce(jump * 100, ForceMode2D.Force);
-        Debug.Log("JUMPING!!!");
+        //Debug.Log("JUMPING!!!");
     }
 
     private void Jump(int strength, int durationPenalty)
