@@ -103,7 +103,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "MediumSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y + 40)
+                if (player.transform.position.y > other.gameObject.transform.position.y + 30)
                 {
                     scoreManager.instance.AddScore();
                     Destroy(other.transform.gameObject.transform.parent.gameObject);
