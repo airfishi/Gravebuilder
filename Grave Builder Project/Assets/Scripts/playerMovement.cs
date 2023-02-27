@@ -90,7 +90,7 @@ public class playerMovement : MonoBehaviour
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.Play();
-                    Jump();
+                    Jump(125, 2 * maxJumpTime / 3);
                 }
                 else
                 {
@@ -112,8 +112,8 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = kill;
                     playerSound.loop = false;
                     playerSound.Play();
-                    player.transform.position += new Vector3(0, 100, 0);
-                    Jump();
+                    player.transform.position += new Vector3(0, 200, 0);
+                    Jump(110, 2 * maxJumpTime / 3);
                 }
                 else
                 {
@@ -272,10 +272,10 @@ public class playerMovement : MonoBehaviour
         Debug.Log("JUMPING!!!");
     }
 
-    private void Jump(int strength)
+    private void Jump(int strength, int durationPenalty)
     {
         jumping = true;
-        jumpTime = 0;
+        jumpTime = durationPenalty;
         playerBody.AddForce(jump * strength, ForceMode2D.Force);
         Debug.Log("JUMPING!!!");
     }
