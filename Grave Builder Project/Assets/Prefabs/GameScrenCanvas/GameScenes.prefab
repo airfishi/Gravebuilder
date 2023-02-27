@@ -258,7 +258,7 @@ MonoBehaviour:
   grounded: 0
   movingRight: 0
   movingLeft: 0
-  mainCanvas: {fileID: 4988355733198665148, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
+  mainCanvas: {fileID: 0}
   other: {fileID: 5477490442067064202, guid: 6665aac8bb3ccdd45a743e39b7dad08c, type: 3}
 --- !u!50 &4652927968040768192
 Rigidbody2D:
@@ -491,7 +491,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4652927968320044654}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 602.8055, y: 121.36369, z: -41.535355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
