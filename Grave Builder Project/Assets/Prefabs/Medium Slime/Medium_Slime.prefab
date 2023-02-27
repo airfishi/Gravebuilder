@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 7107134343546392268}
   - component: {fileID: 8995789676073674047}
   - component: {fileID: 2759957945250594689}
-  - component: {fileID: 4007634489925742886}
   - component: {fileID: 136214268515530907}
   - component: {fileID: 4695096541087598853}
   - component: {fileID: 8959003174069029109}
   - component: {fileID: 5229302091703478095}
+  - component: {fileID: 9152554124224374193}
   m_Layer: 0
   m_Name: Medium_Slime
   m_TagString: MediumSlime
@@ -117,47 +117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   block: {fileID: 5873832888071387712, guid: 7b3b02d1c30eed1468663df965a61e77, type: 3}
---- !u!60 &4007634489925742886
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1113920725537500450}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.03881513, y: -0.10139674}
-      - {x: 0.029887985, y: -0.09004532}
-      - {x: 0.025116077, y: -0.0866667}
-      - {x: -0.024909392, y: -0.08643592}
-      - {x: -0.029681945, y: -0.08994662}
-      - {x: -0.040228404, y: -0.10050073}
-      - {x: -0.04956394, y: -0.109648265}
-      - {x: -0.049279537, y: -0.13926777}
-      - {x: -0.03934307, y: -0.15014264}
-      - {x: -0.03942249, y: -0.15995422}
-      - {x: 0.039711546, y: -0.15983805}
-      - {x: 0.039564293, y: -0.15000185}
-      - {x: 0.05007537, y: -0.1402342}
-      - {x: 0.053534277, y: -0.13564897}
-      - {x: 0.053442407, y: -0.11418135}
-      - {x: 0.04990143, y: -0.11008215}
 --- !u!50 &136214268515530907
 Rigidbody2D:
   serializedVersion: 4
@@ -309,6 +268,32 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!61 &9152554124224374193
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113920725537500450}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0012436155, y: -0.13191172}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.11604756, y: 0.056176543}
+  m_EdgeRadius: 0
 --- !u!1 &6747579021929866888
 GameObject:
   m_ObjectHideFlags: 0
