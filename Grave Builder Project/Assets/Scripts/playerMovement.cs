@@ -35,6 +35,7 @@ public class playerMovement : MonoBehaviour
     public bool movingLeft;
     private int jumpTime;
     private int maxJumpTime;
+    private bool slamming;
 
     //extras
     private bool dead;
@@ -202,6 +203,8 @@ public class playerMovement : MonoBehaviour
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
             }
 
+
+
             //Walking Audio
             if ((movingLeft || movingRight) && grounded && playerSound.clip != walking)
             {
@@ -217,6 +220,9 @@ public class playerMovement : MonoBehaviour
                     playerSound.clip = null;
             }
 
+
+
+            //Jumping
             if(!jumping && grounded)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
@@ -252,8 +258,25 @@ public class playerMovement : MonoBehaviour
                     Debug.Log("");
                 }
             }
+
+
+            //Slam Down
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                slamming = true;
+            }
+            if (slamming && (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S)))
+            {
+                slamming = false;
+            }
+            if (slamming)
+            {
+                playerBody.AddForce(-2 * jump,ForceMode2D.Force);
+            }
         }
         
+        //End of Game
+
         else
         {
             animator.SetBool("isDying", true);
