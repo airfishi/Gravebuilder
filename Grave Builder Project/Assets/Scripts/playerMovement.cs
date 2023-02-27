@@ -85,11 +85,12 @@ public class playerMovement : MonoBehaviour
             {
                 if (player.transform.position.y > other.gameObject.transform.position.y - 100)
                 {
-                    scoreManager.instance.AddScore();
+                    //scoreManager.instance.AddScore();
                     Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.Play();
+                    Jump();
                 }
                 else
                 {
@@ -105,12 +106,14 @@ public class playerMovement : MonoBehaviour
             {
                 if (player.transform.position.y > other.gameObject.transform.position.y + 30)
                 {
-                    scoreManager.instance.AddScore();
+                    //scoreManager.instance.AddScore();
                     Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.loop = false;
                     playerSound.Play();
+                    player.transform.position += new Vector3(0, 100, 0);
+                    Jump();
                 }
                 else
                 {
@@ -218,23 +221,17 @@ public class playerMovement : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    jumping = true;
-                    jumpTime = 0;
-                    playerBody.AddForce(jump*100, ForceMode2D.Force);
+                    Jump();
                     jumpKey = KeyCode.Space;
                 }
                 else if (Input.GetKeyDown(KeyCode.UpArrow))
                 {
-                    jumping = true;
-                    jumpTime = 0;
-                    playerBody.AddForce(jump*100, ForceMode2D.Force);
+                    Jump();
                     jumpKey = KeyCode.UpArrow;
                 }
                 else if (Input.GetKeyDown(KeyCode.W))
                 {
-                    jumping = true;
-                    jumpTime = 0;
-                    playerBody.AddForce(jump*100, ForceMode2D.Force);
+                    Jump();
                     jumpKey = KeyCode.W;
                 }
             }
@@ -252,6 +249,7 @@ public class playerMovement : MonoBehaviour
                     //Debug.Log(jumpKey + " " + Input.GetKeyUp(KeyCode.W)+ " " + jumpTime);
                     jumping = false;
                     animator.SetBool("isJumping", false);
+                    Debug.Log("");
                 }
             }
         }
@@ -264,6 +262,22 @@ public class playerMovement : MonoBehaviour
                 EndGame();
             }
         }    
+    }
+
+    private void Jump()
+    {
+        jumping = true;
+        jumpTime = 0;
+        playerBody.AddForce(jump * 100, ForceMode2D.Force);
+        Debug.Log("JUMPING!!!");
+    }
+
+    private void Jump(int strength)
+    {
+        jumping = true;
+        jumpTime = 0;
+        playerBody.AddForce(jump * strength, ForceMode2D.Force);
+        Debug.Log("JUMPING!!!");
     }
 
     private void EndGame()
