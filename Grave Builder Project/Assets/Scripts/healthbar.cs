@@ -6,6 +6,7 @@ public class healthbar : MonoBehaviour
 {
 
     private GameObject health;
+    private Canvas temp;
 
     // Start is called before the first frame update
 
