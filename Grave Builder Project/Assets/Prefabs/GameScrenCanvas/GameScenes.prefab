@@ -258,8 +258,8 @@ MonoBehaviour:
   grounded: 0
   movingRight: 0
   movingLeft: 0
-  mainCanvas: {fileID: 0}
-  other: {fileID: 0}
+  mainCanvas: {fileID: 4988355733198665148, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
+  other: {fileID: 5477490442067064202, guid: 6665aac8bb3ccdd45a743e39b7dad08c, type: 3}
 --- !u!50 &4652927968040768192
 Rigidbody2D:
   serializedVersion: 4
