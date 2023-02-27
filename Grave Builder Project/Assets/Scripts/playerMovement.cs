@@ -91,7 +91,7 @@ public class playerMovement : MonoBehaviour
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.Play();
-                    Jump(125, 2 * maxJumpTime / 3);
+                    Jump(120, 3 * maxJumpTime / 4);
                 }
                 else
                 {
@@ -114,7 +114,7 @@ public class playerMovement : MonoBehaviour
                     playerSound.loop = false;
                     playerSound.Play();
                     player.transform.position += new Vector3(0, 200, 0);
-                    Jump(110, 2 * maxJumpTime / 3);
+                    Jump(105, 3 * maxJumpTime / 4);
                 }
                 else
                 {
