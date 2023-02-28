@@ -48,7 +48,7 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        jump = new Vector3(0, 4800, 0);
+        jump = new Vector3(0, 3600, 0);
         speed = 1900;
         jumping = false;
         grounded = true;
