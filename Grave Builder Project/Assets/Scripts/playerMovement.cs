@@ -252,7 +252,7 @@ public class playerMovement : MonoBehaviour
                 if (jumping && ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime))
                 {
                     //playerBody.AddForce(jump * -1 * (int)(120 - (jumpTime / 2)), ForceMode2D.Force);
-                    playerBody.AddForce(jump * -55, ForceMode2D.Force);
+                    playerBody.AddForce(jump * -35, ForceMode2D.Force);
                     //Debug.Log(jumpKey + " " + Input.GetKeyUp(KeyCode.W)+ " " + jumpTime);
                     jumping = false;
                     animator.SetBool("isJumping", false);
