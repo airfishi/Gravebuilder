@@ -33,9 +33,10 @@ public class playerMovement : MonoBehaviour
     public bool grounded;
     public bool movingRight;
     public bool movingLeft;
+    public bool slamming;
+    private bool jumpFall;
     private int jumpTime;
     private int maxJumpTime;
-    private bool slamming;
 
     //extras
     private bool dead;
@@ -47,12 +48,12 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        jump = new Vector3(0, 1300, 0);
-        speed = 1500;
+        jump = new Vector3(0, 3600, 0);
+        speed = 1900;
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 200;
+        maxJumpTime = 100;
         movingLeft = false;
         movingRight = false;
         dead = false;
@@ -69,6 +70,7 @@ public class playerMovement : MonoBehaviour
             if (other.gameObject.tag == "floor")
             {
                 grounded = true;
+                jumpFall = false;
                 if (!gameStart)
                 {
                     playerSound.Stop();
@@ -91,7 +93,12 @@ public class playerMovement : MonoBehaviour
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.Play();
-                    Jump(125, 2 * maxJumpTime / 3);
+                    if (jumpFall)
+                        Jump(95, 3 * maxJumpTime / 4);
+                    else
+                    {
+                        Jump(45, 3 * maxJumpTime / 4);
+                    }
                 }
                 else
                 {
@@ -114,7 +121,12 @@ public class playerMovement : MonoBehaviour
                     playerSound.loop = false;
                     playerSound.Play();
                     player.transform.position += new Vector3(0, 200, 0);
-                    Jump(110, 2 * maxJumpTime / 3);
+                    if (jumpFall)
+                        Jump(75, 3 * maxJumpTime / 4);
+                    else
+                    {
+                        Jump(35, 3 * maxJumpTime / 4);
+                    }
                 }
                 else
                 {
@@ -251,11 +263,12 @@ public class playerMovement : MonoBehaviour
                 if (jumping && ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime))
                 {
                     //playerBody.AddForce(jump * -1 * (int)(120 - (jumpTime / 2)), ForceMode2D.Force);
-                    playerBody.AddForce(jump * -55, ForceMode2D.Force);
+                    playerBody.AddForce(jump * -35, ForceMode2D.Force);
                     //Debug.Log(jumpKey + " " + Input.GetKeyUp(KeyCode.W)+ " " + jumpTime);
                     jumping = false;
+                    jumpFall = true;
                     animator.SetBool("isJumping", false);
-                    Debug.Log("");
+                    //Debug.Log("");
                 }
             }
 
@@ -271,7 +284,7 @@ public class playerMovement : MonoBehaviour
             }
             if (slamming)
             {
-                playerBody.AddForce(-2 * jump,ForceMode2D.Force);
+                playerBody.AddForce(-3 * jump,ForceMode2D.Force);
             }
         }
         
@@ -292,7 +305,7 @@ public class playerMovement : MonoBehaviour
         jumping = true;
         jumpTime = 0;
         playerBody.AddForce(jump * 100, ForceMode2D.Force);
-        Debug.Log("JUMPING!!!");
+        //Debug.Log("JUMPING!!!");
     }
 
     private void Jump(int strength, int durationPenalty)
