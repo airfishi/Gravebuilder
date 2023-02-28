@@ -2885,6 +2885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: End Scenes
       objectReference: {fileID: 0}
+    - target: {fileID: 5477490442067064202, guid: 6665aac8bb3ccdd45a743e39b7dad08c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6665aac8bb3ccdd45a743e39b7dad08c, type: 3}
 --- !u!224 &8371067948898862456 stripped

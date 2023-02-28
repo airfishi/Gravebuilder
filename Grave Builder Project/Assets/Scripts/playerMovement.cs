@@ -70,6 +70,7 @@ public class playerMovement : MonoBehaviour
             if (other.gameObject.tag == "floor")
             {
                 grounded = true;
+                jumpFall = false;
                 if (!gameStart)
                 {
                     playerSound.Stop();
@@ -92,7 +93,12 @@ public class playerMovement : MonoBehaviour
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.Play();
-                    Jump(120, 3 * maxJumpTime / 4);
+                    if (jumpFall)
+                        Jump(95, 3 * maxJumpTime / 4);
+                    else
+                    {
+                        Jump(45, 3 * maxJumpTime / 4);
+                    }
                 }
                 else
                 {
@@ -115,7 +121,12 @@ public class playerMovement : MonoBehaviour
                     playerSound.loop = false;
                     playerSound.Play();
                     player.transform.position += new Vector3(0, 200, 0);
-                    Jump(105, 3 * maxJumpTime / 4);
+                    if (jumpFall)
+                        Jump(75, 3 * maxJumpTime / 4);
+                    else
+                    {
+                        Jump(35, 3 * maxJumpTime / 4);
+                    }
                 }
                 else
                 {
@@ -255,6 +266,7 @@ public class playerMovement : MonoBehaviour
                     playerBody.AddForce(jump * -35, ForceMode2D.Force);
                     //Debug.Log(jumpKey + " " + Input.GetKeyUp(KeyCode.W)+ " " + jumpTime);
                     jumping = false;
+                    jumpFall = true;
                     animator.SetBool("isJumping", false);
                     //Debug.Log("");
                 }
