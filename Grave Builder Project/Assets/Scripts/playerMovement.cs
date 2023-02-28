@@ -89,7 +89,7 @@ public class playerMovement : MonoBehaviour
                 if (player.transform.position.y > other.gameObject.transform.position.y - 100)
                 {
                     //scoreManager.instance.AddScore();
-                    Destroy(other.transform.gameObject.transform.parent.gameObject);
+                    //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.Play();
@@ -115,7 +115,7 @@ public class playerMovement : MonoBehaviour
                 if (player.transform.position.y > other.gameObject.transform.position.y + 30)
                 {
                     //scoreManager.instance.AddScore();
-                    Destroy(other.transform.gameObject.transform.parent.gameObject);
+                    //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
                     playerSound.clip = kill;
                     playerSound.loop = false;

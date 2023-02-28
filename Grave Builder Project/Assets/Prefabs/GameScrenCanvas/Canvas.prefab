@@ -2731,10 +2731,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4988355733198665137}
     m_Modifications:
-    - target: {fileID: 4652927968040768193, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
-      propertyPath: mainCanvas
-      value: 
-      objectReference: {fileID: 4988355733198665148}
     - target: {fileID: 4652927968320044654, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
       propertyPath: m_Name
       value: GameScenes
