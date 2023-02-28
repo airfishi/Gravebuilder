@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7926076434041938442}
   - component: {fileID: 521949732616761376}
   - component: {fileID: 8435858870297364321}
+  - component: {fileID: 4832866638913522792}
   m_Layer: 5
   m_Name: Block
   m_TagString: floor
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 5873832888071387712}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3938.4873, y: -1720.3623, z: 41.535355}
-  m_LocalScale: {x: 250, y: 123, z: 10}
+  m_LocalScale: {x: 3600, y: 3500, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1673471852, guid: 17b76fd63b3c5194c86a7cce53c561f1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -659632127, guid: 49f599f30d2429141afe260d8a05219e, type: 3}
+  m_Color: {r: 0.5368903, g: 0.8962264, b: 0.5515571, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,7 +105,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 0.32, y: 0.32}
     newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -149,3 +150,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaa6022164afad74090ddacd5972d7b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &4832866638913522792
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5873832888071387712}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ff38aeee1c26504291ac26fafd44806, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
