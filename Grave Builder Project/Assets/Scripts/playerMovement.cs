@@ -33,9 +33,10 @@ public class playerMovement : MonoBehaviour
     public bool grounded;
     public bool movingRight;
     public bool movingLeft;
+    public bool slamming;
+    private bool jumpFall;
     private int jumpTime;
     private int maxJumpTime;
-    private bool slamming;
 
     //extras
     private bool dead;
