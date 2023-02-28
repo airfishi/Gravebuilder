@@ -49,7 +49,7 @@ public class playerMovement : MonoBehaviour
     void Start()
     {
         jump = new Vector3(0, 3600, 0);
-        speed = 1500;
+        speed = 1900;
         jumping = false;
         grounded = true;
         jumpTime = 0;
@@ -272,7 +272,7 @@ public class playerMovement : MonoBehaviour
             }
             if (slamming)
             {
-                playerBody.AddForce(-2 * jump,ForceMode2D.Force);
+                playerBody.AddForce(-3 * jump,ForceMode2D.Force);
             }
         }
         
