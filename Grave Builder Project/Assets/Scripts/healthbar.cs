@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class healthbar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private GameObject health;
+    private Canvas temp;
+
+    // Start is called before the first frame update
+
+    void OnCollisionEnter2D(Collision2D collision){
+        health = gameObject.GetComponentInChildren<Canvas>().GetComponentInChildren<GameObject>();
+        Debug.Log(health.name);
     }
 }

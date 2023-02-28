@@ -187,10 +187,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 188631958700240982, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4988355733198665137, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -280,6 +276,10 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 6403269571039832228, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366656538898475230, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
