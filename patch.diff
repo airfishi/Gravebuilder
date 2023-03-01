@@ -1,67 +1,25 @@
-From 5ffaaec77d652d16939ff0b5e5499afb1fc7f044 Mon Sep 17 00:00:00 2001
+From 61616410a797d4d67c83788087616dae3d2f1d93 Mon Sep 17 00:00:00 2001
 From: lmaschenberg <lmaschenberg@knox.edu>
-Date: Tue, 28 Feb 2023 16:27:11 -0600
-Subject: [PATCH] Exported slime destruction
+Date: Tue, 28 Feb 2023 16:52:39 -0600
+Subject: [PATCH] Changed Player Gravity
 
 ---
- .../Assets/Prefabs/GameScrenCanvas/Canvas.prefab             | 4 ----
- Grave Builder Project/Assets/Scripts/killSlime.cs            | 5 +++++
- Grave Builder Project/Assets/Scripts/playerMovement.cs       | 4 ++--
- 3 files changed, 7 insertions(+), 6 deletions(-)
+ Grave Builder Project/Assets/Prefabs/Player/Player.prefab | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/Grave Builder Project/Assets/Prefabs/GameScrenCanvas/Canvas.prefab b/Grave Builder Project/Assets/Prefabs/GameScrenCanvas/Canvas.prefab
-index 0ff6177..36f5e7b 100644
---- a/Grave Builder Project/Assets/Prefabs/GameScrenCanvas/Canvas.prefab	
-+++ b/Grave Builder Project/Assets/Prefabs/GameScrenCanvas/Canvas.prefab	
-@@ -2731,10 +2731,6 @@ PrefabInstance:
-   m_Modification:
-     m_TransformParent: {fileID: 4988355733198665137}
-     m_Modifications:
--    - target: {fileID: 4652927968040768193, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
--      propertyPath: mainCanvas
--      value: 
--      objectReference: {fileID: 4988355733198665148}
-     - target: {fileID: 4652927968320044654, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
-       propertyPath: m_Name
-       value: GameScenes
-diff --git a/Grave Builder Project/Assets/Scripts/killSlime.cs b/Grave Builder Project/Assets/Scripts/killSlime.cs
-index 6b201cc..2837c86 100644
---- a/Grave Builder Project/Assets/Scripts/killSlime.cs	
-+++ b/Grave Builder Project/Assets/Scripts/killSlime.cs	
-@@ -22,6 +22,11 @@ public class killSlime : MonoBehaviour
-         cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
-     }
- 
-+    private void OnCollisionEnter2D(Collision2D other)
-+    {
-+        if (other.gameObject.tag == "Player")
-+            Destroy(transform.parent.gameObject);
-+    }
- 
-     void OnDestroy(){
-         //Debug.Log(gameScreen); //should be gameScreen, but cannot directly reference
-diff --git a/Grave Builder Project/Assets/Scripts/playerMovement.cs b/Grave Builder Project/Assets/Scripts/playerMovement.cs
-index 7016409..e2785af 100644
---- a/Grave Builder Project/Assets/Scripts/playerMovement.cs	
-+++ b/Grave Builder Project/Assets/Scripts/playerMovement.cs	
-@@ -89,7 +89,7 @@ public class playerMovement : MonoBehaviour
-                 if (player.transform.position.y > other.gameObject.transform.position.y - 100)
-                 {
-                     //scoreManager.instance.AddScore();
--                    Destroy(other.transform.gameObject.transform.parent.gameObject);
-+                    //Destroy(other.transform.gameObject.transform.parent.gameObject);
-                     playerSound.Stop();
-                     playerSound.clip = kill;
-                     playerSound.Play();
-@@ -115,7 +115,7 @@ public class playerMovement : MonoBehaviour
-                 if (player.transform.position.y > other.gameObject.transform.position.y + 30)
-                 {
-                     //scoreManager.instance.AddScore();
--                    Destroy(other.transform.gameObject.transform.parent.gameObject);
-+                    //Destroy(other.transform.gameObject.transform.parent.gameObject);
-                     playerSound.Stop();
-                     playerSound.clip = kill;
-                     playerSound.loop = false;
+diff --git a/Grave Builder Project/Assets/Prefabs/Player/Player.prefab b/Grave Builder Project/Assets/Prefabs/Player/Player.prefab
+index 0a3194d..b823171 100644
+--- a/Grave Builder Project/Assets/Prefabs/Player/Player.prefab	
++++ b/Grave Builder Project/Assets/Prefabs/Player/Player.prefab	
+@@ -233,7 +233,7 @@ Rigidbody2D:
+   m_Mass: 1
+   m_LinearDrag: 0
+   m_AngularDrag: 0.05
+-  m_GravityScale: 200
++  m_GravityScale: 500
+   m_Material: {fileID: 0}
+   m_Interpolate: 0
+   m_SleepingMode: 1
 -- 
 2.36.0.windows.1
 
