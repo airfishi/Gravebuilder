@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 1439530813087519739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -14, y: -916, z: 0}
-  m_LocalScale: {x: 1500, y: 1500, z: 1}
+  m_LocalScale: {x: 2600, y: 2600, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -113,7 +113,9 @@ MonoBehaviour:
   grounded: 0
   movingRight: 0
   movingLeft: 0
-  endScenes: 0
+  slamming: 0
+  mainCanvas: {fileID: 0}
+  other: {fileID: 0}
 --- !u!50 &8948852884702181203
 Rigidbody2D:
   serializedVersion: 4
@@ -129,7 +131,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 200
+  m_GravityScale: 500
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
