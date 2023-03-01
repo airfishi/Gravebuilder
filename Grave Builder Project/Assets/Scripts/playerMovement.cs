@@ -47,12 +47,12 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
-        jump = new Vector3(0, 1300, 0);
+        jump = new Vector3(0, 3600, 0);
         speed = 1500;
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 200;
+        maxJumpTime = 100;
         movingLeft = false;
         movingRight = false;
         dead = false;
