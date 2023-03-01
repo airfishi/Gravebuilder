@@ -37,7 +37,7 @@ public class killSlime : MonoBehaviour
             int xpos = Mathf.RoundToInt(transform.position.x / 500) * 500;
             int ypos = Mathf.RoundToInt(transform.position.y / 500) * 500;
             
-            spawnloc = new Vector3(xpos,ypos-180, transform.position.z);
+            spawnloc = new Vector3(xpos,ypos+0, transform.position.z);
 
             GameObject newEnemy = (GameObject)Instantiate(block,spawnloc,Quaternion.Euler(0,0,0), gameScreen.transform);
             
