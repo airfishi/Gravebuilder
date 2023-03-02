@@ -6,6 +6,7 @@ public class MoveCamera : MonoBehaviour
 {
     
     private GameObject well;
+    private LevelUp levelUp;
 
     private Vector3 moveBy = Vector3.zero;
     private int numBlocksInLevel = 0;
@@ -18,7 +19,7 @@ public class MoveCamera : MonoBehaviour
 
     void Start()
     {
-
+        levelUp = GetComponent<LevelUp>();
         well = transform.parent.transform.GetChild(0).transform.GetChild(0).transform.GetChild(4).gameObject;
 
         for (int i = 0; i < numBlocksInColumn; i++)    //Iterate through ys
