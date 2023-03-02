@@ -82,6 +82,7 @@ public class MoveCamera : MonoBehaviour
             well.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             well.GetComponent<large_slime_spawning>().increaseYSpawn();
             level++;
+            levelUp.addEffect();
 
             if(level%numBlocksInColumn== 0)                                                     //Clone background and torches every 15 blocks
             {

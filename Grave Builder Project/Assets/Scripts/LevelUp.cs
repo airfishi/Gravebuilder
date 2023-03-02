@@ -8,7 +8,7 @@ public class LevelUp : MonoBehaviour
     // Start is called before the first frame update
     private int time;
     public GameObject well;
-    void Start()
+    public void addEffect() 
     {
         //well = transform.parent.transform.GetChild(0).transform.GetChild(0).transform.GetChild(4).gameObject;
         System.Random rnd = new System.Random();
@@ -33,6 +33,7 @@ public class LevelUp : MonoBehaviour
 
         }
     }
+    /*
     private void Update()
     {
         time++;
@@ -41,4 +42,5 @@ public class LevelUp : MonoBehaviour
             Destroy(this);
         }
     }
+    */
 }
