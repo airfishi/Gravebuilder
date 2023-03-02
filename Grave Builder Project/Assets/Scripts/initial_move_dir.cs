@@ -36,7 +36,7 @@ public class initial_move_dir : MonoBehaviour
             if (changeTo == 1) dirX = -magnitude;
             else dirX = magnitude;
         }
-        else if (other.gameObject.transform.position.y >= slimeBody.position.y)
+        else if (other.gameObject.transform.position.y >= slimeBody.position.y-110)
         {
             if (GetComponent<Transform>().position.x > rightScreen) dirX = -magnitude;
             else if (GetComponent<Transform>().position.x < leftScreen) dirX = magnitude;
