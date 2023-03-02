@@ -5,10 +5,10 @@ using UnityEngine;
 public class MoveCamera : MonoBehaviour
 {
     
-    public GameObject well;
+    private GameObject well;
 
     private Vector3 moveBy = Vector3.zero;
-    private int numBlocksInLevel = 1;
+    private int numBlocksInLevel = 0;
     private int blockSize = 250;
     private int numBlocksInRow = 13;
     private int numBlocksInColumn = 16;//Remember block array does not have this var attached
@@ -18,6 +18,9 @@ public class MoveCamera : MonoBehaviour
 
     void Start()
     {
+
+        well = transform.parent.transform.GetChild(0).transform.GetChild(0).transform.GetChild(4).gameObject;
+
         for (int i = 0; i < numBlocksInColumn; i++)    //Iterate through ys
         {
             blocks[i] = new bool[numBlocksInRow]; 
@@ -26,7 +29,8 @@ public class MoveCamera : MonoBehaviour
                 blocks[i][j] = false;
             }
         }
-        moveBy.y = numBlocksInLevel * blockSize;
+        //moveBy.y = numBlocksInLevel * blockSize;
+        moveBy.y = blockSize;
     }
 
     // Update is called once per frame
