@@ -13,13 +13,17 @@ public class large_slime_spawning : MonoBehaviour
     private GameObject gameScreen;
 
     private int xspawn;
+    private int yspawn = 2000;
     private int posneg;
     System.Random rand = new System.Random();
 
     void Start(){
         gameScreen = gameObject.transform.parent.gameObject;
     }
-
+    public void increaseYSpawn()
+    {
+        yspawn += 250;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -34,7 +38,7 @@ public class large_slime_spawning : MonoBehaviour
             var upperbound = 2600;
             var xspawn = rand.Next(lowerbound,upperbound);
 
-            Vector3 spawnPosition = new Vector3(xspawn,2000,0);
+            Vector3 spawnPosition = new Vector3(xspawn,yspawn,0);
             GameObject newEnemy = (GameObject)Instantiate(slime_type,spawnPosition,Quaternion.Euler(0,0,0), gameScreen.transform);
         }
     }

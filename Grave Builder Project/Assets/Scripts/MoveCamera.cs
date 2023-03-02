@@ -7,16 +7,18 @@ public class MoveCamera : MonoBehaviour
     
     public GameObject well;
 
-
-    private bool[][] blocks = new bool[26][];//y comes first for efficiency
     private Vector3 moveBy = Vector3.zero;
     private int numBlocksInLevel = 1;
     private int blockSize = 250;
     private int numBlocksInRow = 13;
+    private int numBlocksInColumn = 16;//Remember block array does not have this var attached
+    private int level = 1;
+
+    private bool[][] blocks = new bool[16][];//y comes first for efficiency
 
     void Start()
     {
-        for (int i = 0; i < 26; i++)    //Iterate through ys
+        for (int i = 0; i < numBlocksInColumn; i++)    //Iterate through ys
         {
             blocks[i] = new bool[numBlocksInRow]; 
             for (int j = 0; j < numBlocksInRow; j++)    //Iterate through xs
@@ -35,7 +37,7 @@ public class MoveCamera : MonoBehaviour
     }
     public void gravity()
     {
-        for(int i = 25; i > 0; i--)
+        for(int i = numBlocksInColumn-1; i > 0; i--)
         {
             for(int j = 0; j < numBlocksInRow; j++)
             {
@@ -51,7 +53,7 @@ public class MoveCamera : MonoBehaviour
     public void checkAndMove()
     {
         int levels = 0;
-        for (int i = 0; i < 26; i++)//Iterate through y values
+        for (int i = 0; i < numBlocksInColumn; i++)//Iterate through y values
         {
             levels++;
             for (int j = 0; j < numBlocksInRow; j++)    //Iterate through x values
@@ -71,9 +73,18 @@ public class MoveCamera : MonoBehaviour
         if (levels >= numBlocksInLevel)
         {
             Debug.Log("MOVING!!!");
-            GetComponent<Transform>().position += moveBy * (levels - numBlocksInLevel + 1);
+            GetComponent<Transform>().position += moveBy * (levels - numBlocksInLevel + 1);     //Move up objects
             well.transform.position += moveBy * (levels - numBlocksInLevel + 1);
-            for(int i = 0; i < numBlocksInLevel * (levels - numBlocksInLevel + 1); i++)
+            well.GetComponent<large_slime_spawning>().increaseYSpawn();
+            level++;
+
+            if(level%numBlocksInColumn== 0)                                                     //Clone background and torches every 15 blocks
+            {
+
+            }
+            
+
+            for (int i = 0; i < numBlocksInLevel * (levels - numBlocksInLevel + 1); i++)         //Remove Row from Abstraction
             {
                 for(int j = 0; j < numBlocksInRow; j++)
                 {
