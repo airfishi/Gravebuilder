@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: well
       value: 
       objectReference: {fileID: 5173104334237794185}
+    - target: {fileID: 3065238988229989209, guid: 191b2840684d3714f85d2ab5ec9f25b2, type: 3}
+      propertyPath: well
+      value: 
+      objectReference: {fileID: 5173104334237794185}
     - target: {fileID: 7897267136860694414, guid: 191b2840684d3714f85d2ab5ec9f25b2, type: 3}
       propertyPath: well
       value: 

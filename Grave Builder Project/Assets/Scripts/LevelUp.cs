@@ -7,10 +7,10 @@ public class LevelUp : MonoBehaviour
 {
     // Start is called before the first frame update
     private int time;
-    private GameObject well;
+    public GameObject well;
     void Start()
     {
-        well = transform.parent.transform.GetChild(0).transform.GetChild(0).transform.GetChild(4).gameObject;
+        //well = transform.parent.transform.GetChild(0).transform.GetChild(0).transform.GetChild(4).gameObject;
         System.Random rnd = new System.Random();
         int num = rnd.Next(0,3);
         switch(num){
