@@ -43,7 +43,7 @@ public class MoveCamera : MonoBehaviour
                 {
                     blocks[i][j] = false;
                     blocks[i - 1][j] = true;
-                    Debug.Log("Moved " + i + "," + j + "Down by 1.");
+                    //Debug.Log("Moved " + i + "," + j + "Down by 1.");
                 }
             }
         }
@@ -91,6 +91,6 @@ public class MoveCamera : MonoBehaviour
             yindex++;
         }
         blocks[yindex][xindex] = true;
-        Debug.Log("Added at " + yindex + "," + xindex);
+        //Debug.Log("Added at " + yindex + "," + xindex);
     }        
 }

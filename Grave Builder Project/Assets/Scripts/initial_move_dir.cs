@@ -8,6 +8,8 @@ public class initial_move_dir : MonoBehaviour
     public GameObject large_slime;
     //Vector2 speed = Vector2.zero;
 
+    private Rigidbody2D slimeBody;
+
     private float dirX;
     private float magnitude = 500;
     System.Random rand = new System.Random();
@@ -19,25 +21,30 @@ public class initial_move_dir : MonoBehaviour
     {
         dirX = 0;
         animator = GetComponent<Animator>();
+        slimeBody = large_slime.transform.GetChild(0).GetComponent<Rigidbody2D>();
     }
     
-    void OnCollisionEnter2D(){
-        if (dirX == 0)
+    void OnCollisionEnter2D(Collision2D other){
+        if (other.gameObject.transform.position.y >= slimeBody.position.y)
         {
-            if(animator)
-                animator.SetBool("isLanding", true);
-            //randomly start the movement left or right when it lands
-            int changeTo = rand.Next(2);
-            if (changeTo == 1) dirX = -magnitude;
-            else dirX = magnitude;
+            if (dirX == 0)
+            {
+                if (animator)
+                    animator.SetBool("isLanding", true);
+                //randomly start the movement left or right when it lands
+                int changeTo = rand.Next(2);
+                if (changeTo == 1) dirX = -magnitude;
+                else dirX = magnitude;
+            }
+            else if (GetComponent<Transform>().position.x > rightScreen) dirX = -magnitude;
+            else if (GetComponent<Transform>().position.x < leftScreen) dirX = magnitude;
+            else if (dirX == -magnitude) dirX = magnitude; //swap the direction when slime collides
+            else dirX = -magnitude;
+            slimeBody.position = new Vector2(slimeBody.position.x + dirX / 10, slimeBody.position.y);
         }
-        else if (GetComponent<Transform>().position.x > rightScreen) dirX = -magnitude;
-        else if (GetComponent<Transform>().position.x < leftScreen) dirX = magnitude;
-        else if (dirX == -magnitude) dirX = magnitude; //swap the direction when slime collides
-        else dirX = -magnitude;
     }
 
     void Update(){
-        large_slime.transform.GetChild(0).GetComponent<Rigidbody2D>().velocity = new Vector2(dirX, large_slime.transform.GetChild(0).GetComponent<Rigidbody2D>().velocity.y);
+        slimeBody.velocity = new Vector2(dirX, slimeBody.velocity.y);
     }    
 }
