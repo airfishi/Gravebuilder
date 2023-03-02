@@ -71,9 +71,9 @@ public class MoveCamera : MonoBehaviour
         if (levels >= numBlocksInLevel)
         {
             Debug.Log("MOVING!!!");
-            GetComponent<Transform>().position += moveBy;
-            well.transform.position += moveBy;
-            for(int i = 0; i < numBlocksInLevel; i++)
+            GetComponent<Transform>().position += moveBy * (levels - numBlocksInLevel + 1);
+            well.transform.position += moveBy * (levels - numBlocksInLevel + 1);
+            for(int i = 0; i < numBlocksInLevel * (levels - numBlocksInLevel + 1); i++)
             {
                 for(int j = 0; j < numBlocksInRow; j++)
                 {

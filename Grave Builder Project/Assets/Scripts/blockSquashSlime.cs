@@ -17,7 +17,7 @@ public class blockSquashSlime : MonoBehaviour
         if (collision.gameObject.tag.Equals("MediumSlime"))
         {
 
-            if (collision.transform.position.y+200 < block.position.y)
+            if (collision.transform.position.y+200 < block.position.y && (collision.transform.position.x < block.position.x + 300 && collision.transform.position.x > block.position.x - 300))
             {
                 Debug.Log("Destroyed!");
                 Destroy(collision.gameObject);
