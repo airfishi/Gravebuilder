@@ -22,6 +22,11 @@ public class killSlime : MonoBehaviour
         cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+            Destroy(transform.parent.gameObject);
+    }
 
     void OnDestroy(){
         //Debug.Log(gameScreen); //should be gameScreen, but cannot directly reference
