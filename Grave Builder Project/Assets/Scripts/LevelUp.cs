@@ -24,7 +24,7 @@ public class LevelUp : MonoBehaviour
                 Debug.Log("LEVEL UP: Slime Clumping Increased");
                 break;
             case 2:         //Increase the block height required to level up
-                GetComponent<MoveCamera>().numBlocksInLevel++;
+                GetComponent<MoveCamera>().incBlockInLevel();
                 Debug.Log("LEVEL UP: Level Height Increased");
                 break;
             case 3:         //No Effect(Yay)
