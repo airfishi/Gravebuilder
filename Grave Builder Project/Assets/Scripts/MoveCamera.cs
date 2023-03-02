@@ -9,7 +9,7 @@ public class MoveCamera : MonoBehaviour
     private LevelUp levelUp;
 
     private Vector3 moveBy = Vector3.zero;
-    private int numBlocksInLevel = 0;
+    public int numBlocksInLevel = 0;
     private int blockSize = 250;
     private int numBlocksInRow = 13;
     private int numBlocksInColumn = 16;//Remember block array does not have this var attached
