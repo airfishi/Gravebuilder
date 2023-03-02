@@ -30,7 +30,7 @@ public class blockSquashSlime : MonoBehaviour
         else if (collision.gameObject.tag.Equals("LargeSlime"))
         {
 
-            if (collision.transform.position.y -100 < block.position.y && (collision.transform.position.x < block.position.x+250 && collision.transform.position.x > block.position.x-250))
+            if (collision.transform.position.y -100 < block.position.y && (collision.transform.position.x < block.position.x+300 && collision.transform.position.x > block.position.x-300))
             {
                 Debug.Log("Destroyed!");
                 Destroy(collision.gameObject);

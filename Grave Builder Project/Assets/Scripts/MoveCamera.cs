@@ -8,17 +8,17 @@ public class MoveCamera : MonoBehaviour
     public GameObject well;
 
 
-    private bool[][] blocks = new bool[26][];
+    private bool[][] blocks = new bool[26][];//y comes first for efficiency
     private Vector3 moveBy = Vector3.zero;
     private int numBlocksInLevel = 1;
     private int blockSize = 250;
 
     void Start()
     {
-        for (int i = 0; i < 26; i++)
+        for (int i = 0; i < 26; i++)    //Iterate through ys
         {
             blocks[i] = new bool[26]; 
-            for (int j = 0; j < 26; j++)
+            for (int j = 0; j < 26; j++)    //Iterate through xs
             {
                 blocks[i][j] = false;
             }
@@ -42,6 +42,7 @@ public class MoveCamera : MonoBehaviour
                 {
                     blocks[i][j] = false;
                     blocks[i - 1][j] = true;
+                    Debug.Log("Moved " + i + "," + j + "Down by 1.");
                 }
             }
         }
@@ -49,14 +50,15 @@ public class MoveCamera : MonoBehaviour
     public void checkAndMove()
     {
         int levels = 0;
-        for (int i = 0; i < 26; i++)
+        for (int i = 0; i < 26; i++)//Iterate through y values
         {
             levels++;
-            for (int j = 0; j < 26; j++)
+            for (int j = 0; j < 26; j++)    //Iterate through x values
             {
                 if (blocks[i][j] != true)
                 {
                     levels--;
+                    //Debug.Log("Num Blocks in Last Level:" + j);
                     break;
                 }
             }
@@ -82,8 +84,12 @@ public class MoveCamera : MonoBehaviour
     }
     public void addBlock(int ypos, int xpos)
     {
-        int yindex = (ypos / 250)+5;
-        int xindex = (xpos / 250)+14;
+        int yindex = (ypos / 250)+4;
+        int xindex = (xpos / 500)+7;
+        while(blocks[yindex][xindex]){
+            yindex++;
+        }
         blocks[yindex][xindex] = true;
+        Debug.Log("Added at " + yindex + "," + xindex);
     }        
 }
