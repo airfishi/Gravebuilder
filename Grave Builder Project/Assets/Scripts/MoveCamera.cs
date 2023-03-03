@@ -6,24 +6,32 @@ public class MoveCamera : MonoBehaviour
 {
     
     public GameObject well;
+    private LevelUp levelUp;
 
-
-    private bool[][] blocks = new bool[26][];
     private Vector3 moveBy = Vector3.zero;
     private int numBlocksInLevel = 1;
     private int blockSize = 250;
+    private int numBlocksInRow = 13;
+    private int numBlocksInColumn = 16;//Remember block array does not have this var attached
+    private int level = 1;
+
+    private bool[][] blocks = new bool[16][];//y comes first for efficiency
 
     void Start()
     {
-        for (int i = 0; i < 26; i++)
+        levelUp = GetComponent<LevelUp>();
+        //well = transform.parent.transform.GetChild(0).transform.GetChild(0).transform.GetChild(4).gameObject;
+
+        for (int i = 0; i < numBlocksInColumn; i++)    //Iterate through ys
         {
-            blocks[i] = new bool[26]; 
-            for (int j = 0; j < 26; j++)
+            blocks[i] = new bool[numBlocksInRow]; 
+            for (int j = 0; j < numBlocksInRow; j++)    //Iterate through xs
             {
                 blocks[i][j] = false;
             }
         }
         moveBy.y = numBlocksInLevel * blockSize;
+        //moveBy.y = blockSize;
     }
 
     // Update is called once per frame
@@ -34,14 +42,15 @@ public class MoveCamera : MonoBehaviour
     }
     public void gravity()
     {
-        for(int i = 25; i > 0; i--)
+        for(int i = numBlocksInColumn-1; i > 0; i--)
         {
-            for(int j = 0; j < 26; j++)
+            for(int j = 0; j < numBlocksInRow; j++)
             {
                 if (blocks[i][j] && !blocks[i - 1][j])
                 {
                     blocks[i][j] = false;
                     blocks[i - 1][j] = true;
+                    //Debug.Log("Moved " + i + "," + j + "Down by 1.");
                 }
             }
         }
@@ -49,14 +58,15 @@ public class MoveCamera : MonoBehaviour
     public void checkAndMove()
     {
         int levels = 0;
-        for (int i = 0; i < 26; i++)
+        for (int i = 0; i < numBlocksInColumn; i++)//Iterate through y values
         {
             levels++;
-            for (int j = 0; j < 26; j++)
+            for (int j = 0; j < numBlocksInRow; j++)    //Iterate through x values
             {
                 if (blocks[i][j] != true)
                 {
                     levels--;
+                    //Debug.Log("Num Blocks in Last Level:" + j);
                     break;
                 }
             }
@@ -68,11 +78,21 @@ public class MoveCamera : MonoBehaviour
         if (levels >= numBlocksInLevel)
         {
             Debug.Log("MOVING!!!");
-            GetComponent<Transform>().position += moveBy;
-            well.transform.position += moveBy;
-            for(int i = 0; i < numBlocksInLevel; i++)
+            GetComponent<Transform>().position += moveBy * (levels - numBlocksInLevel + 1);     //Move up objects
+            well.transform.position += moveBy * (levels - numBlocksInLevel + 1);
+            well.GetComponent<large_slime_spawning>().increaseYSpawn();
+            level++;
+            levelUp.addEffect();
+
+            if(level%numBlocksInColumn== 0)                                                     //Clone background and torches every 15 blocks
             {
-                for(int j = 0; j < 26; j++)
+
+            }
+            
+
+            for (int i = 0; i < numBlocksInLevel * (levels - numBlocksInLevel + 1); i++)         //Remove Row from Abstraction
+            {
+                for(int j = 0; j < numBlocksInRow; j++)
                 {
                     blocks[i][j] = false;
                 }
@@ -82,8 +102,17 @@ public class MoveCamera : MonoBehaviour
     }
     public void addBlock(int ypos, int xpos)
     {
-        int yindex = (ypos / 250)+5;
-        int xindex = (xpos / 250)+14;
+        int yindex = (ypos / 250)+4;
+        int xindex = (xpos / 500)+7;
+        while(blocks[yindex][xindex]){
+            yindex++;
+        }
         blocks[yindex][xindex] = true;
+        //Debug.Log("Added at " + yindex + "," + xindex);
     }        
+
+    public void incBlockInLevel()
+    {
+        numBlocksInLevel++;
+    }
 }
