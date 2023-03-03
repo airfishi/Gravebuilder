@@ -100,8 +100,9 @@ public class playerMovement : MonoBehaviour
                     }
                     scoreManager.instance.AddScore();
                 }
-                else
+                else //part where the player dies
                 {
+
                     playerSound.Stop();
                     playerSound.clip = die;
                     playerSound.loop = false;
@@ -295,7 +296,8 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("isDying", true);
             if (!playerSound.isPlaying)
             {
-                EndGame();
+                livesManager.instance.loseLife();
+                Destroy(gameObject);
             }
         }    
     }
@@ -314,13 +316,6 @@ public class playerMovement : MonoBehaviour
         jumpTime = durationPenalty;
         playerBody.AddForce(jump * strength, ForceMode2D.Force);
         Debug.Log("JUMPING!!!");
-    }
-
-    private void EndGame()
-    {
-        mainCanvas.gameObject.SetActive(false);
-
-        other.gameObject.SetActive(true);
     }
 }
 
