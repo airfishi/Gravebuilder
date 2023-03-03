@@ -35,8 +35,8 @@ public class playerMovement : MonoBehaviour
     public bool movingLeft;
     public bool slamming;
     private bool jumpFall;
-    private int jumpTime;
-    private int maxJumpTime;
+    private float jumpTime;
+    private float maxJumpTime;
 
     //extras
     private bool dead;
@@ -53,7 +53,7 @@ public class playerMovement : MonoBehaviour
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 100;
+        maxJumpTime = 0.3f;
         movingLeft = false;
         movingRight = false;
         dead = false;
@@ -257,7 +257,8 @@ public class playerMovement : MonoBehaviour
             {
                 if (jumping)
                 {
-                    jumpTime++;
+                    jumpTime+=Time.deltaTime;
+                    Debug.Log(jumpTime);
                     animator.SetBool("isJumping", true);
                 }
                 if (jumping && ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime))
@@ -308,7 +309,7 @@ public class playerMovement : MonoBehaviour
         //Debug.Log("JUMPING!!!");
     }
 
-    private void Jump(int strength, int durationPenalty)
+    private void Jump(int strength, float durationPenalty)
     {
         jumping = true;
         jumpTime = durationPenalty;
