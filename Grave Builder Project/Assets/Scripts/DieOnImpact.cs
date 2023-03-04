@@ -10,13 +10,14 @@ public class DieOnImpact : MonoBehaviour
     private void Start()
     {
         gameScreen = gameObject.transform.parent.gameObject;
-        player = gameScreen.transform.Find("Player").gameObject;
+        player = gameScreen.transform.Find("Player1").gameObject;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
         if(collision.gameObject.tag == "Player")
         {
-            player.GetComponent<playerMovement>().beginInvulnerable();
+            GameObject.FindGameObjectWithTag("Player").gameObject.GetComponent<playerMovement>().beginInvulnerable();
             Destroy(transform.gameObject);
         }
         else

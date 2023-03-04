@@ -44,7 +44,7 @@ public class large_slime_spawning : MonoBehaviour
                 var lowerbound = -3200;
                 var upperbound = 2600;
                 var xspawn = rand.Next(lowerbound, upperbound);
-                var type = rand.Next(0, 12);
+                var type = rand.Next(0, 5);
 
                 Vector3 spawnPosition = new Vector3(xspawn, yspawn, 0);
                 GameObject newObject;
