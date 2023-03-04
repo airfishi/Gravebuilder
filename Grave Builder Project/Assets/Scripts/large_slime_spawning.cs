@@ -44,23 +44,26 @@ public class large_slime_spawning : MonoBehaviour
                 var lowerbound = -3200;
                 var upperbound = 2600;
                 var xspawn = rand.Next(lowerbound, upperbound);
-                var type = rand.Next(0, 12);
+                var type = rand.Next(0, 20);
 
                 Vector3 spawnPosition = new Vector3(xspawn, yspawn, 0);
                 GameObject newObject;
-                if (type >= 3)
+                if (type >= 7)
+                {
+                    newObject = (GameObject)Instantiate(slime_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+                }else if (type == 6)
                 {
                     newObject = (GameObject)Instantiate(slime_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
                 }
-                else if (type == 2)
+                else if (type == 4 || type == 3)
                 {
                     newObject = (GameObject)Instantiate(scoreBonus, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
                 }
-                else if (type == 1)
+                else if (type == 1 || type == 2)
                 {
                     newObject = (GameObject)Instantiate(invulnerability_upgrade, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
                 }
-                else if (type == 0)
+                else if (type == 0 || type == 5)
                 {
                     int xpos = Mathf.RoundToInt(spawnPosition.x / 500) * 500;
                     int ypos = Mathf.RoundToInt(spawnPosition.y / 250) * 250;

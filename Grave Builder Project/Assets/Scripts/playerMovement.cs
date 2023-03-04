@@ -44,6 +44,8 @@ public class playerMovement : MonoBehaviour
     private bool invulnerable;
     private float invulnerableTime;
 
+    private static bool isFirst = true;
+
     public GameObject mainCanvas;
     public GameObject other;
 
@@ -63,7 +65,8 @@ public class playerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameStart = true;
         invulnerableTime = 0;
-        invulnerable = true;
+        if(!isFirst)
+            invulnerable = true;
         GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
 
     }
@@ -311,6 +314,7 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("isDying", true);
             if (!playerSound.isPlaying)
             {
+                isFirst = false;
                 livesManager.instance.loseLife();
                 Destroy(gameObject);
             }
