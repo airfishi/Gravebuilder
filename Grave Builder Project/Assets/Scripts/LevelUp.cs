@@ -8,7 +8,7 @@ public class LevelUp : MonoBehaviour
     // Start is called before the first frame update
     private int time;
     public GameObject well;
-    public void addEffect() 
+    public String addEffect() 
     {
         //well = transform.parent.transform.GetChild(0).transform.GetChild(0).transform.GetChild(4).gameObject;
         System.Random rnd = new System.Random();
@@ -17,20 +17,15 @@ public class LevelUp : MonoBehaviour
             case 0:         //Accelerate Slime Spawning
                 well.GetComponent<large_slime_spawning>().secondsBetweenSpawn *= 2;
                 well.GetComponent<large_slime_spawning>().secondsBetweenSpawn /= 3;
-                Debug.Log(":EVEL UP: Slimes Spawn  Faster!");
-                break;
+                return("LEVEL UP: Slimes Spawn  Faster!");
             case 1:         //Spawn another slime, but spawn less frequently.
                 well.GetComponent<large_slime_spawning>().clumpNumber++;
-                Debug.Log("LEVEL UP: Slime Clumping Increased");
-                break;
+                return("LEVEL UP: Slime Clumping Increased");
             case 2:         //Increase the block height required to level up
                 GetComponent<MoveCamera>().incBlockInLevel();
-                Debug.Log("LEVEL UP: Level Height Increased");
-                break;
-            case 3:         //No Effect(Yay)
-                Debug.Log("LEVEL UP!!!!");
-                break;
-
+                return("LEVEL UP: Level Height Increased");
+            default:        //No Effect(Yay)
+                return("LEVEL UP!!!!");
         }
     }
     /*

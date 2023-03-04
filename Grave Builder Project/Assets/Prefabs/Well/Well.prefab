@@ -451,7 +451,8 @@ MonoBehaviour:
   clumpNumber: 1
   elapsedTime: 0
   slime_type: {fileID: 6057649563210529295, guid: 3f487223f3cdc3241b7994229eccc245, type: 3}
-  secondary_type: {fileID: 3970329439537998615, guid: af2cb4544e3be1b4297c09198817ed2a, type: 3}
+  invulnerability_upgrade: {fileID: 3970329439537998615, guid: af2cb4544e3be1b4297c09198817ed2a, type: 3}
+  block: {fileID: 5873832888071387712, guid: 7b3b02d1c30eed1468663df965a61e77, type: 3}
 --- !u!82 &4721883272047988836
 AudioSource:
   m_ObjectHideFlags: 0

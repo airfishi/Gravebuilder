@@ -8,6 +8,7 @@ public class MoveCamera : MonoBehaviour
     public GameObject well;
     public GameObject background;
     public GameObject score;
+    public GameObject text;
     private LevelUp levelUp;
 
     private Vector3 moveBy = Vector3.zero;
@@ -87,7 +88,10 @@ public class MoveCamera : MonoBehaviour
             level++;
             levelUp.addEffect();
 
-            if(level%numBlocksInColumn == 0)                                                     //Clone background and torches every 15 blocks
+            GameObject newObject = (GameObject)Instantiate(text, new Vector3(transform.position.x,transform.position.y+600,transform.position.z+190), Quaternion.Euler(0, 0, 0), background.transform.parent);
+            newObject.GetComponent<FadeOut>().setText(levelUp.addEffect());
+
+            if (level%numBlocksInColumn == 0)                                                     //Clone background and torches every 15 blocks
             {
                 Vector3 spawnLoc = new Vector3(background.transform.position.x, background.transform.position.y+(moveBy.y*level*numBlocksInColumn), background.transform.position.z);
                 GameObject newWall = (GameObject)Instantiate(background, spawnLoc, Quaternion.Euler(0, 0, 0), background.transform.parent);

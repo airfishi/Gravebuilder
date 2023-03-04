@@ -8,6 +8,7 @@ public class FadeOut : MonoBehaviour
 {
     // Start is called before the first frame update
     float timer;
+    public TextMeshProUGUI text;
     void Start()
     {
         timer = 0;
@@ -21,5 +22,10 @@ public class FadeOut : MonoBehaviour
         {
            Destroy(transform.gameObject);
         }
+    }
+
+    public void setText(string newText)
+    {
+        text.text = newText;
     }
 }

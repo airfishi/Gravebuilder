@@ -11,7 +11,9 @@ public class large_slime_spawning : MonoBehaviour
     public float clumpNumber = 1;
     public float elapsedTime = 0.0f;
     public GameObject slime_type;
-    public GameObject secondary_type;
+    public GameObject invulnerability_upgrade;
+    public GameObject block;
+    public GameObject scoreBonus;
     private GameObject gameScreen;
     
     private int xspawn;
@@ -42,19 +44,25 @@ public class large_slime_spawning : MonoBehaviour
                 var lowerbound = -3200;
                 var upperbound = 2600;
                 var xspawn = rand.Next(lowerbound, upperbound);
-                var type = rand.Next(0, 10);
+                var type = rand.Next(0, 11);
 
                 Vector3 spawnPosition = new Vector3(xspawn, yspawn, 0);
                 GameObject newObject;
-                if (type >= 2)
+                if (type >= 3)
                 {
                     newObject = (GameObject)Instantiate(slime_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
                 }
-                else
+                else if(type == 2)
                 {
-                    newObject = (GameObject)Instantiate(secondary_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+                    newObject = (GameObject)Instantiate(scoreBonus, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
                 }
-            }
+                else if(type == 1)
+                {
+                    newObject = (GameObject)Instantiate(invulnerability_upgrade, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+                }else if(type == 0)
+                {
+                    newObject = (GameObject)Instantiate(block, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+                }
         }
     }
 }
