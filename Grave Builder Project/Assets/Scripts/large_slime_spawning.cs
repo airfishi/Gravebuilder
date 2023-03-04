@@ -46,15 +46,13 @@ public class large_slime_spawning : MonoBehaviour
 
                 Vector3 spawnPosition = new Vector3(xspawn, yspawn, 0);
                 GameObject newObject;
-                if (type > 5)
+                if (type >= 2)
                 {
                     newObject = (GameObject)Instantiate(slime_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
-                    Debug.Log("SLIME");
                 }
                 else
                 {
                     newObject = (GameObject)Instantiate(secondary_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
-                    Debug.Log("Potion");
                 }
             }
         }

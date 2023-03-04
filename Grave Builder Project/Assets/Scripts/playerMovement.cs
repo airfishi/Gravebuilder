@@ -178,7 +178,7 @@ public class playerMovement : MonoBehaviour
         if (invulnerable)
         {
             invulnerableTime+= Time.deltaTime;
-            if(invulnerableTime > 5)
+            if(invulnerableTime > 8)
             {
                 invulnerable = false;
                 invulnerableTime = 0;
@@ -271,7 +271,6 @@ public class playerMovement : MonoBehaviour
                 if (jumping)
                 {
                     jumpTime+=Time.deltaTime;
-                    Debug.Log(jumpTime);
                     animator.SetBool("isJumping", true);
                 }
                 if (jumping && ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime))
@@ -327,7 +326,6 @@ public class playerMovement : MonoBehaviour
         jumping = true;
         jumpTime = durationPenalty;
         playerBody.AddForce(jump * strength, ForceMode2D.Force);
-        Debug.Log("JUMPING!!!");
     }
 
     private void EndGame()
