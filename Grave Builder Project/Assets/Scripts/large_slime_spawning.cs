@@ -36,7 +36,7 @@ public class large_slime_spawning : MonoBehaviour
         if (elapsedTime/clumpNumber > secondsBetweenSpawn){
             elapsedTime = 0;
             for (int i = 0; i < clumpNumber; i++)
-            {    
+            {
                 //randomly pick a place between -4200 and 2300 for slime to spawn
                 //xspawn = rand.Next(5000);
                 //posneg = rand.Next(2);
@@ -44,7 +44,7 @@ public class large_slime_spawning : MonoBehaviour
                 var lowerbound = -3200;
                 var upperbound = 2600;
                 var xspawn = rand.Next(lowerbound, upperbound);
-                var type = rand.Next(0, 11);
+                var type = rand.Next(0, 5);
 
                 Vector3 spawnPosition = new Vector3(xspawn, yspawn, 0);
                 GameObject newObject;
@@ -52,17 +52,19 @@ public class large_slime_spawning : MonoBehaviour
                 {
                     newObject = (GameObject)Instantiate(slime_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
                 }
-                else if(type == 2)
+                else if (type == 2)
                 {
                     newObject = (GameObject)Instantiate(scoreBonus, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
                 }
-                else if(type == 1)
+                else if (type == 1)
                 {
                     newObject = (GameObject)Instantiate(invulnerability_upgrade, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
-                }else if(type == 0)
+                }
+                else if (type == 0)
                 {
                     newObject = (GameObject)Instantiate(block, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
                 }
+            }
         }
     }
 }
