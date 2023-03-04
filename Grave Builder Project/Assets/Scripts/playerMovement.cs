@@ -35,12 +35,14 @@ public class playerMovement : MonoBehaviour
     public bool movingLeft;
     public bool slamming;
     private bool jumpFall;
-    private int jumpTime;
-    private int maxJumpTime;
+    private float jumpTime;
+    private float maxJumpTime;
 
     //extras
     private bool dead;
     private bool gameStart;
+    private bool invulnerable;
+    private float invulnerableTime;
 
     public GameObject mainCanvas;
     public GameObject other;
@@ -53,13 +55,14 @@ public class playerMovement : MonoBehaviour
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 100;
+        maxJumpTime = 0.45f;
         movingLeft = false;
         movingRight = false;
         dead = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameStart = true;
+        invulnerableTime = 0;
 
     }
 
@@ -86,7 +89,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "LargeSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y - 100)
+                if ((player.transform.position.y > other.gameObject.transform.position.y - 70) || invulnerable)
                 {
                     //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
@@ -100,8 +103,9 @@ public class playerMovement : MonoBehaviour
                     }
                     scoreManager.instance.AddScore();
                 }
-                else
+                else //part where the player dies
                 {
+
                     playerSound.Stop();
                     playerSound.clip = die;
                     playerSound.loop = false;
@@ -112,7 +116,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "MediumSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y + 30)
+                if ((player.transform.position.y > other.gameObject.transform.position.y + 100) || invulnerable)
                 {
                     //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
@@ -172,6 +176,16 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (invulnerable)
+        {
+            invulnerableTime+= Time.deltaTime;
+            if(invulnerableTime > 8)
+            {
+                invulnerable = false;
+                invulnerableTime = 0;
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 1);
+            }
+        }
         if (!dead)
         {
             //Player Movement (left/right)
@@ -257,7 +271,7 @@ public class playerMovement : MonoBehaviour
             {
                 if (jumping)
                 {
-                    jumpTime++;
+                    jumpTime+=Time.deltaTime;
                     animator.SetBool("isJumping", true);
                 }
                 if (jumping && ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime))
@@ -295,7 +309,8 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("isDying", true);
             if (!playerSound.isPlaying)
             {
-                EndGame();
+                livesManager.instance.loseLife();
+                Destroy(gameObject);
             }
         }    
     }
@@ -308,12 +323,11 @@ public class playerMovement : MonoBehaviour
         //Debug.Log("JUMPING!!!");
     }
 
-    private void Jump(int strength, int durationPenalty)
+    private void Jump(int strength, float durationPenalty)
     {
         jumping = true;
         jumpTime = durationPenalty;
         playerBody.AddForce(jump * strength, ForceMode2D.Force);
-        Debug.Log("JUMPING!!!");
     }
 
     private void EndGame()
@@ -322,5 +336,12 @@ public class playerMovement : MonoBehaviour
 
         other.gameObject.SetActive(true);
     }
+
+    public void beginInvulnerable()
+    {
+        invulnerable = true;
+        GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
+    }
+
 }
 

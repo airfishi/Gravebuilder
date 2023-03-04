@@ -27,6 +27,12 @@ public class scoreManager : MonoBehaviour
 
     }
 
+    public void AddScore(int addable)
+    {
+        score+=addable;
+        scoreText.text = score.ToString();
+    }
+
     public void AddScore()
     {
         score++;
