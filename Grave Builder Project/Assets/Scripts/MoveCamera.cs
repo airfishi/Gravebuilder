@@ -86,7 +86,6 @@ public class MoveCamera : MonoBehaviour
             score.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             well.GetComponent<large_slime_spawning>().increaseYSpawn();
             level++;
-            levelUp.addEffect();
 
             GameObject newObject = (GameObject)Instantiate(text, new Vector3(transform.position.x,transform.position.y+600,transform.position.z+190), Quaternion.Euler(0, 0, 0), background.transform.parent);
             newObject.GetComponent<FadeOut>().setText(levelUp.addEffect());

@@ -341,6 +341,7 @@ public class playerMovement : MonoBehaviour
 
     public void beginInvulnerable()
     {
+        invulnerableTime = 0;
         invulnerable = true;
         GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
     }
