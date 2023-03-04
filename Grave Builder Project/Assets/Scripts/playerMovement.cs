@@ -53,7 +53,7 @@ public class playerMovement : MonoBehaviour
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 0.3f;
+        maxJumpTime = 0.45f;
         movingLeft = false;
         movingRight = false;
         dead = false;
@@ -86,7 +86,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "LargeSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y - 100)
+                if (player.transform.position.y > other.gameObject.transform.position.y - 70)
                 {
                     //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
@@ -112,7 +112,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "MediumSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y + 30)
+                if (player.transform.position.y > other.gameObject.transform.position.y + 100)
                 {
                     //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
