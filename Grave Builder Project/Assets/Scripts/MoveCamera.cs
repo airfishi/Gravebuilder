@@ -7,6 +7,7 @@ public class MoveCamera : MonoBehaviour
     
     public GameObject well;
     public GameObject background;
+    public GameObject score;
     private LevelUp levelUp;
 
     private Vector3 moveBy = Vector3.zero;
@@ -81,6 +82,7 @@ public class MoveCamera : MonoBehaviour
             Debug.Log("MOVING!!!");
             GetComponent<Transform>().position += moveBy * (levels - numBlocksInLevel + 1);     //Move up objects
             well.transform.position += moveBy * (levels - numBlocksInLevel + 1);
+            score.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             well.GetComponent<large_slime_spawning>().increaseYSpawn();
             level++;
             levelUp.addEffect();
