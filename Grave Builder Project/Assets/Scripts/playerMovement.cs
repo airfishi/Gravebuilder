@@ -103,8 +103,9 @@ public class playerMovement : MonoBehaviour
                     }
                     scoreManager.instance.AddScore();
                 }
-                else
+                else //part where the player dies
                 {
+
                     playerSound.Stop();
                     playerSound.clip = die;
                     playerSound.loop = false;
@@ -308,7 +309,8 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("isDying", true);
             if (!playerSound.isPlaying)
             {
-                EndGame();
+                livesManager.instance.loseLife();
+                Destroy(gameObject);
             }
         }    
     }
@@ -340,5 +342,6 @@ public class playerMovement : MonoBehaviour
         invulnerable = true;
         GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
     }
+
 }
 
