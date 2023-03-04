@@ -41,6 +41,8 @@ public class playerMovement : MonoBehaviour
     //extras
     private bool dead;
     private bool gameStart;
+    private bool invulnerable;
+    private float invulnerableTime;
 
     public GameObject mainCanvas;
     public GameObject other;
@@ -60,6 +62,7 @@ public class playerMovement : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameStart = true;
+        invulnerableTime = 0;
 
     }
 
@@ -86,7 +89,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "LargeSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y - 70)
+                if ((player.transform.position.y > other.gameObject.transform.position.y - 70) || invulnerable)
                 {
                     //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
@@ -112,7 +115,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "MediumSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y + 100)
+                if ((player.transform.position.y > other.gameObject.transform.position.y + 100) || invulnerable)
                 {
                     //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
@@ -172,6 +175,16 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (invulnerable)
+        {
+            invulnerableTime+= Time.deltaTime;
+            if(invulnerableTime > 5)
+            {
+                invulnerable = false;
+                invulnerableTime = 0;
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 1);
+            }
+        }
         if (!dead)
         {
             //Player Movement (left/right)
@@ -322,6 +335,12 @@ public class playerMovement : MonoBehaviour
         mainCanvas.gameObject.SetActive(false);
 
         other.gameObject.SetActive(true);
+    }
+
+    public void beginInvulnerable()
+    {
+        invulnerable = true;
+        GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
     }
 }
 
