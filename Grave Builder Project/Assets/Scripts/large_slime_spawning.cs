@@ -62,7 +62,14 @@ public class large_slime_spawning : MonoBehaviour
                 }
                 else if (type == 0)
                 {
+                    int xpos = Mathf.RoundToInt(spawnPosition.x / 500) * 500;
+                    int ypos = Mathf.RoundToInt(spawnPosition.y / 250) * 250;
+
+                    spawnPosition = new Vector3(xpos, ypos + 100, transform.position.z);
                     newObject = (GameObject)Instantiate(block, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+
+                    Transform everything = gameScreen.transform.parent.transform.parent;
+                    everything.Find("Main Camera").GetComponent<MoveCamera>().addBlock(ypos, xpos);
                 }
             }
         }
