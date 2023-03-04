@@ -135,6 +135,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4988355733198665137, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
   m_PrefabInstance: {fileID: 6774475280478519778}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2514070805574058075 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8998195681025475001, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
+  m_PrefabInstance: {fileID: 6774475280478519778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5173104334237794185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1858099489765637739, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
@@ -151,6 +156,10 @@ PrefabInstance:
       propertyPath: well
       value: 
       objectReference: {fileID: 5173104334237794185}
+    - target: {fileID: 1612357754057929867, guid: 191b2840684d3714f85d2ab5ec9f25b2, type: 3}
+      propertyPath: background
+      value: 
+      objectReference: {fileID: 2514070805574058075}
     - target: {fileID: 3065238988229989209, guid: 191b2840684d3714f85d2ab5ec9f25b2, type: 3}
       propertyPath: well
       value: 
