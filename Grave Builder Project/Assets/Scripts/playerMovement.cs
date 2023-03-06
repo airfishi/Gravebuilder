@@ -39,10 +39,11 @@ public class playerMovement : MonoBehaviour
     private float maxJumpTime;
 
     //extras
-    private bool dead;
+    public bool dead;
     private bool gameStart;
     private bool invulnerable;
     private float invulnerableTime;
+    public bool isTutorial;
 
     private static bool isFirst = true;
 
@@ -65,9 +66,11 @@ public class playerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameStart = true;
         invulnerableTime = 0;
-        if(!isFirst)
+        if (!isFirst)
+        {
             invulnerable = true;
-        GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
+            GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
+        }
 
     }
 
@@ -315,7 +318,14 @@ public class playerMovement : MonoBehaviour
             if (!playerSound.isPlaying)
             {
                 isFirst = false;
-                livesManager.instance.loseLife();
+                if (isTutorial)
+                {
+                    tutorialLivesManager.instance.loseLife();
+                }
+                else
+                {
+                    livesManager.instance.loseLife();
+                }
                 Destroy(gameObject);
             }
         }    
