@@ -16,13 +16,13 @@ public class GameOverAudio : MonoBehaviour
     {
         game = true;
         GetComponent<AudioSource>().clip = gameAudio;
+        GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame
     void Update()
     {
         Debug.Log(GetComponent<AudioSource>().clip + " " + GetComponent<AudioSource>().isPlaying);
-        GetComponent<AudioSource>().Play();
         if (!game && !endScene.activeSelf)
         {
             GetComponent<AudioSource>().Stop();
