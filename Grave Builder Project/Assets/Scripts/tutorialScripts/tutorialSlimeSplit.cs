@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System;
 
 public class tutorialSlimeSplit : MonoBehaviour
 {
@@ -13,45 +15,57 @@ public class tutorialSlimeSplit : MonoBehaviour
 
     //tutorial stuff
     public GameObject prompt2;
+    public GameObject dprompt;
     private GameObject newparent;
-    private bool ready = false;
+    private bool destroySlime = false;
 
     void Start()
     {
-     //   enemy = gameObject.transform.parent.gameObject;    
+        
+        newparent = gameObject;
+        while(!newparent.name.Equals("tutorialEverything"))
+            newparent = newparent.transform.parent.gameObject;
+        newparent = newparent.transform.Find("Canvas").transform.Find("GameScenes").gameObject;
         animator = GetComponent<Animator>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag.Equals("Player")){
-            Debug.Log("In collision");
-            Time.timeScale = 0;
-            StartCoroutine("secondPrompt");
+            if(collision.gameObject.transform.position.y < gameObject.transform.parent.transform.position.y)
+                StartCoroutine("secondPrompt");
+            else{
+                StartCoroutine("deathPrompt");
+            }
         }
     }
 
-    IEnumerable secondPrompt(){
-        //Time.timeScale = 0;
-        Debug.Log("Hit 1");
-        newparent = gameObject;
-        while(!newparent.name.Equals("tutorialEverything"))
-            newparent = newparent.transform.parent.gameObject;
-        Debug.Log(newparent.name + ": Hit 2");
-        newparent = newparent.transform.Find("Canvas").transform.Find("GameScenes").gameObject;
-        Debug.Log(newparent.name + "Should be GameScenes");
+    IEnumerator secondPrompt(){
+
+        Time.timeScale = 0;
         Vector3 adjustment = new Vector3(-1600, 1200, 0);
         prompt2 = (GameObject)Instantiate(prompt2, newparent.transform.position + adjustment, Quaternion.Euler(0,0,0), newparent.transform);
         while(!Input.anyKeyDown)
             yield return null;
-        yield return new WaitForSeconds(2);
+
         Time.timeScale = 1;
-        ready = true;
+        destroySlime = true;
+        Destroy(prompt2);
     }
 
-    private void Update(){
-        if(ready){
+    IEnumerator deathPrompt() {
+        Time.timeScale = 0;
+        Vector3 adjustment = new Vector3(-1600, 1200, 0);
+        dprompt = (GameObject)Instantiate(dprompt, newparent.transform.position + adjustment, Quaternion.Euler(0,0,0), newparent.transform);
+        while(!Input.anyKeyDown)
+            yield return null;
+
+        Time.timeScale = 1;
+        Destroy(dprompt);
+    }
+
+    void Update(){
+        if(destroySlime)
             Destroy(gameObject);
-        }
     }
 
 
