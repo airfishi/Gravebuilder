@@ -22,7 +22,7 @@ public class GameOverAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GetComponent<AudioSource>().clip + " " + GetComponent<AudioSource>().isPlaying);
+        //Debug.Log(GetComponent<AudioSource>().clip + " " + GetComponent<AudioSource>().isPlaying);
         if (!game && !endScene.activeSelf)
         {
             GetComponent<AudioSource>().Stop();
