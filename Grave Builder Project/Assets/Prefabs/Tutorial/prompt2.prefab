@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5422992720578479471}
   m_Layer: 0
-  m_Name: firstPrompt
+  m_Name: prompt2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,16 +98,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hello! Welcome to the tutorial! This hooded red person over here is you,
-    and this green blob is a slime! Jump  on the slime to increase your score!
+  m_text: 'Good job! When you jump on a large slime, two smaller slimes are going
+    to spawn, see if you can jump on both of those!
 
 
-    (use
-    the WASD keys or the arrow keys to move, you can also use spacebar to jump)
-
-
-    Press
-    any key to begin'
+    Press any key to continue'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
