@@ -6,7 +6,7 @@ using UnityEngine;
 public class livesManager : MonoBehaviour
 {
 
-    public int lives = 3;
+    public int lives = 1;
     public TextMeshProUGUI liveCounter;
     public static livesManager instance;
 

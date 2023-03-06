@@ -329,7 +329,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: GameScreen
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 815959739803817805, guid: 43cf44ec5a34f8b4cb244c703dd09e1c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 43cf44ec5a34f8b4cb244c703dd09e1c, type: 3}
 --- !u!1 &6774475279907120133 stripped
 GameObject:

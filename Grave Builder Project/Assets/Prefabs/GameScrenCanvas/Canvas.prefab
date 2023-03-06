@@ -638,7 +638,8 @@ GameObject:
   - component: {fileID: 4988355733198665136}
   - component: {fileID: 4988355733198665151}
   - component: {fileID: 4988355733198665150}
-  - component: {fileID: 4988355733198665149}
+  - component: {fileID: 4004874260082755002}
+  - component: {fileID: 5669301590270323478}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -733,7 +734,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!82 &4988355733198665149
+--- !u!82 &4004874260082755002
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -743,11 +744,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 0b4b07ec661204b40888bda82dd7bdd8, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4106666d3da63544b91ea5c8a9d584f3, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -829,6 +830,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5669301590270323478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4988355733198665148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b542de552d00a984e99abb12ff49dc30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4988355733202173324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: 0b4b07ec661204b40888bda82dd7bdd8, type: 2}
-  AudioSource: {fileID: 4988355733198665149}
+  AudioSource: {fileID: 0}
   ValueText: {fileID: 0}
   MixMode: 0
 --- !u!1 &4988355733329140942
@@ -2132,7 +2145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: 0b4b07ec661204b40888bda82dd7bdd8, type: 2}
-  AudioSource: {fileID: 4988355733198665149}
+  AudioSource: {fileID: 0}
   ValueText: {fileID: 0}
   MixMode: 0
 --- !u!1 &4988355734359194930
@@ -2779,14 +2792,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4652927968691308923, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 20617
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652927968756625559, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4386
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afb83be7064444842a77ed4fba26c0cb, type: 3}
 --- !u!4 &6785024072434392202 stripped
@@ -2888,10 +2893,6 @@ PrefabInstance:
     - target: {fileID: 5477490442067064202, guid: 6665aac8bb3ccdd45a743e39b7dad08c, type: 3}
       propertyPath: m_Name
       value: End Scenes
-      objectReference: {fileID: 0}
-    - target: {fileID: 5477490442067064202, guid: 6665aac8bb3ccdd45a743e39b7dad08c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6665aac8bb3ccdd45a743e39b7dad08c, type: 3}

@@ -39,7 +39,7 @@ public class playerMovement : MonoBehaviour
     private float maxJumpTime;
 
     //extras
-    private bool dead;
+    public bool dead;
     private bool gameStart;
     private bool invulnerable;
     private float invulnerableTime;
