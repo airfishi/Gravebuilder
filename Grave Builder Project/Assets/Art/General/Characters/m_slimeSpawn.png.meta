@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ae90e9cbb992c174e84cfd51d6bfed14
+guid: 176f6509444e56045bc949516da5996b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: large_slime_die (3)_0
+      name: m_slimeSpawn_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 959a46909f6c2e24faf4626cb13e9ca8
-      internalID: -466063716
+      spriteID: 8959d3690bd005448bec60397ae98cb9
+      internalID: -310672585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: large_slime_die (3)_1
+      name: m_slimeSpawn_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 564a00f136f07254b9cbec6105126050
-      internalID: -854619491
+      spriteID: d3dce806c1f744546862f428590e1eac
+      internalID: 2035176462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: large_slime_die (3)_2
+      name: m_slimeSpawn_2
       rect:
         serializedVersion: 2
         x: 0
@@ -173,14 +173,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22fa988bf7fee1948b5272baf040e06d
-      internalID: 1179111530
+      spriteID: 5c233709d73880d4e91c6af58495a0aa
+      internalID: 836258658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: large_slime_die (3)_3
+      name: m_slimeSpawn_3
       rect:
         serializedVersion: 2
         x: 32
@@ -194,14 +194,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b41c8a4a6efd4f149bd9fb3fff2af787
-      internalID: 896779587
+      spriteID: c785742b43403ed4aae5a745f168d1a4
+      internalID: -1726264811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: large_slime_die (3)_4
+      name: m_slimeSpawn_4
       rect:
         serializedVersion: 2
         x: 0
@@ -215,14 +215,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f51ef198843c4348a0f0d29beee246d
-      internalID: -1467238181
+      spriteID: d43324324a0878d4f85dc8bff61c599f
+      internalID: -32617151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: large_slime_die (3)_5
+      name: m_slimeSpawn_5
       rect:
         serializedVersion: 2
         x: 32
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6840d74b19daf246828a740f99a329b
-      internalID: 2048394213
+      spriteID: bd4cc9361c19b4547a98699c6a57026c
+      internalID: 1213280715
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      large_slime_die (3)_5: 2048394213
-      large_slime_die (3)_3: 896779587
-      large_slime_die (3)_2: 1179111530
-      large_slime_die (3)_4: -1467238181
-      large_slime_die (3)_0: -466063716
-      large_slime_die (3)_1: -854619491
+      m_slimeSpawn_5: 1213280715
+      m_slimeSpawn_1: 2035176462
+      m_slimeSpawn_0: -310672585
+      m_slimeSpawn_3: -1726264811
+      m_slimeSpawn_4: -32617151
+      m_slimeSpawn_2: 836258658
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
