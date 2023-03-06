@@ -12,9 +12,16 @@ public class GameOverAudio : MonoBehaviour
 
     private bool game;
 
+    private void Start()
+    {
+        game = true;
+        GetComponent<AudioSource>().clip = gameAudio;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(GetComponent<AudioSource>().clip + " " + GetComponent<AudioSource>().isPlaying);
         GetComponent<AudioSource>().Play();
         if (!game && !endScene.activeSelf)
         {
