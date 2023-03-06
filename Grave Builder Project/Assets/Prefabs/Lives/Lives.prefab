@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7313271667338063520}
   - component: {fileID: 6696211146838671233}
   - component: {fileID: 3197425735632805358}
+  - component: {fileID: 8680246315090418800}
   - component: {fileID: 7481475824107233309}
   m_Layer: 0
   m_Name: Lives
@@ -136,6 +137,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8680246315090418800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5566247900738858444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a343ea0d925291e429e17c897e22610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 1
+  liveCounter: {fileID: 3197425735632805358}
 --- !u!114 &7481475824107233309
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,10 +31,12 @@ public class tutorialSlimeSplit : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag.Equals("Player")){
-            if(collision.gameObject.transform.position.y < gameObject.transform.parent.transform.position.y)
+            Debug.Log("Play position = " + collision.gameObject.transform.position.y);
+            Debug.Log("Slime posiiont = " + gameObject.transform.parent.transform.position.y);
+            if(collision.gameObject.transform.position.y > gameObject.transform.parent.transform.position.y)
                 StartCoroutine("secondPrompt");
             else{
-                StartCoroutine("deathPrompt");
+                tutorialLivesManager.instance.loseLife();
             }
         }
     }
@@ -50,17 +52,6 @@ public class tutorialSlimeSplit : MonoBehaviour
         Time.timeScale = 1;
         destroySlime = true;
         Destroy(prompt2);
-    }
-
-    IEnumerator deathPrompt() {
-        Time.timeScale = 0;
-        Vector3 adjustment = new Vector3(-1600, 1200, 0);
-        dprompt = (GameObject)Instantiate(dprompt, newparent.transform.position + adjustment, Quaternion.Euler(0,0,0), newparent.transform);
-        while(!Input.anyKeyDown)
-            yield return null;
-
-        Time.timeScale = 1;
-        Destroy(dprompt);
     }
 
     void Update(){

@@ -19,9 +19,12 @@ public class tutorialLivesManager : MonoBehaviour
 
     void Start(){
         newparent = gameObject;
-        while(!newparent.name.Equals("tutorialEverything"))
+        /*
+        while(!newparent.name.Equals("tutorialEverything") || !newparent.name.Equals("Everything"))
+            Debug.Log(newparent.name);
             newparent = newparent.transform.parent.gameObject;
         newparent = newparent.transform.Find("Canvas").transform.Find("GameScenes").gameObject;
+        */
         liveCounter.text = $"Lives: {lives}";
     }
 

@@ -64,11 +64,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7637511292709969505, guid: 6484d47aa8a84e4449d857e4b9946285, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2269
+      value: -576
       objectReference: {fileID: 0}
     - target: {fileID: 7637511292709969505, guid: 6484d47aa8a84e4449d857e4b9946285, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1388
+      value: -1127
       objectReference: {fileID: 0}
     - target: {fileID: 7637511292709969505, guid: 6484d47aa8a84e4449d857e4b9946285, type: 3}
       propertyPath: m_LocalPosition.z
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9391d1ded67f93446874f682768949e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dprompt: {fileID: 0}
+  dprompt: {fileID: 6963712260183547526, guid: 3f05aaed6b0acd744a230186e3ca2d0a, type: 3}
   lives: 3
   liveCounter: {fileID: 3814907332183429265}
 --- !u!114 &7243560260993349897 stripped
