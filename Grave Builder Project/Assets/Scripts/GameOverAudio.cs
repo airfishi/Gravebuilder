@@ -14,6 +14,7 @@ public class GameOverAudio : MonoBehaviour
 
     private void Start()
     {
+        //endScene = GameObject.FindGameObjectWithTag("EndScenes");
         game = true;
         GetComponent<AudioSource>().clip = gameAudio;
         GetComponent<AudioSource>().Play();
@@ -22,6 +23,8 @@ public class GameOverAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if(endScene == null)
+         //   endScene = GameObject.FindGameObjectWithTag("EndScenes");
         //Debug.Log(GetComponent<AudioSource>().clip + " " + GetComponent<AudioSource>().isPlaying);
         if (!game && !endScene.activeSelf)
         {

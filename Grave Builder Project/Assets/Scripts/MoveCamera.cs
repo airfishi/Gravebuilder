@@ -6,12 +6,12 @@ public class MoveCamera : MonoBehaviour
 {
     
     public GameObject well;
-    public GameObject player;
     public GameObject background;
     public GameObject score;
     public GameObject text;
     public GameObject livesText;
     private LevelUp levelUp;
+    private GameObject player;
 
     private Vector3 moveBy = Vector3.zero;
     private int numBlocksInLevel = 1;
@@ -83,6 +83,8 @@ public class MoveCamera : MonoBehaviour
         if (levels >= numBlocksInLevel)
         {
             Debug.Log("MOVING!!!");
+            player = GameObject.FindGameObjectWithTag("Player");
+
             GetComponent<Transform>().position += moveBy * (levels - numBlocksInLevel + 1);     //Move up objects
             well.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             score.transform.position += moveBy * (levels - numBlocksInLevel + 1);
