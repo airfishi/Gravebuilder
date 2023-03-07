@@ -82,7 +82,7 @@ public class MoveCamera : MonoBehaviour
         }
         if (levels >= numBlocksInLevel)
         {
-            Debug.Log("MOVING!!!");
+            Debug.Log("MOVING" + numBlocksInLevel);
             player = GameObject.FindGameObjectWithTag("Player");
 
             GetComponent<Transform>().position += moveBy * (levels - numBlocksInLevel + 1);     //Move up objects
@@ -99,12 +99,13 @@ public class MoveCamera : MonoBehaviour
 
             if (level%numBlocksInColumn == 0)                                                     //Clone background and torches every 15 blocks
             {
+                Debug.Log("Backgrounding!!!");
                 Vector3 spawnLoc = new Vector3(background.transform.position.x, background.transform.position.y+(moveBy.y*level*numBlocksInColumn), background.transform.position.z);
                 GameObject newWall = (GameObject)Instantiate(background, spawnLoc, Quaternion.Euler(0, 0, 0), background.transform.parent);
             }
             
 
-            for (int i = 0; i < numBlocksInLevel * (levels - numBlocksInLevel + 1); i++)         //Remove Row from Abstraction
+            for (int i = 0; i < numBlocksInLevel * (levels - numBlocksInLevel + 1); i++)         //Remove Rows from Abstraction
             {
                 for(int j = 0; j < numBlocksInRow; j++)
                 {
@@ -128,5 +129,9 @@ public class MoveCamera : MonoBehaviour
     public void incBlockInLevel()
     {
         numBlocksInLevel++;
+    }
+    public int getLevel()
+    {
+        return level;
     }
 }
