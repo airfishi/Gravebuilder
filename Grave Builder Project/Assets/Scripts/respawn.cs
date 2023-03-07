@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class respawn : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class respawn : MonoBehaviour
     private GameObject endScreen;
 
     private bool quitting = false;
+
+    private int xspawn = 0;
+    private int yspawn = 0;
 
     void Start(){
         gameScreen = gameObject;
@@ -34,11 +38,17 @@ public class respawn : MonoBehaviour
             }
             else{
                 Debug.Log("newplayer was hit");
-                GameObject newPlayer = (GameObject)Instantiate(player, Vector3.zero, Quaternion.Euler(0,0,0), gameScreen.transform);
+                GameObject newPlayer = (GameObject)Instantiate(player, new Vector3(xspawn,yspawn,0), Quaternion.Euler(0,0,0), gameScreen.transform);
                 newPlayer.SetActive(true);
                 //Destroy(gameObject);
             }
         }
+    }
+
+    public void setSpawn(int x, int y)
+    {
+        xspawn = x;
+        yspawn = y;
     }
 
     //activate the end game screen and disable the game screen
