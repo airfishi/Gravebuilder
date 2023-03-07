@@ -53,6 +53,7 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
+        GetComponent<SpriteRenderer>().color = new UnityEngine.Color(255, 255, 255, 1);
         jump = new Vector3(0, 3600, 0);
         speed = 1900;
         jumping = false;
@@ -66,10 +67,10 @@ public class playerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameStart = true;
         invulnerableTime = 0;
+        invulnerable = false;
         if (!isFirst)
         {
-            invulnerable = true;
-            GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
+            beginInvulnerable();
         }
 
     }
@@ -184,14 +185,27 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(GetComponent<SpriteRenderer>().color);
         if (invulnerable)
         {
             invulnerableTime+= Time.deltaTime;
-            if(invulnerableTime > 8)
+            if (invulnerableTime > 8)
             {
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(255, 255, 255, 1);
                 invulnerable = false;
                 invulnerableTime = 0;
-                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 1);
+            }
+            else if (invulnerableTime > 6)
+            {
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0, 150, 255, (0.25f + 0.75f * (1 / (8 - invulnerableTime))));
+            }
+            else if (invulnerableTime > 4)
+            {
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0, 0, 255, (0.25f + 0.75f * (1 / (8 - invulnerableTime))));
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0, 0, 0, (0.25f + 0.75f * (1 / (8 - invulnerableTime))));
             }
         }
         if (!dead)
@@ -357,7 +371,7 @@ public class playerMovement : MonoBehaviour
     {
         invulnerableTime = 0;
         invulnerable = true;
-        GetComponent<SpriteRenderer>().color = new UnityEngine.Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, 0.5f);
+        GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0,0,0, 0.5f);
     }
 
 }
