@@ -326,7 +326,7 @@ public class playerMovement : MonoBehaviour
                 {
                     livesManager.instance.loseLife();
                 }
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
         }    
     }

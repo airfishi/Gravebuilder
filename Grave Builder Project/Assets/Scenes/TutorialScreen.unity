@@ -130,10 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 33055478, guid: f7ad9e3e95f56594c985767d60670f6a, type: 3}
-      propertyPath: dprompt
-      value: 
-      objectReference: {fileID: 6963712260183547526, guid: 3f05aaed6b0acd744a230186e3ca2d0a, type: 3}
     - target: {fileID: 8592904847805760944, guid: f7ad9e3e95f56594c985767d60670f6a, type: 3}
       propertyPath: m_Name
       value: tutorialEverything

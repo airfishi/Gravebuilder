@@ -6,7 +6,7 @@ using UnityEngine;
 public class livesManager : MonoBehaviour
 {
 
-    public int lives = 1;
+    public int lives = 3;
     public TextMeshProUGUI liveCounter;
     public static livesManager instance;
 
@@ -24,10 +24,14 @@ public class livesManager : MonoBehaviour
 
     public void loseLife(){
         lives = --lives;
-        if(lives == 0){
+        if(lives <= 0){
             liveCounter.text = "Lives: DEAD";
         }
         liveCounter.text = $"Lives: {lives}";
+        if(gameObject.transform.parent.Find("Player1"))
+            Destroy(gameObject.transform.parent.Find("Player1").gameObject);
+        if(gameObject.transform.parent.Find("Player"))
+            Destroy(gameObject.transform.parent.Find("Player").gameObject);
     }
 
     public int getLives(){

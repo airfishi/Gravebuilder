@@ -28,7 +28,7 @@ public class respawn : MonoBehaviour
     //what to do when the player dies each time
     void OnDestroy(){
         if(!quitting){
-            if(livesManager.instance.getLives() == 0){
+            if(livesManager.instance.getLives() <= 0){
                 Debug.Log("end game was hit");
                 EndGame();
             }
@@ -36,14 +36,7 @@ public class respawn : MonoBehaviour
                 Debug.Log("newplayer was hit");
                 GameObject newPlayer = (GameObject)Instantiate(player, Vector3.zero, Quaternion.Euler(0,0,0), gameScreen.transform);
                 newPlayer.SetActive(true);
-
-                //tried this but doesn't work, also tried using Behaviours and MonoBehaviours
-                /*
-                Component[] components = newPlayer.GetComponents(typeof(Component));
-                for(Component component in components){
-                    component.enabled = true;
-                }
-                */
+                //Destroy(gameObject);
             }
         }
     }
