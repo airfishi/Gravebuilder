@@ -51,6 +51,11 @@ public class respawn : MonoBehaviour
         yspawn = y;
     }
 
+    public int getYSpawn()
+    {
+        return yspawn;
+    }
+
     //activate the end game screen and disable the game screen
     private void EndGame()
     {

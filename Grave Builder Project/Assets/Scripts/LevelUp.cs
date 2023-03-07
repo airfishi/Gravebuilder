@@ -17,10 +17,10 @@ public class LevelUp : MonoBehaviour
             case 0:         //Accelerate Slime Spawning
                 well.GetComponent<large_slime_spawning>().secondsBetweenSpawn *= 2;
                 well.GetComponent<large_slime_spawning>().secondsBetweenSpawn /= 3;
-                return("LEVEL UP: Slimes Spawn  Faster!");
+                return("LEVEL UP: Slimes Spawn Faster!");
             case 1:         //Spawn another slime, but spawn less frequently.
                 well.GetComponent<large_slime_spawning>().clumpNumber++;
-                return("LEVEL UP: Extra Slimes Increased");
+                return("LEVEL UP: Extra Slimes");
             case 2:         //Increase the block height required to level up
                 GetComponent<MoveCamera>().incBlockInLevel();
                 return("LEVEL UP: Level Height Increased");

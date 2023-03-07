@@ -6,9 +6,11 @@ public class MoveCamera : MonoBehaviour
 {
     
     public GameObject well;
+    public GameObject player;
     public GameObject background;
     public GameObject score;
     public GameObject text;
+    public GameObject livesText;
     private LevelUp levelUp;
 
     private Vector3 moveBy = Vector3.zero;
@@ -84,7 +86,9 @@ public class MoveCamera : MonoBehaviour
             GetComponent<Transform>().position += moveBy * (levels - numBlocksInLevel + 1);     //Move up objects
             well.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             score.transform.position += moveBy * (levels - numBlocksInLevel + 1);
+            livesText.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             well.GetComponent<large_slime_spawning>().increaseYSpawn();
+            //player.GetComponent<respawn>().setSpawn(0, player.GetComponent<respawn>().getYSpawn());
             level++;
 
             GameObject newObject = (GameObject)Instantiate(text, new Vector3(transform.position.x,transform.position.y+600,transform.position.z+190), Quaternion.Euler(0, 0, 0), background.transform.parent);
