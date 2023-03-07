@@ -31,10 +31,12 @@ public class tutorialSlimeSplit : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag.Equals("Player")){
-            if(collision.gameObject.transform.position.y < gameObject.transform.parent.transform.position.y)
+            Debug.Log(collision.gameObject.transform.position.y - gameObject.transform.parent.transform.position.y); // use to find the approx constant in the next line
+            if(collision.gameObject.transform.position.y - gameObject.transform.parent.transform.position.y > -2400)
                 StartCoroutine("secondPrompt");
             else{
                 StartCoroutine("deathPrompt");
+                tutorialLivesManager.instance.loseLife();
             }
         }
     }

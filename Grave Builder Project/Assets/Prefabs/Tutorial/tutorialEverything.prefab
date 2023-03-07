@@ -106,6 +106,10 @@ PrefabInstance:
       propertyPath: dprompt
       value: 
       objectReference: {fileID: 6963712260183547526, guid: 3f05aaed6b0acd744a230186e3ca2d0a, type: 3}
+    - target: {fileID: 8843949482728904427, guid: 6484d47aa8a84e4449d857e4b9946285, type: 3}
+      propertyPath: babyEnemy
+      value: 
+      objectReference: {fileID: 6747579021929866888, guid: 996cf8ec956539e4288d8bde5bd46f6e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6484d47aa8a84e4449d857e4b9946285, type: 3}
 --- !u!1001 &8592904847947365780
@@ -438,6 +442,7 @@ MonoBehaviour:
   dprompt: {fileID: 0}
   lives: 3
   liveCounter: {fileID: 3814907332183429265}
+  tutorial: 1
 --- !u!114 &7243560260993349897 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1424943719790314653, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}

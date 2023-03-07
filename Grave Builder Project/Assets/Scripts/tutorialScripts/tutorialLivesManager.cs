@@ -10,7 +10,7 @@ public class tutorialLivesManager : MonoBehaviour
     public int lives = 3;
     public TextMeshProUGUI liveCounter;
     public static tutorialLivesManager instance;
-
+    public bool tutorial;
     private GameObject newparent;
 
     private void Awake(){
@@ -19,6 +19,7 @@ public class tutorialLivesManager : MonoBehaviour
 
     void Start(){
         newparent = gameObject;
+
         while(!newparent.name.Equals("tutorialEverything"))
             newparent = newparent.transform.parent.gameObject;
         newparent = newparent.transform.Find("Canvas").transform.Find("GameScenes").gameObject;

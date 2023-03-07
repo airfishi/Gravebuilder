@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5422992720578479471}
   m_Layer: 0
-  m_Name: prompt2
+  m_Name: prompt3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,8 +67,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -434.5734, y: -482.82523}
-  m_SizeDelta: {x: 846.1121, y: 688.6856}
+  m_AnchoredPosition: {x: -153.89499, y: -482.82523}
+  m_SizeDelta: {x: 1407.469, y: 688.6856}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7264383233812050088
 CanvasRenderer:
@@ -98,12 +98,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Good job! When you jump on a large slime, two smaller slimes are going
-    to spawn, see if you can jump on one of them without getting hit!
+  m_text: 'Nice! Whenever you land on a small slime it is going to turn into a block.
+    Your goal is to use these blocks to climb as high as possible.
 
 
-    Press
-    any key to continue'
+    Down in
+    the middle is the score, see how high you can get!
+
+
+    Also there are some
+    other things to make the game a bit more exciting but you''ll have to explore
+    and find those yourself.
+
+
+    Good luck!
+
+
+    Press any key to continue'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
