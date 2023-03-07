@@ -88,6 +88,7 @@ public class MoveCamera : MonoBehaviour
             score.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             livesText.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             well.GetComponent<large_slime_spawning>().increaseYSpawn();
+            Debug.Log(player.GetComponent<respawn>().getYSpawn());
             //player.GetComponent<respawn>().setSpawn(0, player.GetComponent<respawn>().getYSpawn());
             level++;
 
