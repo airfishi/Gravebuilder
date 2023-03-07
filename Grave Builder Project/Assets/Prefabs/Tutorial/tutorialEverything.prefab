@@ -439,10 +439,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9391d1ded67f93446874f682768949e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dprompt: {fileID: 0}
+  dprompt: {fileID: 6963712260183547526, guid: 3f05aaed6b0acd744a230186e3ca2d0a, type: 3}
   lives: 3
   liveCounter: {fileID: 3814907332183429265}
   tutorial: 1
+--- !u!114 &2094513452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165858059945762995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9391d1ded67f93446874f682768949e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dprompt: {fileID: 6963712260183547526, guid: 3f05aaed6b0acd744a230186e3ca2d0a, type: 3}
+  lives: 3
+  liveCounter: {fileID: 3814907332183429265}
+  tutorial: 0
 --- !u!114 &7243560260993349897 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1424943719790314653, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}

@@ -38,7 +38,8 @@ public class tutorialKillSlime : MonoBehaviour
             if(collision.gameObject.transform.position.y - gameObject.transform.parent.transform.position.y > 0)
                 StartCoroutine("thirdPrompt");
             else{
-                StartCoroutine("deathPrompt");
+                //StartCoroutine("deathPrompt");
+                quitting = true;
                 tutorialLivesManager.instance.loseLife();
             }
             //Destroy(transform.parent.gameObject);

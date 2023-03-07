@@ -35,7 +35,8 @@ public class tutorialSlimeSplit : MonoBehaviour
             if(collision.gameObject.transform.position.y - gameObject.transform.parent.transform.position.y > -2400)
                 StartCoroutine("secondPrompt");
             else{
-                StartCoroutine("deathPrompt");
+                //StartCoroutine("deathPrompt");
+                quitting = true;
                 tutorialLivesManager.instance.loseLife();
             }
         }
@@ -67,7 +68,7 @@ public class tutorialSlimeSplit : MonoBehaviour
 
     void Update(){
         if(destroySlime)
-            Destroy(gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
     }
 
 

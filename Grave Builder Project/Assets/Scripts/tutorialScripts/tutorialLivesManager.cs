@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class tutorialLivesManager : MonoBehaviour
 {
@@ -38,11 +39,12 @@ public class tutorialLivesManager : MonoBehaviour
         Time.timeScale = 0;
         Vector3 adjustment = new Vector3(-1600, 1200, 0);
         dprompt = (GameObject)Instantiate(dprompt, newparent.transform.position + adjustment, Quaternion.Euler(0,0,0), newparent.transform);
-        Time.timeScale = 0;
         while(!Input.anyKeyDown){
             yield return null;
         }
         Time.timeScale = 1;
+        Destroy(dprompt);
+        SceneManager.LoadScene("TutorialScreen");
     }
 
 
