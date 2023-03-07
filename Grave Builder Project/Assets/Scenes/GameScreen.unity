@@ -450,11 +450,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 12097024589258089, guid: 43cf44ec5a34f8b4cb244c703dd09e1c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1961869882507488564, guid: 43cf44ec5a34f8b4cb244c703dd09e1c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1961869882507488565, guid: 43cf44ec5a34f8b4cb244c703dd09e1c, type: 3}
       propertyPath: m_SizeDelta.x
