@@ -10,6 +10,7 @@ public class MoveCamera : MonoBehaviour
     public GameObject score;
     public GameObject text;
     public GameObject livesText;
+    public GameObject levelDisplay;
     private LevelUp levelUp;
     private GameObject player;
 
@@ -89,6 +90,8 @@ public class MoveCamera : MonoBehaviour
             well.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             score.transform.position += moveBy * (levels - numBlocksInLevel + 1);
             livesText.transform.position += moveBy * (levels - numBlocksInLevel + 1);
+            levelDisplay.transform.position += moveBy * (levels - numBlocksInLevel + 1);
+
             well.GetComponent<large_slime_spawning>().increaseYSpawn();
             Debug.Log(player.GetComponent<respawn>().getYSpawn());
             //player.GetComponent<respawn>().setSpawn(0, player.GetComponent<respawn>().getYSpawn());

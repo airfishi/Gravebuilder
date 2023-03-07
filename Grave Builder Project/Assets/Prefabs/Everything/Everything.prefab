@@ -286,6 +286,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8902685428470440593, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
   m_PrefabInstance: {fileID: 6774475280478519778}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3719899251853676467 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7898321947634470481, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
+  m_PrefabInstance: {fileID: 6774475280478519778}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4034557674929512075 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7637653668818952041, guid: f3ab6c5e05213ce449a047a50ccc916f, type: 3}
@@ -354,6 +359,10 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 2514070805574058075}
+    - target: {fileID: 1612357754057929867, guid: 191b2840684d3714f85d2ab5ec9f25b2, type: 3}
+      propertyPath: levelDisplay
+      value: 
+      objectReference: {fileID: 3719899251853676467}
     - target: {fileID: 3065238988229989209, guid: 191b2840684d3714f85d2ab5ec9f25b2, type: 3}
       propertyPath: well
       value: 

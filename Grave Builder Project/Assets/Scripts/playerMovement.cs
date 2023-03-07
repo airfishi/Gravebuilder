@@ -185,7 +185,6 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GetComponent<SpriteRenderer>().color);
         if (invulnerable)
         {
             invulnerableTime+= Time.deltaTime;
