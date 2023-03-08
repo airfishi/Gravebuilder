@@ -35,14 +35,16 @@ public class tutorialKillSlime : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player"){
             //Debug.Log(collision.gameObject.transform.position.y - gameObject.transform.parent.transform.position.y);
-            if(collision.gameObject.transform.position.y - gameObject.transform.parent.transform.position.y > 0)
+            if(collision.gameObject.transform.position.y - gameObject.transform.parent.transform.position.y > 0){
+                quitting = true;
+                //tutorialRespawn.instance.setQuitting(true);
                 StartCoroutine("thirdPrompt");
+            }
             else{
                 //StartCoroutine("deathPrompt");
                 quitting = true;
                 tutorialLivesManager.instance.loseLife();
             }
-            //Destroy(transform.parent.gameObject);
 
         }
     }

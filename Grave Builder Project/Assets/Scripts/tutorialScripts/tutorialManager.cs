@@ -6,12 +6,18 @@ public class tutorialManager : MonoBehaviour
 {
 
     public GameObject prompt1;
+    public GameObject player;
 
     private GameObject newparent;
+    
 
     void Awake()
     {   
         newparent = gameObject.transform.Find("Canvas").transform.Find("GameScenes").gameObject; //set newparent to GameScenes
+        //Destroy(GameObject.FindGameObjectWithTag("Player"));
+        Vector3 forward = new Vector3(0,0,-1);
+        //GameObject gameScene = GameObject.FindGameObjectWithTag("GameScene");
+        //GameObject newplayer = (GameObject)Instantiate(player, gameScene.transform.position + forward, Quaternion.Euler(0,0,0), gameScene.transform);
         StartCoroutine("firstPrompt");   
     }
 

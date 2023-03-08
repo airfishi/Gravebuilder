@@ -6,6 +6,7 @@ public class tutorialRespawn : MonoBehaviour
 {
 
     public GameObject player;
+    public static tutorialRespawn instance;
 
     private GameObject gameScreen;
     private GameObject endScreen;
@@ -13,6 +14,7 @@ public class tutorialRespawn : MonoBehaviour
     private bool quitting = false;
 
     void Awake(){
+        instance = this;
         gameScreen = gameObject;
         while(!gameScreen.name.Equals("GameScenes")){
             gameScreen = gameScreen.transform.parent.gameObject;
@@ -58,5 +60,9 @@ public class tutorialRespawn : MonoBehaviour
 
     void OnApplicationQuit(){
         quitting = true;
+    }
+
+    public void setQuitting(bool x){
+        quitting = x;
     }
 }
