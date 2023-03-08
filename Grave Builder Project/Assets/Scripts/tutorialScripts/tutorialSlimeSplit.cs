@@ -19,7 +19,7 @@ public class tutorialSlimeSplit : MonoBehaviour
     private GameObject newparent;
     private bool destroySlime = false;
 
-    void Start()
+    void Awake()
     {
         
         newparent = gameObject;

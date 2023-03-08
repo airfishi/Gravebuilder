@@ -9,7 +9,7 @@ public class tutorialManager : MonoBehaviour
 
     private GameObject newparent;
 
-    void Start()
+    void Awake()
     {   
         newparent = gameObject.transform.Find("Canvas").transform.Find("GameScenes").gameObject; //set newparent to GameScenes
         StartCoroutine("firstPrompt");   
