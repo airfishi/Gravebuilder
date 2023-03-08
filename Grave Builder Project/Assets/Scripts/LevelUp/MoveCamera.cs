@@ -94,7 +94,7 @@ public class MoveCamera : MonoBehaviour
 
             well.GetComponent<large_slime_spawning>().increaseYSpawn();
             Debug.Log(player.GetComponent<respawn>().getYSpawn());
-            //player.GetComponent<respawn>().setSpawn(0, player.GetComponent<respawn>().getYSpawn());
+            player.GetComponent<respawn>().setSpawn(0, player.GetComponent<respawn>().getYSpawn() + (numBlocksInLevel * blockSize * (levels - numBlocksInLevel + 1)));
             level++;
 
             GameObject newObject = (GameObject)Instantiate(text, new Vector3(transform.position.x,transform.position.y+600,transform.position.z+190), Quaternion.Euler(0, 0, 0), background.transform.parent);
