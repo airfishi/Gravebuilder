@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 54931144}
   - component: {fileID: 54931143}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Luke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 226.9123, y: -186.071}
+  m_AnchoredPosition: {x: 226.9123, y: -364.64233}
   m_SizeDelta: {x: 423.8246, y: 58.8284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54931143
@@ -225,7 +225,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Luke
+  m_text: "- Luke:\n\tHe/Him\n\tDouble Major in computer science and creative writing\n\tJunior
+    (Class of '24)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -252,8 +253,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -314,7 +315,7 @@ GameObject:
   - component: {fileID: 87678415}
   - component: {fileID: 87678414}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Lizzy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,7 +338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 226.9123, y: -256.8994}
+  m_AnchoredPosition: {x: 226.9123, y: -524.7564}
   m_SizeDelta: {x: 423.8246, y: 58.8284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &87678414
@@ -360,7 +361,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lizzy
+  m_text: "- Lizzy:\n\tShe/Her\n\tMajor in Computer Science and Minor in Economics\n\tSenior
+    (Class of '23)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -387,8 +389,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -423,7 +425,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.000000024015554, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1528,7 +1530,7 @@ GameObject:
   - component: {fileID: 621651976}
   - component: {fileID: 621651975}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Game Screen back ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1551,7 +1553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 226.9123, y: -398.5562}
+  m_AnchoredPosition: {x: 226.9123, y: -840.6899}
   m_SizeDelta: {x: 423.8246, y: 58.8284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &621651975
@@ -1574,7 +1576,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Audio
+  m_text: '- Game Screen background - Noestryo
+
+    - Torches - The.Pixelist.Creator
+
+    -
+    Title Screen background - GabusArt
+
+    - Slimes - Ethen''s Pixel Art Shop
+
+    -
+    Player - Penzilla
+
+    - Brick formation animation - Elizabeth Shakman
+
+    -
+    Slime spawn animation - Elizabeth Shakman'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1601,8 +1618,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1798,7 +1815,7 @@ GameObject:
   - component: {fileID: 734587136}
   - component: {fileID: 734587135}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Andree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1821,8 +1838,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 226.9123, y: -327.72778}
-  m_SizeDelta: {x: 423.8246, y: 58.8284}
+  m_AnchoredPosition: {x: 224.765, y: -682.72314}
+  m_SizeDelta: {x: 419.53, y: 54.5337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &734587135
 MonoBehaviour:
@@ -1844,7 +1861,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Andree
+  m_text: "- Andree:\n\tHe/Him\n\tMajor in Computer Science and Minor in Business\n\tJunior
+    (Class of '24)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1871,8 +1889,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2040,8 +2058,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: 52.231003}
-  m_SizeDelta: {x: 423.82, y: 442.9704}
+  m_AnchoredPosition: {x: -9.4273, y: 318.06915}
+  m_SizeDelta: {x: 422.9653, y: 974.3898}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &781453202
 MonoBehaviour:
@@ -2056,7 +2074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
-  m_VerticalFit: 2
+  m_VerticalFit: 0
 --- !u!114 &781453203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3662,7 +3680,7 @@ GameObject:
   - component: {fileID: 1454864589}
   - component: {fileID: 1454864588}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3685,7 +3703,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 226.9123, y: -115.2426}
+  m_AnchoredPosition: {x: 226.9123, y: -204.52827}
   m_SizeDelta: {x: 423.8246, y: 58.8284}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1454864588
@@ -3708,7 +3726,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Fish
+  m_text: "- Fish:\n\tHe/Him\n\tDouble majors in computer science and physics\n\tSenior
+    (Class of '23)\n\t"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3735,8 +3754,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 15
+  m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
