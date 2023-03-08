@@ -20,7 +20,7 @@ public class tutorialKillSlime : MonoBehaviour
     private bool destroySlime;
 
 
-    void Start()
+    void Awake()
     {
         //removed gameScreen object from being assigned in inspector
         gameScreen = gameObject;

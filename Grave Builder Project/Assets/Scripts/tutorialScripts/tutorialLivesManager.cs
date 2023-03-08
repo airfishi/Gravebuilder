@@ -16,9 +16,6 @@ public class tutorialLivesManager : MonoBehaviour
 
     private void Awake(){
         instance = this;
-    }
-
-    void Start(){
         newparent = gameObject;
 
         while(!newparent.name.Equals("tutorialEverything"))

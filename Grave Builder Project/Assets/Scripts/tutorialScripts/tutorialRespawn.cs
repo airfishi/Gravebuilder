@@ -12,7 +12,7 @@ public class tutorialRespawn : MonoBehaviour
 
     private bool quitting = false;
 
-    void Start(){
+    void Awake(){
         gameScreen = gameObject;
         while(!gameScreen.name.Equals("GameScenes")){
             gameScreen = gameScreen.transform.parent.gameObject;
