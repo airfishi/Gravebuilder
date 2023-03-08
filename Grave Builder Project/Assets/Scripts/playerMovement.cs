@@ -373,5 +373,10 @@ public class playerMovement : MonoBehaviour
         GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0,0,0, 0.5f);
     }
 
+    public void setFirst()
+    {
+        isFirst = true;
+    }
+
 }
 
