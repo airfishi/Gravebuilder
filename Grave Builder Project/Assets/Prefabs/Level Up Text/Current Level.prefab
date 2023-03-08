@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 698827002865513146}
   m_Layer: 0
   m_Name: Current Level
-  m_TagString: Untagged
+  m_TagString: LevelText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

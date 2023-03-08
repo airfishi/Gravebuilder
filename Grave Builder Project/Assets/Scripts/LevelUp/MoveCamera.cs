@@ -85,6 +85,8 @@ public class MoveCamera : MonoBehaviour
         {
             Debug.Log("MOVING" + numBlocksInLevel);
             player = GameObject.FindGameObjectWithTag("Player");
+            livesText = GameObject.FindGameObjectWithTag("LivesText");
+            levelDisplay = GameObject.FindGameObjectWithTag("LevelText");
 
             GetComponent<Transform>().position += moveBy * (levels - numBlocksInLevel + 1);     //Move up objects
             well.transform.position += moveBy * (levels - numBlocksInLevel + 1);
