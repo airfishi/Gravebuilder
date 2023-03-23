@@ -11,6 +11,9 @@ public class large_slime_spawning : MonoBehaviour
     public float clumpNumber = 1;
     public float elapsedTime = 0.0f;
     public GameObject slime_type;
+    public GameObject invulnerability_upgrade;
+    public GameObject block;
+    public GameObject scoreBonus;
     private GameObject gameScreen;
     
     private int xspawn;
@@ -33,7 +36,7 @@ public class large_slime_spawning : MonoBehaviour
         if (elapsedTime/clumpNumber > secondsBetweenSpawn){
             elapsedTime = 0;
             for (int i = 0; i < clumpNumber; i++)
-            {    
+            {
                 //randomly pick a place between -4200 and 2300 for slime to spawn
                 //xspawn = rand.Next(5000);
                 //posneg = rand.Next(2);
@@ -41,9 +44,36 @@ public class large_slime_spawning : MonoBehaviour
                 var lowerbound = -3200;
                 var upperbound = 2600;
                 var xspawn = rand.Next(lowerbound, upperbound);
+                var type = rand.Next(0, 40);
 
                 Vector3 spawnPosition = new Vector3(xspawn, yspawn, 0);
-                GameObject newEnemy = (GameObject)Instantiate(slime_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+                GameObject newObject;
+                if (type >= 7)
+                {
+                    newObject = (GameObject)Instantiate(slime_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+                }else if (type == 6)
+                {
+                    newObject = (GameObject)Instantiate(slime_type, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+                }
+                else if (type == 4 || type == 3)
+                {
+                    newObject = (GameObject)Instantiate(scoreBonus, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+                }
+                else if (type == 1 || type == 2)
+                {
+                    newObject = (GameObject)Instantiate(invulnerability_upgrade, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+                }
+                else if (type == 0 || type == 5)
+                {
+                    int xpos = Mathf.RoundToInt(spawnPosition.x / 500) * 500;
+                    int ypos = Mathf.RoundToInt(spawnPosition.y / 250) * 250;
+
+                    spawnPosition = new Vector3(xpos, ypos + 100, transform.position.z);
+                    newObject = (GameObject)Instantiate(block, spawnPosition, Quaternion.Euler(0, 0, 0), gameScreen.transform);
+
+                    Transform everything = gameScreen.transform.parent.transform.parent;
+                    everything.Find("Main Camera").GetComponent<MoveCamera>().addBlock(ypos, xpos);
+                }
             }
         }
     }

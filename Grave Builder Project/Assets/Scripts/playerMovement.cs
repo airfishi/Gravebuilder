@@ -35,12 +35,17 @@ public class playerMovement : MonoBehaviour
     public bool movingLeft;
     public bool slamming;
     private bool jumpFall;
-    private int jumpTime;
-    private int maxJumpTime;
+    private float jumpTime;
+    private float maxJumpTime;
 
     //extras
-    private bool dead;
+    public bool dead;
     private bool gameStart;
+    private bool invulnerable;
+    private float invulnerableTime;
+    public bool isTutorial;
+
+    private static bool isFirst = true;
 
     public GameObject mainCanvas;
     public GameObject other;
@@ -48,18 +53,25 @@ public class playerMovement : MonoBehaviour
 
     void Start()
     {
+        GetComponent<SpriteRenderer>().color = new UnityEngine.Color(255, 255, 255, 1);
         jump = new Vector3(0, 3600, 0);
         speed = 1900;
         jumping = false;
         grounded = true;
         jumpTime = 0;
-        maxJumpTime = 100;
+        maxJumpTime = 0.45f;
         movingLeft = false;
         movingRight = false;
         dead = false;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         gameStart = true;
+        invulnerableTime = 0;
+        invulnerable = false;
+        if (!isFirst)
+        {
+            beginInvulnerable();
+        }
 
     }
 
@@ -86,7 +98,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "LargeSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y - 100)
+                if ((player.transform.position.y > other.gameObject.transform.position.y - 70) || invulnerable)
                 {
                     //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
@@ -100,8 +112,9 @@ public class playerMovement : MonoBehaviour
                     }
                     scoreManager.instance.AddScore();
                 }
-                else
+                else //part where the player dies
                 {
+
                     playerSound.Stop();
                     playerSound.clip = die;
                     playerSound.loop = false;
@@ -112,7 +125,7 @@ public class playerMovement : MonoBehaviour
 
             if (other.gameObject.tag == "MediumSlime")
             {
-                if (player.transform.position.y > other.gameObject.transform.position.y + 30)
+                if ((player.transform.position.y > other.gameObject.transform.position.y + 100) || invulnerable)
                 {
                     //Destroy(other.transform.gameObject.transform.parent.gameObject);
                     playerSound.Stop();
@@ -172,6 +185,28 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (invulnerable)
+        {
+            invulnerableTime+= Time.deltaTime;
+            if (invulnerableTime > 8)
+            {
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(255, 255, 255, 1);
+                invulnerable = false;
+                invulnerableTime = 0;
+            }
+            else if (invulnerableTime > 6)
+            {
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0, 150, 255, (0.25f + 0.75f * (1 / (8 - invulnerableTime))));
+            }
+            else if (invulnerableTime > 4)
+            {
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0, 0, 255, (0.25f + 0.75f * (1 / (8 - invulnerableTime))));
+            }
+            else
+            {
+                GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0, 0, 0, (0.25f + 0.75f * (1 / (8 - invulnerableTime))));
+            }
+        }
         if (!dead)
         {
             //Player Movement (left/right)
@@ -257,7 +292,7 @@ public class playerMovement : MonoBehaviour
             {
                 if (jumping)
                 {
-                    jumpTime++;
+                    jumpTime+=Time.deltaTime;
                     animator.SetBool("isJumping", true);
                 }
                 if (jumping && ((Input.GetKeyUp(KeyCode.Space) && jumpKey == KeyCode.Space) || (Input.GetKeyUp(KeyCode.UpArrow) && jumpKey == KeyCode.UpArrow) || (Input.GetKeyUp(KeyCode.W) && jumpKey == KeyCode.W) || jumpTime >= maxJumpTime))
@@ -295,7 +330,16 @@ public class playerMovement : MonoBehaviour
             animator.SetBool("isDying", true);
             if (!playerSound.isPlaying)
             {
-                EndGame();
+                isFirst = false;
+                if (isTutorial)
+                {
+                    tutorialLivesManager.instance.loseLife();
+                }
+                else
+                {
+                    livesManager.instance.loseLife();
+                }
+                Destroy(gameObject);
             }
         }    
     }
@@ -308,12 +352,11 @@ public class playerMovement : MonoBehaviour
         //Debug.Log("JUMPING!!!");
     }
 
-    private void Jump(int strength, int durationPenalty)
+    private void Jump(int strength, float durationPenalty)
     {
         jumping = true;
         jumpTime = durationPenalty;
         playerBody.AddForce(jump * strength, ForceMode2D.Force);
-        Debug.Log("JUMPING!!!");
     }
 
     private void EndGame()
@@ -322,5 +365,18 @@ public class playerMovement : MonoBehaviour
 
         other.gameObject.SetActive(true);
     }
+
+    public void beginInvulnerable()
+    {
+        invulnerableTime = 0;
+        invulnerable = true;
+        GetComponent<SpriteRenderer>().color = new UnityEngine.Color(0,0,0, 0.5f);
+    }
+
+    public void setFirst()
+    {
+        isFirst = true;
+    }
+
 }
 

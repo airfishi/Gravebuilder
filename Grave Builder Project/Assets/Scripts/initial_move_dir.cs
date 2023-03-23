@@ -14,7 +14,7 @@ public class initial_move_dir : MonoBehaviour
     private float magnitude = 500;
     System.Random rand = new System.Random();
     private float leftScreen = -4200;
-    private float rightScreen = 2300;
+    private float rightScreen = 2100;
     private Animator animator;
     private int blockedTimer = 0;
 
